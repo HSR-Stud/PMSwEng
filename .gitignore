@@ -1,3 +1,5 @@
 /tmp
 PMSwEng.pdf
 *.synctex
+*.aux
+*.log
