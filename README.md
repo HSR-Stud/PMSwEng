@@ -5,6 +5,10 @@
  * Persönliche, handgeschriebene Zusammenfassung von maximal 10 A4-Seiten (beidseitig beschrieben).
  * maximal 5 beliebige Informatik-Fachbücher
  
+## Branches
+ * master: komplette Zusammenfassung aller Übungen
+ * short: kurze Zusammenfassung der wichtigsten Übungen
+ 
 ## Lizenz
 Diese Zusammenfassung steht unter einer Creative Commons BY-NC-SA Lizenz.
 
