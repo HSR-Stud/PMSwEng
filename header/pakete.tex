@@ -1,0 +1,38 @@
+%--------------------%
+%File für alle Pakete
+
+\usepackage{array} % Extending the array and tabular environment
+\usepackage{textcomp} %Wird für Copyright-Symbol,Währungen, Musikalische-Symbole benötigt
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{mathtools} % Das mathtools package ist eine Erweiterung zum amsmath package.
+\usepackage{adjustbox} %adjustbox, minipage..
+\usepackage[automark]{scrpage2} % Header und Footer
+\usepackage{multirow} % Create tabular cells spanning multiple rows
+\usepackage{multicol} % In­ter­mix sin­gle and mul­ti­ple columns
+\usepackage{rotating} % Rotation tools, including rotated fullpage floats
+
+%Deutsche Sprache mit Sonderzeichen und Umlauten
+\usepackage[utf8]{inputenc}  % UTF-8 unterstützung
+\usepackage[T1]{fontenc} %ä,ü...
+\usepackage[ngerman]{babel}  %Silbentrennung und Rechtschreibung Deutsch
+
+% Für Code einfügen
+\usepackage{listings}
+\lstset{basicstyle=\small} %Schriftgrösse Code
+
+%Schriftart mit LuaLatex (alle Schriften aus Word möglich)
+\usepackage{fontspec}
+\setmainfont{Arial}
+
+%Schriftart mit pdflatex Compiler
+%\usepackage{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
+%\fontfamily{phv}\selectfont
+
+%Hyperlinks im Dokument
+\usepackage[breaklinks,pdftex]{hyperref}
+
+% Seitenränder für Formelsammlungen
+\usepackage[left=1.27cm,right=1.27cm,top=0.80cm,bottom=0.80cm,includeheadfoot]{geometry}
+

@@ -1,0 +1,40 @@
+%-----------------------------------%
+%File für eigene Befehle und Makros
+
+
+% Makros für Titel, Autor und Datum 
+% Dank diesem Makro stehen Titel, Autor und Datum überall im Dokument zur verfügung
+% Date hat zudem den Default-Wert \today
+\makeatletter
+\def\@Title{}
+\def\@Author{}
+\def\@Date{\today}
+\newcommand{\Title}{\@Title}
+\newcommand{\Author}{\@Author}
+\newcommand{\Date}{\@Date}
+\AtBeginDocument{%
+	\let\@Title\@title
+	\let\@Author\@author
+	\let\@Date\@date
+}
+\makeatother
+
+% Layout der Kopf und Fusszeile
+\deftripstyle{zusammenfassung}[0pt][1.00pt]
+{\Title}	% Kopfzeile innen
+{}	% Kopfzeile mitte
+{\Date}	% Kopfzeile aussen
+{\Author}	% Fusszeile innen
+{\text {Elektrotechnik@HSR}}% Fusszeile mitte
+{\pagemark}	% Fusszeile aussen
+\pagestyle{zusammenfassung}
+
+
+%Eigene Befehle
+
+%Befehl für Bild in Tabelle
+\newcommand\tabbild[2][]{%
+	\raisebox{0pt}[\dimexpr\totalheight+\dp\strutbox\relax][\dp\strutbox]{%
+		\includegraphics[#1]{#2}%
+	}%
+}
