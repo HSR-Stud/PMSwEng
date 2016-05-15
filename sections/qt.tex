@@ -1,2 +1,70 @@
 \section{Qt}
+\begin{minipage}{17cm}
+	Qt (sprich cute =süess) ist eine plattformübergreifende Programmierungsapplikation für grafische Benutzeroberflächen (GUI = Graphical User Interface).
+\end{minipage}
+\begin{minipage}{1.5cm}
+	\includegraphics[width=1.5cm]{images/qt_logo.jpg}
+\end{minipage}
 
+\subsection{Grundlagen zu Qt}
+\begin{multicols}{2}
+\subsubsection{Qt Widget}
+	\begin{itemize}
+		\item Qt C++ Klassenbibliothek stellt GUI-Elemente (Widget) zur Verfügung
+		\item Das GUI wird als C++ Sourcefile geschrieben
+	\end{itemize}
+\subsubsection{Qt Quick}
+	\begin{itemize}
+		\item basiert auf QML , Sprache welche das Aussehen festlegt.
+		\item ähnlich wie HTML
+	\end{itemize}	
+\end{multicols}
+
+\subsubsection{Qt Konvention}
+\begin{tabular}{|l|l|l|}
+	\hline \textbf{Was} & \textbf{Beispiel} &\textbf{Konvention}\\
+	\hline Qt-Modulname & "QtCore"& \textit{Qt}\\
+	\hline Qt-Klassenname & "QString" & \textit{Q}\\
+	\hline Qt-Variablen-,Funktionsname & "qTranslator, qDebug()"& \textit{q}\\
+	\hline Qt-include & "\#include <QtGui>& \textit{ohne.h}\\
+	\hline
+\end{tabular}
+
+\subsubsection{Qt Building}
+\begin{itemize}
+	\item qmake Makefile-Generator
+	\item macht aus plattformunabhängiem Projektfile (.pro) ein plattformspezifisches Projektfile. 
+	\item die gewünschte Plattform wird qmake als Option mitgegeben
+	\item Bei Build-Problemen alle Dateien ausser .pro und Sourcefile löschen
+\end{itemize}
+
+\subsubsection{Qt Widget}
+\begin{itemize}
+	\item \textit{"Widget $\rightarrow$ Window Gadget / Fensterding"}
+	\item Visuelles Element einer UI
+	\item Toplevel Widget, alleinstehendes Fenster 
+	\item Verschachtelung, in einem Widget sind weitere Widget enthalten
+\end{itemize}
+
+\subsection{GUI-Programmierung}
+\subsubsection{Layout}
+Festlegen Anordnung und Grösse der Widgets in einem Toplevel Widget.
+\begin{enumerate}
+	\item Absolute Positionierung\\
+	Mit Methoden wie \textit{"'setGeometry(x,y,w,h)"}	
+	\item Layout Manager\\
+	\begin{tabular}{|l|l|}
+		\hline \textbf{Name} & \textbf{Ort}\\
+		\hline QVBoxLayout & Elemente vertikal\\
+		\hline QHBoxLayout & Elemente horizontal\\
+		\hline QGridLayout & zweidimensionales Gitter\\
+		\hline QFormLayout & Elemente zeilenweise\\
+		\hline QStackedLayout & aufeinandergelegt\\
+		\hline
+	\end{tabular}
+	\item GUI-Designer\\
+	Anordnung innerhalb Formular, anschliessend Umwandlung in Code	
+\end{enumerate}
+
+\subsubsection{Interaktion}
+Reaktion des Programmes auf eine Eingabe.
