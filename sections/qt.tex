@@ -45,14 +45,31 @@
 	\item Toplevel Widget, alleinstehendes Fenster 
 	\item Verschachtelung, in einem Widget sind weitere Widget enthalten
 \end{itemize}
+Objekte der Klasse QWidget sind durch Vererbung Bestandteil von Objekten der Klasse QObject. 
+\begin{itemize}
+	\item innerhalb eines Widget dargestellte Widgets sind \textit{"Child-Widget"}
+	\item äusseres Widget ist \textit{"Parent-Widget"}
+	\item Das \textit{"Parent-Widget"} übernimmt Verwaltungsfunktionen wie Memory-Management, weiterleiten von Ereignisse an \textit{"Child-Widget}, anzeigen, verstecken von Widgets etc.
+\end{itemize}
 
 \subsection{GUI-Programmierung}
-\subsubsection{Layout}
-Festlegen Anordnung und Grösse der Widgets in einem Toplevel Widget.
-\begin{enumerate}
-	\item Absolute Positionierung\\
-	Mit Methoden wie \textit{"'setGeometry(x,y,w,h)"}	
-	\item Layout Manager\\
+Es gibt zwei grundlegende Aufgaben bei der GUI-Programmierung.\\
+Das \textbf{Layout} legt Anordnung, Grösse  und Farbe fest.\\
+Die \textbf{Interaktion} legt die Reaktion des Programmes auf eine Eingabe fest. \\
+\newpage
+
+\subsection{Layout}
+Es gibt drei Varianten wie Widgets angeordnet werden können, absolute Positionierung, Layout Manager und GUI-Designer
+
+\subsubsection{Absolute Positionierung}
+Mittels Methoden.
+\begin{multicols}{2}	
+	\lstinputlisting{source/Qt/methoden.cpp}
+	
+	\includegraphics[width=8cm]{images/geometry.png}
+\end{multicols}
+
+\subsubsection{Layout Manager}
 	\begin{tabular}{|l|l|}
 		\hline \textbf{Name} & \textbf{Ort}\\
 		\hline QVBoxLayout & Elemente vertikal\\
@@ -62,9 +79,18 @@ Festlegen Anordnung und Grösse der Widgets in einem Toplevel Widget.
 		\hline QStackedLayout & aufeinandergelegt\\
 		\hline
 	\end{tabular}
-	\item GUI-Designer\\
-	Anordnung innerhalb Formular, anschliessend Umwandlung in Code	
-\end{enumerate}
+	
+\subsubsection{GUI-Designer}	
+	Anordnung innerhalb eines Formulars mittels interaktiven Tools, anschliessend Umwandlung in Code. 	
 
-\subsubsection{Interaktion}
-Reaktion des Programmes auf eine Eingabe.
+\subsubsection{Top-Level-Window}
+Die \textit{"Top-Level-Window"} sind Widgets welche auf der obersten Hierarchiestufe liegen. Sie haben keine \textit{"Parent-Widget"}.
+Übliche Widget für \textit{"Top-Level-Window"}: 
+\begin{itemize}
+	\item QMainWindow $\rightarrow$ Applikations-Window (Hauptfenster)
+	\item QDialog $\rightarrow$ Popup-Window für Abfragen (Wirklich löschen), Hauptanwendung bleibt blockiert
+	\item QWidget $\rightarrow$ Einfaches Fenster
+\end{itemize}
+
+\subsection{Interaktion}
+%TODO Signale & Slots
