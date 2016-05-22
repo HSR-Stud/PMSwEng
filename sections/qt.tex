@@ -38,7 +38,10 @@
 	\item Bei Build-Problemen alle Dateien ausser .pro und Sourcefile löschen
 \end{itemize}
 
-\subsubsection{Qt Widget}
+\subsubsection{QObject}
+%TODO QObject
+
+\subsubsection{QWidget}
 \begin{itemize}
 	\item \textit{"Widget $\rightarrow$ Window Gadget / Fensterding"}
 	\item Visuelles Element einer UI
@@ -47,6 +50,7 @@
 \end{itemize}
 Objekte der Klasse QWidget sind durch Vererbung Bestandteil von Objekten der Klasse QObject. 
 \begin{itemize}
+	\item Alle Objekte welche von QObject abgeleitet, haben automatisches delete
 	\item innerhalb eines Widget dargestellte Widgets sind \textit{"Child-Widget"}
 	\item äusseres Widget ist \textit{"Parent-Widget"}
 	\item Das \textit{"Parent-Widget"} übernimmt Verwaltungsfunktionen wie Memory-Management, weiterleiten von Ereignisse an \textit{"Child-Widget}, anzeigen, verstecken von Widgets etc.
@@ -71,7 +75,7 @@ Mittels Methoden.
 
 \subsubsection{Layout Manager}
 	\begin{tabular}{|l|l|}
-		\hline \textbf{Name} & \textbf{Ort}\\
+		\hline \textbf{Klasse} & \textbf{Ort}\\
 		\hline QVBoxLayout & Elemente vertikal\\
 		\hline QHBoxLayout & Elemente horizontal\\
 		\hline QGridLayout & zweidimensionales Gitter\\
@@ -93,4 +97,62 @@ Die \textit{"Top-Level-Window"} sind Widgets welche auf der obersten Hierarchies
 \end{itemize}
 
 \subsection{Interaktion}
-%TODO Signale & Slots
+In Qt werden die Eingaben als SIGNALS bezeichnet und die Asugaben als SLOTS. Mittels der Funktion connect() werden die beiden miteinander verknüpft.\\
+\includegraphics[width=15cm]{images/connect.png}
+
+\begin{multicols}{3}
+\subsubsection{SIGNALS}
+\begin{itemize}
+	\item nur deklariert, nie definiert
+	\item kein Zugfriffsrecht vergeben
+	\item Rückgabetyp immer void
+\end{itemize}
+
+\subsubsection{SLOTS}
+\begin{itemize}
+	\item deklariert und definiert
+	\item oftmals Memberfunktion, auch normal abrufbar
+	\item Zugriffsrechte
+\end{itemize}
+
+\subsubsection{connect}
+\begin{itemize}
+	\item Verbindungsfunktion zwischen Input und Output
+	\item ein Signal zu mehreren Slots
+	\item mehrere Signale zu einem Slot
+\end{itemize}
+\end{multicols}
+
+\vspace{0.5pt}
+\textbf{Beispiele connect-Funktion}
+\lstinputlisting{source/Qt/connect.cpp}
+
+\subsection{Zeichnen und Malen}
+\subsubsection{QPainter}
+Der Maler mit Mal-,\& Zeichenwerkzeugen.\\
+
+\begin{tabular}{|l|l|}
+	\hline \textbf{Klasse} & \textbf{Werkzeug}\\
+	\hline QPen & Zeichenstift\\
+	\hline QBrush & Pinsel\\
+	\hline QFont & Schriftart\\
+	\hline draw & Formen malen\\
+	\hline
+\end{tabular}
+
+\subsubsection{QPaintDevice}
+Oberfläche wo darauf gezeichnet \& gemalt werden kann
+QPainter-Objekte zeigen auf QPaintDevice-Objekte. QPaintDevice ist eine abstrakte Basisklasse welche nicht von QObject abgeleitet ist und daher kein automatisches delete.\\
+
+\begin{tabular}{|l|l|}
+	\hline \textbf{Klasse} & \textbf{Funktion}\\
+	\hline QWidget & -\\
+	\hline QImage & Änderung Pixel\\
+	\hline QPixmap & Off-Screen zeichnen, Ausgabe Bildschirm\\
+	\hline QBitmap & monochrom\\
+	\hline QPagedPaintDevice & Seitenformat, Ausgabe Drucker\\
+	\hline
+\end{tabular}
+
+\subsubsection{Vorgehen}
+\lstinputlisting{source/Qt/qpainter.cpp}
