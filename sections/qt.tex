@@ -1,23 +1,45 @@
 \section{Qt}
 \begin{minipage}{17cm}
-	Qt (sprich cute =süess) ist eine plattformübergreifende Programmierungsapplikation für grafische Benutzeroberflächen (GUI = Graphical User Interface).
+	Qt (sprich cute =süess) ist eine plattformübergreifende Programmierungsapplikation für grafische Benutzeroberflächen (GUI = Graphical User Interface).\\
+	Qt wurde 1991 gegründet und gehörte der Firma Trolltech. Im Jahr 2008 übernahm Nokia die Firma Trolltech. Im Jahr 2014 wurde Qt als Open-Source-Projekt verwaltet. 
 \end{minipage}
 \begin{minipage}{1.5cm}
 	\includegraphics[width=1.5cm]{images/qt_logo.jpg}
 \end{minipage}
 
 \subsection{Grundlagen zu Qt}
-\begin{multicols}{2}
-\subsubsection{Qt Widget}
+\begin{minipage}{8cm}
 	\begin{itemize}
-		\item Qt C++ Klassenbibliothek stellt GUI-Elemente (Widget) zur Verfügung
+		\item Qt C++ Klassenbibliothek stellt GUI-Elemente zur Verfügung
 		\item Das GUI wird als C++ Sourcefile geschrieben
+		\item Standartklasse QtGui und QtCore werden automatisch inkludiert
+		\item Alle Qt Widgets werden auf dem Heap erstellt
+		\item Jedes Programm enthält eine Instanz von QApplication
+		\item QApplication hält alles zusammen
+		\item siehe Hello World Beispiel im Anhang für näheres
 	\end{itemize}
-\subsubsection{Qt Quick}
+\end{minipage}
+\begin{minipage}{10cm}
+	\includegraphics[width=10cm]{images/qt_classes.jpg}
+\end{minipage}
+
+\begin{multicols}{2}
+	\subsubsection{QObject}
 	\begin{itemize}
-		\item basiert auf QML , Sprache welche das Aussehen festlegt.
-		\item ähnlich wie HTML
-	\end{itemize}	
+		\item QObject ist die Basisklasse des Qt-Modells
+		\item stellt das Memorymanagement (automatische delete) für alle abgeleitet Klassen von QObject zur Verfügung. Es entstehen Objektbäume. 
+		\item stellt die connect-Funktion zur Verfügung
+		\item bearbeitet das Eventhandling
+		\item hat keine visuelle Representation
+	\end{itemize}
+	
+	\subsubsection{Qt Building}
+	\begin{itemize}
+		\item qmake Makefile-Generator
+		\item macht aus plattformunabhängiem Projektfile (.pro) ein plattformspezifisches Projektfile. 
+		\item die gewünschte Plattform wird qmake als Option mitgegeben
+		\item Bei Build-Problemen alle Dateien ausser .pro und Sourcefile löschen
+	\end{itemize}
 \end{multicols}
 
 \subsubsection{Qt Konvention}
@@ -30,40 +52,47 @@
 	\hline
 \end{tabular}
 
-\subsubsection{Qt Building}
+\subsection{QWidget}
 \begin{itemize}
-	\item qmake Makefile-Generator
-	\item macht aus plattformunabhängiem Projektfile (.pro) ein plattformspezifisches Projektfile. 
-	\item die gewünschte Plattform wird qmake als Option mitgegeben
-	\item Bei Build-Problemen alle Dateien ausser .pro und Sourcefile löschen
-\end{itemize}
-
-\subsubsection{QObject}
-%TODO QObject
-
-\subsubsection{QWidget}
-\begin{itemize}
-	\item \textit{"Widget $\rightarrow$ Window Gadget / Fensterding"}
-	\item Visuelles Element einer UI
-	\item Toplevel Widget, alleinstehendes Fenster 
-	\item Verschachtelung, in einem Widget sind weitere Widget enthalten
-\end{itemize}
-Objekte der Klasse QWidget sind durch Vererbung Bestandteil von Objekten der Klasse QObject. 
-\begin{itemize}
-	\item Alle Objekte welche von QObject abgeleitet, haben automatisches delete
-	\item innerhalb eines Widget dargestellte Widgets sind \textit{"Child-Widget"}
-	\item äusseres Widget ist \textit{"Parent-Widget"}
+	\item abgeleitet von QObject
+	\item Eine Instanz der Klasse stellt eine grafisches Element dar
+	\item Diese Klasse hat viele Methoden umd Aussehen, Grösse, Position etc. zu verändern
+	\item mit show() wird das Widget angezeigt, mit hide() wird das Widget versteckt
+	\item Jedes Widget wird einem \textit{"Parent-Widget"} (Eltern) zugewiesen, ein solches Widgets nennt man dann \textit{Child-Widgets}
+	\item Durch die Parent-Child Funktion entsteht eine Verschachtelung
+	\item Ein Widget ohne Parent ist ein Top-Level-Widget oder Window	
 	\item Das \textit{"Parent-Widget"} übernimmt Verwaltungsfunktionen wie Memory-Management, weiterleiten von Ereignisse an \textit{"Child-Widget}, anzeigen, verstecken von Widgets etc.
 \end{itemize}
+
+\begin{multicols}{3}
+\subsubsection{Top-Level-Widget}
+Die \textit{"Top-Level-Window"} sind Widgets welche auf der obersten Hierarchiestufe liegen. Sie haben keine \textit{"Parent-Widget"}.
+Übliche Widgets für \textit{"Top-Level-Window"}: 
+\begin{itemize}
+	\item QMainWindow $\rightarrow$ Applikations-Window (Hauptfenster)
+	\item QDialog $\rightarrow$ Popup-Window für Abfragen (Wirklich löschen), Hauptanwendung bleibt blockiert
+	\item QWidget $\rightarrow$ Einfaches Fenster
+\end{itemize}
+
+\subsubsection{Parent-Child-Widgets}
+\begin{itemize}
+	\item Jedes QObject kann maximal ein Eltern-QObject haben
+	\item Jedes QObject kann beliebig viele Kind-QObject haben
+	\item Kind muss Eltern über sich informieren
+	\item Entweder über Konstruktor, label->setParent(mainwindow) oder Layout Manager
+\end{itemize}
+
+\includegraphics[width=5cm]{images/qt_parent_child.png}
+\end{multicols}
+
 
 \subsection{GUI-Programmierung}
 Es gibt zwei grundlegende Aufgaben bei der GUI-Programmierung.\\
 Das \textbf{Layout} legt Anordnung, Grösse  und Farbe fest.\\
 Die \textbf{Interaktion} legt die Reaktion des Programmes auf eine Eingabe fest. \\
-\newpage
 
 \subsection{Layout}
-Es gibt drei Varianten wie Widgets angeordnet werden können, absolute Positionierung, Layout Manager und GUI-Designer
+Es gibt drei Varianten wie Widgets innerhalb eines Widget angeordnet werden können, absolute Positionierung, Layout Manager und GUI-Designer (Qt Designer)
 
 \subsubsection{Absolute Positionierung}
 Mittels Methoden.
@@ -84,17 +113,8 @@ Mittels Methoden.
 		\hline
 	\end{tabular}
 	
-\subsubsection{GUI-Designer}	
+\subsubsection{GUI-Designer / Qt Designer}	
 	Anordnung innerhalb eines Formulars mittels interaktiven Tools, anschliessend Umwandlung in Code. 	
-
-\subsubsection{Top-Level-Window}
-Die \textit{"Top-Level-Window"} sind Widgets welche auf der obersten Hierarchiestufe liegen. Sie haben keine \textit{"Parent-Widget"}.
-Übliche Widget für \textit{"Top-Level-Window"}: 
-\begin{itemize}
-	\item QMainWindow $\rightarrow$ Applikations-Window (Hauptfenster)
-	\item QDialog $\rightarrow$ Popup-Window für Abfragen (Wirklich löschen), Hauptanwendung bleibt blockiert
-	\item QWidget $\rightarrow$ Einfaches Fenster
-\end{itemize}
 
 \subsection{Interaktion}
 In Qt werden die Eingaben als SIGNALS bezeichnet und die Asugaben als SLOTS. Mittels der Funktion connect() werden die beiden miteinander verknüpft.\\
@@ -128,31 +148,24 @@ In Qt werden die Eingaben als SIGNALS bezeichnet und die Asugaben als SLOTS. Mit
 \lstinputlisting{source/Qt/connect.cpp}
 
 \subsection{Zeichnen und Malen}
-\subsubsection{QPainter}
-Der Maler mit Mal-,\& Zeichenwerkzeugen.\\
+\begin{multicols}{2}
+	\subsubsection{QPainter}
+	Der Maler mit Mal-,\& Zeichenwerkzeugen.\\
+	
+	\begin{tabular}{|l|l|}
+		\hline \textbf{Klasse} & \textbf{Werkzeug}\\
+		\hline QPen & Zeichenstift\\
+		\hline QBrush & Pinsel\\
+		\hline QFont & Schriftart\\
+		\hline draw & Formen malen\\
+		\hline
+	\end{tabular}
+	
+	\subsubsection{QPaintDevice}
+	Oberfläche wo darauf gezeichnet \& gemalt werden kann
+	QPainter-Objekte zeigen auf QPaintDevice-Objekte. QPaintDevice ist eine abstrakte Basisklasse welche nicht von QObject abgeleitet ist und daher kein automatisches delete.\\
 
-\begin{tabular}{|l|l|}
-	\hline \textbf{Klasse} & \textbf{Werkzeug}\\
-	\hline QPen & Zeichenstift\\
-	\hline QBrush & Pinsel\\
-	\hline QFont & Schriftart\\
-	\hline draw & Formen malen\\
-	\hline
-\end{tabular}
-
-\subsubsection{QPaintDevice}
-Oberfläche wo darauf gezeichnet \& gemalt werden kann
-QPainter-Objekte zeigen auf QPaintDevice-Objekte. QPaintDevice ist eine abstrakte Basisklasse welche nicht von QObject abgeleitet ist und daher kein automatisches delete.\\
-
-\begin{tabular}{|l|l|}
-	\hline \textbf{Klasse} & \textbf{Funktion}\\
-	\hline QWidget & -\\
-	\hline QImage & Änderung Pixel\\
-	\hline QPixmap & Off-Screen zeichnen, Ausgabe Bildschirm\\
-	\hline QBitmap & monochrom\\
-	\hline QPagedPaintDevice & Seitenformat, Ausgabe Drucker\\
-	\hline
-\end{tabular}
+\end{multicols}
 
 \subsubsection{Vorgehen}
 \lstinputlisting{source/Qt/qpainter.cpp}
