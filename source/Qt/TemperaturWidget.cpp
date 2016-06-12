@@ -1,84 +1,81 @@
-// Modul: PmSwE, UW 13, N-Uebung 9 (Qt 4): Aufgabe 1: Temperatur-Umrechnung
-// File: TemperaturWidget.cpp, 20.5.2010, H. Pletscher
-//---------------------------------------------------------------------------
 #include <QtGui>
+#include "temperaturwidget.h"
 
-#include "TemperaturWidget.h"
-//---------------------------------------------------------------------------
-TemperaturWidget::TemperaturWidget(QWidget * parent)
-    : QWidget(parent)
+temperaturwidget::temperaturwidget(QWidget *parent) :   QWidget(parent)
 {
-    // **** Darstellung festlegen:
-    mainLayout = new QGridLayout;
+    //**** GUI aufbauen
+    mainLayout = new QGridLayout();
     this->setLayout(mainLayout);
 
-    // Obere Zeile:
-    label1 = new QLabel("<b>Temperatur Umrechnung:</b>");
-    mainLayout->addWidget( label1, 0, 0, 1, 3 );
+    font1 = new QFont("Arial", 12, QFont::Bold);    //Schriften setzen
+    font2 = new QFont("Arial", 10, QFont::Bold);
 
-    label1->setAlignment(Qt::AlignLeft);
-    label1->setAlignment(Qt::AlignVCenter);
-    label1->setAutoFillBackground(true);
-    //label1->setStyleSheet("background-color: white;");
-    label1->setFont( QFont("Arial", 12) );
+    //**** Oberste Linie
+    temp = new QLabel("Temperatur Umrechnung");
+    temp-> setFont(*font1);
+    mainLayout->addWidget(temp, 0,0);           //Objekt, Zeile 0, Spalte 0
 
-    // Mittlere Zeile:
-    label2 = new QLabel("Eingabe:");
-    mainLayout->addWidget( label2, 1, 0 );
-    eingabeLineEdit = new QLineEdit();
-    mainLayout->addWidget( eingabeLineEdit, 1, 1 );
-    boxLayout = new QHBoxLayout;
-    groupBox = new QGroupBox;
-    groupBox->setLayout(boxLayout);
-    tCelsiusButton = new QRadioButton("°C", groupBox);
-    tCelsiusButton->setChecked(true);
-    boxLayout->addWidget(tCelsiusButton);
-    tFahrenheitButton = new QRadioButton("°F", groupBox);
-    boxLayout->addWidget(tFahrenheitButton);
-    mainLayout->addWidget(groupBox, 1, 2);
+    //**** Mittlere Linie
+    input = new QLabel("Eingabe");
+    input ->setFont(*font2);
+    mainLayout->addWidget(input, 1, 0 );        //Objekt, Zeile 1, Spalte
 
-    // Untere Zeile:
-    label3 = new QLabel("Ergebnis= ");
-    mainLayout->addWidget( label3, 2, 0 );
-    resultLineEdit = new QLineEdit();
-    resultLineEdit->setReadOnly(true);
-    mainLayout->addWidget( resultLineEdit, 2, 1 );
+    eingabe = new QLineEdit();
+    mainLayout->addWidget(eingabe, 1, 1);
 
-    rechneButton = new QPushButton("Rechne");
-    mainLayout->addWidget( rechneButton, 2, 2 );
+    radiobutton = new QGroupBox();
+    mainLayout-> addWidget(radiobutton, 1, 2);
 
-    // **** Interaktives Verhalten initialisieren:
-    QObject::connect(rechneButton, SIGNAL(clicked()),
-                     this, SLOT(rechne()) );
-    QObject::connect(eingabeLineEdit, SIGNAL(editingFinished()),
-                     this, SLOT(rechne()) );
+    celsius = new QRadioButton("°C");
+    fahrenheit = new QRadioButton("°F");
+    celsius->setChecked(true);
+
+    hbox = new QHBoxLayout();       //Layout RadioButtons
+    hbox->addWidget(celsius);
+    hbox->addWidget(fahrenheit);
+    radiobutton->setLayout(hbox);
+
+    //**** Unterste Liniec
+    output = new QLabel("Ausgabe");
+    output -> setFont(*font2);
+    mainLayout->addWidget(output, 2, 0);
+
+    ausgabe = new QLineEdit();
+    ausgabe-> setReadOnly(true);
+    mainLayout-> addWidget(ausgabe, 2,1);
+
+    rechne = new QPushButton("Berechne");
+    rechne->setDefault(true);
+    mainLayout->addWidget(rechne, 2, 2);
+
+    //**** Signale Verknüpfen
+    QObject::connect(rechne, SIGNAL(clicked()),this , SLOT(Berechne()));
+    QObject::connect(eingabe, SIGNAL(editingFinished()), this, SLOT(Berechne()));
 }
-//---------------------------------------------------------------------------
-void TemperaturWidget::rechne()
-// Slot: wird aufgerufen falls Button 'Rechne' betaetigt.
+
+void temperaturwidget::Berechne()
 {
-    QString s = eingabeLineEdit->text();
+    QString s = eingabe->text();
     bool okay;
     double x = s.toDouble(&okay);
-    if (!okay)
+    if(!okay)
     {
-        resultLineEdit->setText("Eingabe falsch");
-        eingabeLineEdit->setText("0.0");
+        ausgabe->setText("Eingabe falsch");
+        eingabe->setText("0.0");
     }
-    else
+    else //okay=true umwandlung möglich
     {
-        double res = 0;
-        if (tCelsiusButton->isChecked() )
-        {   // Umrechnung Celsius --> Fahrenheit
-            res = x * 1.8 +32;
+        double y;
+        if(celsius->isChecked())
+        {
+            y=(x*1.8)+32;
         }
-        else
-        {   // Umrechnung  Fahrenheit --> Celsius
-            res = (x - 32) * 5.0 / 9.0;
+        else //fahrenheit is checked
+        {
+            y=(x-32)*(5.0/9.0);
         }
-        QString r = QString("%1").arg(res, 0, 'g', 5 );
-        resultLineEdit->setText(r);
+    QString d = QString("%1").arg(y, 0, 'g', 6);
+    ausgabe->setText(d);
+
     }
 }
-//---------------------------------------------------------------------------
-

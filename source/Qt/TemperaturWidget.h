@@ -1,34 +1,33 @@
 #ifndef TEMPERATURWIDGET_H
 #define TEMPERATURWIDGET_H
-//---------------------------------------------------------------------------
-// Modul: PmSwE, UW 13, N-Uebung 9 (Qt 4): Aufgabe 1: Temperaturumrechnung
-// File: TemperaturWidget.h, 20.5.2010, H. Pletscher
-//---------------------------------------------------------------------------
-#include <QtGui>
 
-//---------------------------------------------------------------------------
-class TemperaturWidget : public QWidget
+#include <QtWidgets>
+
+class temperaturwidget : public QWidget
 {
 private:
     Q_OBJECT
 
-private:    // **** GUI-Stuff:
     QGridLayout * mainLayout;
-    QLabel *label1, *label2, *label3;
-    QLineEdit *eingabeLineEdit, *resultLineEdit;
-    QGroupBox *groupBox;
-
-    QHBoxLayout * boxLayout;
-    QRadioButton * tCelsiusButton, * tFahrenheitButton;
-
-    QPushButton * rechneButton;
+    QGroupBox * radiobutton;
+    QHBoxLayout * hbox;
+    QFont * font1;
+    QFont * font2;
+    QLabel * temp;
+    QLabel * input;
+    QLabel * output;
+    QPushButton * rechne;
+    QLineEdit * eingabe;
+    QLineEdit * ausgabe;
+    QRadioButton * celsius;
+    QRadioButton * fahrenheit;
 
 public:
-    TemperaturWidget(QWidget * parent = 0);
+    temperaturwidget(QWidget *parent = 0);
 
 private slots:
-    void rechne();
-
+    void Berechne();        //muss als slot gekennzeichent werden
+                            //weil sonst Qt die Funktion nicht erkennt
 };
-//---------------------------------------------------------------------------
-#endif // MYDIALOG_H
+
+#endif // TEMPERATURWIDGET_H
