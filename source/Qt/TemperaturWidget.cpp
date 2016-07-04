@@ -1,12 +1,10 @@
 #include <QtGui>
 #include "temperaturwidget.h"
-
 temperaturwidget::temperaturwidget(QWidget *parent) :   QWidget(parent)
 {
     //**** GUI aufbauen
     mainLayout = new QGridLayout();
     this->setLayout(mainLayout);
-
     font1 = new QFont("Arial", 12, QFont::Bold);    //Schriften setzen
     font2 = new QFont("Arial", 10, QFont::Bold);
 
@@ -19,17 +17,13 @@ temperaturwidget::temperaturwidget(QWidget *parent) :   QWidget(parent)
     input = new QLabel("Eingabe");
     input ->setFont(*font2);
     mainLayout->addWidget(input, 1, 0 );        //Objekt, Zeile 1, Spalte
-
     eingabe = new QLineEdit();
     mainLayout->addWidget(eingabe, 1, 1);
-
     radiobutton = new QGroupBox();
     mainLayout-> addWidget(radiobutton, 1, 2);
-
     celsius = new QRadioButton("°C");
     fahrenheit = new QRadioButton("°F");
     celsius->setChecked(true);
-
     hbox = new QHBoxLayout();       //Layout RadioButtons
     hbox->addWidget(celsius);
     hbox->addWidget(fahrenheit);
@@ -39,11 +33,9 @@ temperaturwidget::temperaturwidget(QWidget *parent) :   QWidget(parent)
     output = new QLabel("Ausgabe");
     output -> setFont(*font2);
     mainLayout->addWidget(output, 2, 0);
-
     ausgabe = new QLineEdit();
     ausgabe-> setReadOnly(true);
     mainLayout-> addWidget(ausgabe, 2,1);
-
     rechne = new QPushButton("Berechne");
     rechne->setDefault(true);
     mainLayout->addWidget(rechne, 2, 2);
@@ -52,7 +44,6 @@ temperaturwidget::temperaturwidget(QWidget *parent) :   QWidget(parent)
     QObject::connect(rechne, SIGNAL(clicked()),this , SLOT(Berechne()));
     QObject::connect(eingabe, SIGNAL(editingFinished()), this, SLOT(Berechne()));
 }
-
 void temperaturwidget::Berechne()
 {
     QString s = eingabe->text();
@@ -76,6 +67,5 @@ void temperaturwidget::Berechne()
         }
     QString d = QString("%1").arg(y, 0, 'g', 6);
     ausgabe->setText(d);
-
     }
 }
