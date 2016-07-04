@@ -1,15 +1,9 @@
-/**
- * Klasse 'Keyboard', um abzufragen, ob ein Zeichen eingegeben wurde
- * (Funktion "keypressed()") und um Einzelzeichen (ohne Eingabe von
- * 'Return') einzulesen.
- * Fuer Cygwin und Unix-Umgebungen (Linux etc.).
- * Nur mit Cygwin getestet.
- * Entspricht in etwa 'conio.h' von Microsoft.
- * @file Keyboard.h
- * @author H. Pletscher
- * @date  29.3.2012
- * @version 1.1
- */
+//Klasse 'Keyboard', um abzufragen, ob ein Zeichen eingegeben wurde
+// (Funktion "keypressed()") und um Einzelzeichen (ohne Eingabe von
+// 'Return') einzulesen.
+// Fuer Cygwin und Unix-Umgebungen (Linux etc.).
+// Nur mit Cygwin getestet.
+// Entspricht in etwa 'conio.h' von Microsoft.
 
 #ifndef KEYBOARD_H_
 #define KEYBOARD_H_
