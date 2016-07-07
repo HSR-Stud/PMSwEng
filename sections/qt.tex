@@ -56,7 +56,7 @@
 \begin{itemize}
 	\item abgeleitet von QObject
 	\item Eine Instanz der Klasse stellt eine grafisches Element dar
-	\item Diese Klasse hat viele Methoden umd Aussehen, Grösse, Position etc. zu verändern
+	\item Diese Klasse hat viele Methoden um Aussehen, Grösse, Position etc. zu verändern
 	\item mit show() wird das Widget angezeigt, mit hide() wird das Widget versteckt
 	\item Jedes Widget wird einem \textit{"Parent-Widget"} (Eltern) zugewiesen, ein solches Widgets nennt man dann \textit{Child-Widgets}
 	\item Durch die Parent-Child Funktion entsteht eine Verschachtelung
@@ -117,7 +117,7 @@ Mittels Methoden.
 	Anordnung innerhalb eines Formulars mittels interaktiven Tools, anschliessend Umwandlung in Code. 	
 
 \subsection{Interaktion}
-In Qt werden die Eingaben als SIGNALS bezeichnet und die Asugaben als SLOTS. Mittels der Funktion connect() werden die beiden miteinander verknüpft.\\
+In Qt werden die Eingaben als SIGNALS bezeichnet und die Ausgaben als SLOTS. Mittels der Funktion connect() werden die beiden miteinander verknüpft.\\
 \includegraphics[width=15cm]{images/connect.png}
 
 \begin{multicols}{3}
@@ -163,7 +163,7 @@ In Qt werden die Eingaben als SIGNALS bezeichnet und die Asugaben als SLOTS. Mit
 	
 	\subsubsection{QPaintDevice}
 	Oberfläche wo darauf gezeichnet \& gemalt werden kann
-	QPainter-Objekte zeigen auf QPaintDevice-Objekte. QPaintDevice ist eine abstrakte Basisklasse welche nicht von QObject abgeleitet ist und daher kein automatisches delete.\\
+	QPainter-Objekte zeigen auf QPaintDevice-Objekte. QPaintDevice ist eine abstrakte Basisklasse welche nicht von QObject abgeleitet ist und daher \textbf{kein automatisches delete.}\\
 
 \end{multicols}
 

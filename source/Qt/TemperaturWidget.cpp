@@ -11,12 +11,12 @@ temperaturwidget::temperaturwidget(QWidget *parent) :   QWidget(parent)
     //**** Oberste Linie
     temp = new QLabel("Temperatur Umrechnung");
     temp-> setFont(*font1);
-    mainLayout->addWidget(temp, 0,0);           //Objekt, Zeile 0, Spalte 0
+    mainLayout->addWidget(temp, 0,0);              //Objekt, Zeile 0, Spalte 0
 
     //**** Mittlere Linie
     input = new QLabel("Eingabe");
     input ->setFont(*font2);
-    mainLayout->addWidget(input, 1, 0 );        //Objekt, Zeile 1, Spalte
+    mainLayout->addWidget(input, 1, 0 );           //Objekt, Zeile 1, Spalte
     eingabe = new QLineEdit();
     mainLayout->addWidget(eingabe, 1, 1);
     radiobutton = new QGroupBox();
@@ -24,7 +24,7 @@ temperaturwidget::temperaturwidget(QWidget *parent) :   QWidget(parent)
     celsius = new QRadioButton("°C");
     fahrenheit = new QRadioButton("°F");
     celsius->setChecked(true);
-    hbox = new QHBoxLayout();       //Layout RadioButtons
+    hbox = new QHBoxLayout();                        //Layout RadioButtons
     hbox->addWidget(celsius);
     hbox->addWidget(fahrenheit);
     radiobutton->setLayout(hbox);
@@ -54,14 +54,14 @@ void temperaturwidget::Berechne()
         ausgabe->setText("Eingabe falsch");
         eingabe->setText("0.0");
     }
-    else //okay=true umwandlung möglich
+    else         //okay=true umwandlung möglich
     {
         double y;
         if(celsius->isChecked())
         {
             y=(x*1.8)+32;
         }
-        else //fahrenheit is checked
+        else       //fahrenheit is checked
         {
             y=(x-32)*(5.0/9.0);
         }
