@@ -1,0 +1,170 @@
+\section{Git Commands}
+\begin{longtable}{| p{.30\textwidth} | p{.70\textwidth} |}
+    \hline 
+    \textbf{Create}&
+    \\ \hline
+    
+    git init <directory>&
+    Create empty Git repo in specified directory. Run with no arguments to
+    initialize the current directory as a git repository.
+    \\ \hline 
+    
+    git clone <repo>& 
+    Clone repo located at <repo> onto local machine. Original repo can be located on the local filesystem or on a remote machine
+    \\ \hline  \hline
+    
+    \textbf{Local Changes}&
+    \\ \hline 
+
+    \hline 
+    git status&
+    List which files are staged, unstaged, and untracked  
+    \\ \hline
+    
+    git diff& 
+    Show unstaged changes between your index and working
+    directory 
+    \\ \hline 
+    
+    git diff HEAD&
+    Show difference between working directory and last commit.
+    \\ \hline
+        
+    git add <directory>&
+    Stage all changes in <directory> for the next commit. Replace <directory>
+    with a <file> to change a specific file or witch <.> to Stage all.
+    \\ \hline 
+    
+    git commit -m " \" <message>"&
+    Commit the staged snapshot, but instead of launching a text editor, use
+    <message> as the commit message.
+    \\ \hline
+    
+    git commit -a&
+    Commit all local changes in tracked files.  
+    \\ \hline 
+    
+    gitt commit --amend&
+    Change the last commit. \textbf{Don‘t amend published commits!}
+    \\ \hline \hline
+    
+    \textbf{Commit History}&  
+    \\ \hline 
+
+    \hline
+    git log&
+    Display the entire commit history using the default format.
+    \\ \hline 
+    
+    git log -p <file>&
+    Show changes over time for a specific file 
+    \\ \hline
+    
+    git log --author="\"<pattern>"&
+    Search for commits by a particular author. 
+    \\ \hline
+        
+    git blame <file>& 
+    Who changed what and when in <file>
+    \\ \hline \hline
+
+   \textbf{Branches and Tags}&  
+    \\ \hline
+
+    \hline
+    git branch&
+    List all of the branches in your repo. Add a <branch> argument to
+    create a new branch with the name <branch>.
+    \\ \hline 
+    
+    git branch <new-branch>&
+    Create a new branch based
+    on your current HEAD
+    \\ \hline
+    
+    git branch -d <branch>&
+    Delete a local branch
+    \\ \hline   
+    
+    git branch -dr <remote/branch>&
+    Delete a branch on the remote
+    \\ \hline
+        
+    git checkout -b <branch>&
+    Create and check out a new branch named <branch>. Drop the -b
+    flag to checkout an existing branch.
+    \\ \hline 
+    
+    git merge <branch>&
+    Merge <branch> into the current branch.
+    \\ \hline
+    
+    git tag <tag-name>&
+    Mark the current commit with a tag (v1.0.1)
+    \\ \hline  \hline
+      
+    \textbf{Update and Publish}&
+    \\\hline 
+
+    \hline
+    git remote -v&
+    List all currently configured remotes.
+    \\ \hline 
+    
+    git remote add <name> <url>& 
+    Add new remote repository, named <remote>
+    \\ \hline 
+    
+    git fetch <remote>&  
+    Download all changes from <remote>,
+    but don‘t integrate into HEAD
+    \\ \hline
+    
+    git pull <remote> <branch>&
+    Download changes and directly merge/integrate into HEAD  
+    \\ \hline 
+    
+    git push <remote> <branch>&
+    Publish local changes on a remote
+    \\ \hline \hline
+       
+   \textbf{ Merge and Rebase}&
+    \\\hline 
+    
+    \hline
+    git merge <branch>&
+    Merge <branch> into your current HEAD
+    \\ \hline 
+    
+    git rebase <branch>& 
+    Rebase your current HEAD onto <branch>!\textbf{Don‘t rebase published commits!}
+    \\ \hline 
+    
+    git rebase --abort&
+    Abort a rebase
+    \\ \hline 
+    
+    git mergetool& 
+    Use your configured merge tool to solve conflicts
+    \\ \hline \hline
+   
+    \textbf{Undo}&
+    \\\hline 
+
+    \hline
+    git reset --hard HEAD&
+    Discard all local changes in your working directory.
+    \\ \hline  
+    
+    git checkout HEAD <file>&
+    Discard local changes in a specific file
+    \\ \hline   
+    
+    git revert <commit>&
+    Revert a commit (by producing a new commit with contrary changes)
+    \\ \hline    
+    
+    git reset <commit>&
+    Move the current branch tip backward to <commit>, reset the staging area to match, but leave the working directory alone. 
+    \\ \hline
+\end{longtable}
