@@ -1,7 +1,9 @@
 \section{Qt}
 \begin{minipage}{17cm}
-	Qt (sprich cute =süess) ist eine plattformübergreifende Programmierungsapplikation für grafische Benutzeroberflächen (GUI = Graphical User Interface).\\
-	Qt wurde 1991 gegründet und gehörte der Firma Trolltech. Im Jahr 2008 übernahm Nokia die Firma Trolltech. Im Jahr 2014 wurde Qt als Open-Source-Projekt verwaltet. 
+	Qt (sprich cute =süess) ist eine plattformübergreifende Programmierungsapplikation für grafische Benutzeroberflächen \newline
+    (GUI = Graphical User Interface).\\
+	Qt wurde 1991 gegründet und gehörte der Firma Trolltech.\newline
+    Im Jahr 2008 übernahm Nokia die Firma Trolltech. Im Jahr 2014 wurde Qt als Open-Source-Projekt verwaltet. 
 \end{minipage}
 \begin{minipage}{1.5cm}
 	\includegraphics[width=1.5cm]{images/qt_logo.jpg}
@@ -10,7 +12,7 @@
 \subsection{Grundlagen zu Qt}
 \begin{minipage}{8cm}
 	\begin{itemize}
-		\item Qt C++ Klassenbibliothek stellt GUI-Elemente zur Verfügung
+		\item Qt C++ Klassenbibliothek stellt GUI-Elemente zur \newline Verfügung
 		\item Das GUI wird als C++ Sourcefile geschrieben
 		\item Standartklasse QtGui und QtCore werden automatisch inkludiert
 		\item Alle Qt Widgets werden auf dem Heap erstellt
@@ -38,18 +40,36 @@
 		\item qmake Makefile-Generator
 		\item macht aus plattformunabhängiem Projektfile (.pro) ein plattformspezifisches Projektfile. 
 		\item die gewünschte Plattform wird qmake als Option mitgegeben
-		\item Bei Build-Problemen alle Dateien ausser .pro und Sourcefile löschen
+		\item Bei Build-Problemen alle Dateien\textbf{ausser} .pro und Sourcefile \newline löschen
 	\end{itemize}
 \end{multicols}
 
 \subsubsection{Qt Konvention}
-\begin{tabular}{|l|l|l|}
-	\hline \textbf{Was} & \textbf{Beispiel} &\textbf{Konvention}\\
-	\hline Qt-Modulname & "QtCore"& \textit{Qt}\\
-	\hline Qt-Klassenname & "QString" & \textit{Q}\\
-	\hline Qt-Variablen-,Funktionsname & "qTranslator, qDebug()"& \textit{q}\\
-	\hline Qt-include & "\#include <QtGui>& \textit{ohne.h}\\
-	\hline
+\begin{tabular}{|l|l|c|}
+	\hline \textbf{Was}&
+    \textbf{Beispiel} &
+    \textbf{Konvention}
+    \\ \hline
+    
+    Qt-Modulname&
+    "QtCore"&
+    \textit{Qt}
+    \\ \hline
+    
+    Qt-Klassenname &
+    "QString" &
+    \textit{Q}
+    \\ \hline
+    
+    Qt-Variablen-,Funktionsname &
+    "qTranslator, qDebug()"&
+    \textit{q}
+    \\ \hline
+    
+    Qt-include &
+    "\#include <QtGui>&
+    \textit{ohne.h}
+    \\ \hline
 \end{tabular}
 
 \subsection{QWidget}
@@ -60,26 +80,27 @@
 	\item mit show() wird das Widget angezeigt, mit hide() wird das Widget versteckt
 	\item Jedes Widget wird einem \textit{"Parent-Widget"} (Eltern) zugewiesen, ein solches Widgets nennt man dann \textit{Child-Widgets}
 	\item Durch die Parent-Child Funktion entsteht eine Verschachtelung
-	\item Ein Widget ohne Parent ist ein Top-Level-Widget oder Window	
-	\item Das \textit{"Parent-Widget"} übernimmt Verwaltungsfunktionen wie Memory-Management, weiterleiten von Ereignisse an \textit{"Child-Widget}, anzeigen, verstecken von Widgets etc.
+	\item Ein Widget \textbf{ohne} Parent ist ein Top-Level-Widget oder Window	
+	\item Das \textit{"Parent-Widget"} übernimmt Verwaltungsfunktionen wie Memory-Management, \newline
+    weiterleiten von Ereignisse an \textit{"Child-Widget}, anzeigen, verstecken von Widgets etc.
 \end{itemize}
 
 \begin{multicols}{3}
 \subsubsection{Top-Level-Widget}
-Die \textit{"Top-Level-Window"} sind Widgets welche auf der obersten Hierarchiestufe liegen. Sie haben keine \textit{"Parent-Widget"}.
+Die \textit{"Top-Level-Window"} sind Widgets welche auf der obersten Hierarchiestufe liegen. Sie haben keine \textit{"Parent-Widget"}.\newline
 Übliche Widgets für \textit{"Top-Level-Window"}: 
 \begin{itemize}
 	\item QMainWindow $\rightarrow$ Applikations-Window (Hauptfenster)
-	\item QDialog $\rightarrow$ Popup-Window für Abfragen (Wirklich löschen), Hauptanwendung bleibt blockiert
+	\item QDialog $\rightarrow$ Popup-Window für Abfragen ("Wirklich löschen?"), Hauptanwendung bleibt blockiert
 	\item QWidget $\rightarrow$ Einfaches Fenster
 \end{itemize}
 
 \subsubsection{Parent-Child-Widgets}
 \begin{itemize}
 	\item Jedes QObject kann maximal ein Eltern-QObject haben
-	\item Jedes QObject kann beliebig viele Kind-QObject haben
+	\item Jedes QObject kann beliebig viele \newline Kind-QObject haben
 	\item Kind muss Eltern über sich informieren
-	\item Entweder über Konstruktor, label->setParent(mainwindow) oder Layout Manager
+	\item Entweder über Konstruktor, \newline label->setParent(mainwindow) oder Layout Manager
 \end{itemize}
 
 \includegraphics[width=5cm]{images/qt_parent_child.png}
@@ -92,17 +113,18 @@ Das \textbf{Layout} legt Anordnung, Grösse  und Farbe fest.\\
 Die \textbf{Interaktion} legt die Reaktion des Programmes auf eine Eingabe fest. \\
 
 \subsection{Layout}
-Es gibt drei Varianten wie Widgets innerhalb eines Widget angeordnet werden können, absolute Positionierung, Layout Manager und GUI-Designer (Qt Designer)
+Es gibt drei Varianten wie Widgets innerhalb eines Widget angeordnet werden können: \newline
+absolute Positionierung, Layout Manager und GUI-Designer (Qt Designer)
 
 \subsubsection{Absolute Positionierung}
-Mittels Methoden.
+Mittels Methoden:
 \begin{multicols}{2}	
 	\lstinputlisting{source/Qt/methoden.cpp}
 	
 	\includegraphics[width=8cm]{images/geometry.png}
 \end{multicols}
 
-\subsubsection{Layout Manager}
+\subsubsection{Layout Manager} %TODO Layout?
 	\begin{tabular}{|l|l|}
 		\hline \textbf{Klasse} & \textbf{Ort}\\
 		\hline QVBoxLayout & Elemente vertikal\\
