@@ -168,3 +168,31 @@
     Move the current branch tip backward to <commit>, reset the staging area to match, but leave the working directory alone. 
     \\ \hline
 \end{longtable}
+
+\subsection{Bashprints}
+\begin{multicols}{2}
+\begin{minipage}[l]{.40\textwidth}
+    Files changed but not staged.\\    
+    \textbf{\$ git status}\\
+    On branch master\\
+    Your branch is up-to-date with 'origin/master'.\\
+    Changes not staged for commit:\\
+    \quad (use "git add <file>..." to update what will be committed)\\
+    \quad (use "git checkout -- <file>..." to discard changes in working directory)\\
+    \\
+    \qquad modified:\quad idiotenseite/IdiotenseiteInclude.tex\\
+    \\
+    no changes added to commit (use "git add" and/or "git commit -a")\\
+\end{minipage}
+
+\begin{minipage}[r]{.40\textwidth}
+    \textbf{\$ git log}\\
+    commit 1b7ff854a491397087ff89689a535c275549e6ee\\
+    Author: \quad Michel Gisler <Michel Gisler>\\
+    Date:  \quad  Tue May 31 15:08:58 2016 +0200\\
+    \\  
+    \qquad Kleiner Ergänzungen und Anpasungen\\
+\end{minipage}
+\end{multicols}
+
+\clearpage
