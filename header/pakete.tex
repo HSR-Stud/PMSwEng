@@ -54,13 +54,13 @@
     captionpos=b,                    % sets the caption-position to bottom
     commentstyle=\color{mygreen},    % comment style
     deletekeywords={...},            % if you want to delete keywords from the given language
+    otherkeywords={...},             % if you want to add more keywords to the set
     escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
     extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-    frame=single,	                   % adds a frame around the code
+    frame=single,	                 % adds a frame around the code
     keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
     keywordstyle=\color{blue},       % keyword style
-    language=C++,                 % the language of the code
-    otherkeywords={*,...},           % if you want to add more keywords to the set
+    language=C++,                    % the language of the code   
     numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
     numbersep=5pt,                   % how far the line-numbers are from the code
     numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
@@ -70,10 +70,10 @@
     showtabs=false,                  % show tabs within strings adding particular underscores
     stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
     stringstyle=\color{mymauve},     % string literal style
-    tabsize=2,	                   % sets default tabsize to 2 spaces
+    tabsize=2,	                     % sets default tabsize to 2 spaces
    %title=\lstname                   % show the filename of files included with         \lstinputlisting; also try caption instead of title
 }
-\lstdefinestyle{customc++}{
+\lstdefinestyle{customc++doxy}{
     belowcaptionskip=1\baselineskip,
     breaklines=true,
    %frame=L,
@@ -85,19 +85,25 @@
     commentstyle=\itshape\color{mygreen},
     identifierstyle=\color{black},
     stringstyle=\color{gray},
-}
-%
-\lstdefinestyle{customasm}{    
-     keywordstyle=\bfseries\color{black},
-     commentstyle=\itshape\color{black},
-     identifierstyle=\color{black},
-%    belowcaptionskip=1\baselineskip,
-%    frame=L,
-%    xleftmargin=\parindent,
-%    language=[x86masm]Assembler,
-%    basicstyle=\footnotesize\ttfamily,
-%    commentstyle=\itshape\color{purple!40!black},
+    %TODO Change DOXYGEN Keyword-Highliting
+     otherkeywords={           % DoxygenKeywords
+         ...,
+         ....,
+         @mainpage,
+         @file,
+         @author,
+         @version,
+         @date,
+         @bug,
+         @brief,
+         @extended,
+         @param,
+         @return,
+         @warning,
+         @note,
+         @see},
 }
 
 %choose customstyle in DOC with \lstinputlisting[style=custom]{path}
-\lstset{escapechar=@,style=customc++}
+%\lstset{escapechar=@,style=customc++}
+\lstset{style=customc++doxy}
