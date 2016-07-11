@@ -2,13 +2,20 @@
 \author{M. Gisler}
 \documentclass[a4paper]{article}
 
-
+%Includes
 \include{header/pakete}
 \include{header/zusammenfassung}
 
+%Dokument
 \begin{document}
+\title{\Huge{Projektmanagement und Softwareengineering}}
+\maketitle
+
 \tableofcontents
-\pagebreak
+\setcounter{tocdepth}{2} %Setzt Tiefe des Inhaltsverzeichnis
+\thispagestyle{empty}
+\newpage
+
 \input{sections/softwareEngineering}
 \input{sections/testing}
 \pagebreak
@@ -16,8 +23,8 @@
 \pagebreak
 \input{sections/projectManagement}
 \input{sections/versionskontrolle}
+\pagebreak
 \input{sections/qt}
 \pagebreak
-\input{sections/GitCommands}
 \input{sections/beispiele}
 \end{document}
