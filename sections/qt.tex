@@ -1,8 +1,8 @@
 \section{Qt}
-\begin{minipage}{17cm}
-	Qt (sprich cute =süess) ist eine plattformübergreifende Programmierungsapplikation für grafische Benutzeroberflächen \newline
+\begin{minipage}{16cm}
+	Qt (sprich cute =süess) ist eine plattformübergreifende Programmierungsapplikation für grafische Benutzeroberflächen
     (GUI = Graphical User Interface).\\
-	Qt wurde 1991 gegründet und gehörte der Firma Trolltech.\newline
+	Qt wurde 1991 gegründet und gehörte der Firma Trolltech.
     Im Jahr 2008 übernahm Nokia die Firma Trolltech. Im Jahr 2014 wurde Qt als Open-Source-Projekt verwaltet. 
 \end{minipage}
 \begin{minipage}{1.5cm}
@@ -74,8 +74,7 @@
 
 \subsection{QWidget}
 \begin{itemize}
-	\item abgeleitet von QObject
-	\item Eine Instanz der Klasse stellt eine grafisches Element dar
+	\item abgeleitet von QObject,  eine Instanz der Klasse stellt grafisches Element dar
 	\item Diese Klasse hat viele Methoden um Aussehen, Grösse, Position etc. zu verändern
 	\item mit show() wird das Widget angezeigt, mit hide() wird das Widget versteckt
 	\item Jedes Widget wird einem \textit{"Parent-Widget"} (Eltern) zugewiesen, ein solches Widgets nennt man dann \textit{Child-Widgets}
@@ -106,7 +105,6 @@ Die \textit{"Top-Level-Window"} sind Widgets welche auf der obersten Hierarchies
 \includegraphics[width=5cm]{images/qt_parent_child.png}
 \end{multicols}
 
-
 \subsection{GUI-Programmierung}
 Es gibt zwei grundlegende Aufgaben bei der GUI-Programmierung.\\
 Das \textbf{Layout} legt Anordnung, Grösse  und Farbe fest.\\
@@ -121,7 +119,7 @@ Mittels Methoden:
 \begin{multicols}{2}	
 	\lstinputlisting[style=c++qt]{source/Qt/methoden.cpp}
 	
-	\includegraphics[width=8cm]{images/geometry.png}
+	\includegraphics[width=7cm]{images/geometry.png}
 \end{multicols}
 
 \subsubsection{Layout Manager} %TODO Layout?
