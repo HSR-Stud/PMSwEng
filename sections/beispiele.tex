@@ -1,7 +1,10 @@
 \section{Beispiele}
 
 \subsection{CppUnit}
-\lstinputlisting{source/CppUnit/AuthorTest.cpp}
+\lstinputlisting[style=cppunit ]{source/CppUnit/AuthorTest.cpp}
+\clearpage
+\lstinputlisting[style=cppunit ]{source/CppUnit/datum.h}
+\lstinputlisting[style=cppunit ]{source/CppUnit/datumTest.cpp}
 \pagebreak
 
 \subsection{Doxygen}
@@ -62,13 +65,13 @@
 \end{tabular}
 \\
 \textbf{Code} \newline
-\lstinputlisting[linewidth=12cm]{source/Doxygen/doxygenbsp.c}&
+\lstinputlisting[style=cdoxy, linewidth=12cm]{source/Doxygen/doxygenbsp.c}&
 \tabbild[height=25cm]{images/html.JPG}\\
 \end{tabular}
 \clearpage
 \pagebreak
-\subsection{mainpage.h}
-\lstinputlisting{source/Doxygen/mainpage.h}
+\subsubsection{mainpage.h}
+\lstinputlisting[style=cdoxy]{source/Doxygen/mainpage.h}
 %======================================================================
 \begin{tabular}{l l}
 	\textbf{HTML-Dokumentation} & \textbf{Eclipse-Plugin}\\
@@ -79,7 +82,8 @@
 %======================================================================
 \subsection{Qt}
 \subsubsection{Hello World}
-\lstinputlisting{source/Qt/hello_world.cpp}
+\lstinputlisting[style=c++qt]{source/Qt/hello_world.cpp}
+
 \subsubsection{QWidgets}
 \begin{tabular}{c c}
 	\includegraphics[width=9cm]{images/button_1.png}& \includegraphics[width=9cm]{images/button_2.png}\\
@@ -93,21 +97,39 @@
 \includegraphics[width=9cm]{images/brush.png}
 
 \subsubsection{QPainter draw-Methoden}
-\begin{tabular}{c c}
+\begin{tabular}{c c}%TODO file doppelt
 	\includegraphics[width=9cm]{images/draw_1.png}& \includegraphics[width=9cm]{images/draw_2.png}\\
 \end{tabular}
 \subsubsection{QPen}
 \begin{tabular}{c c}
 	\includegraphics[width=9cm]{images/pen_1.png}& \includegraphics[width=9cm]{images/pen_2.png}\\
 \end{tabular}
-\newpage
+
+\subsubsection{SpezUeb}
+\begin{longtable}{l l} %TODO: Layout
+    \lstinputlisting[style=c++qt,linewidth=12cm]{source/Qt/SpezUeb1.cpp}&
+    \includegraphics{images/qtSpezUeb1.jpg}
+    \\
+    \lstinputlisting[style=c++qt,linewidth=12cm]{source/Qt/SpezUeb2.cpp}&
+    \includegraphics{images/qtSpezUeb2.jpg}
+    \\
+    \lstinputlisting[style=c++qt,linewidth=12cm]{source/Qt/SpezUeb3.cpp}&
+    \includegraphics{images/qtSpezUeb3.jpg}
+    \\
+    \lstinputlisting[style=c++qt,linewidth=12cm]{source/Qt/GridLayout.cpp}&
+    \includegraphics{images/GridLayout.jpg}    
+\end{longtable}
+%TODO JPG smaller
+%\newpage 
+%\includegraphics[angle=90,origin=c,width=\linewidth]{images/qt3classchart}
+%\newpage
 \subsubsection{Temperaturwidget}
 \textbf{main.cpp}
 \\
-\lstinputlisting{source/Qt/main.cpp}
+\lstinputlisting[style=c++qt]{source/Qt/main.cpp}
 \textbf{temperaturwidget.h}
 \\
-\lstinputlisting{source/Qt/temperaturwidget.h}
+\lstinputlisting[style=c++qt]{source/Qt/temperaturwidget.h}
 \newpage
 \textbf{temperaturwidget.cpp}
-\lstinputlisting{source/Qt/temperaturwidget.cpp}
+\lstinputlisting[style=c++qt]{source/Qt/temperaturwidget.cpp}

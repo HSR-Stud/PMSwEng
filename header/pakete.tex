@@ -73,37 +73,99 @@
     tabsize=2,	                     % sets default tabsize to 2 spaces
    %title=\lstname                   % show the filename of files included with         \lstinputlisting; also try caption instead of title
 }
-\lstdefinestyle{customc++doxy}{
+
+\lstdefinestyle{customc++}{
     belowcaptionskip=1\baselineskip,
-    breaklines=true,
    %frame=L,
     xleftmargin=\parindent,
     language=C++,
-    showstringspaces=false,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{blue},
+    commentstyle=\itshape\color{mygreen},
+    identifierstyle=\color{black},
+    stringstyle=\color{gray},
+}
+
+\lstdefinestyle{cppunit}{
+    belowcaptionskip=1\baselineskip,
+    %frame=L,
+    xleftmargin=\parindent,
+    language=C++,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{blue},
+    commentstyle=\itshape\color{mygreen},
+    identifierstyle=\color{black},
+    stringstyle=\color{gray},
+    %TODO Wieso kai Highlighting?
+    otherkeywords{  %Cpp Unit Keywords
+        CPPUNIT_ASSERT,
+        CPPUNIT_TEST_SUITE,
+        CPPUNIT_TEST,
+        CPPUNIT_TEST_END,
+        CPPUNIT_TEST_SUITE_REGISTRATION},
+}
+
+\lstdefinestyle{c++qt}{
+    belowcaptionskip=1\baselineskip,
+    %frame=L,
+    xleftmargin=\parindent,
+    language=C++,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{blue},
+    commentstyle=\itshape\color{mygreen},
+    identifierstyle=\color{black},
+    stringstyle=\color{gray},
+    otherkeywords={           % qt-Keywords
+        Qt,
+        SIGNAL,
+        SLOT,
+        QApplication,
+        QDialog,
+        QGridLayout,
+        QPushButton,
+        QLabel,
+        QVBoxLayout,
+        QHBoxLayout,
+        QWidget,
+        QGroupBox,
+        QFont,
+        QLineEdit,
+        QRadioButton,
+        QPen,
+        QBrush,
+        QPixmap,
+        QPainter},
+}
+
+\lstdefinestyle{cdoxy}{
+    belowcaptionskip=1\baselineskip,
+    %frame=L,
+    xleftmargin=\parindent,
+    language=C++,
     basicstyle=\footnotesize\ttfamily,
     keywordstyle=\bfseries\color{blue},
     commentstyle=\itshape\color{mygreen},
     identifierstyle=\color{black},
     stringstyle=\color{gray},
     %TODO Change DOXYGEN Keyword-Highliting
-     otherkeywords={           % DoxygenKeywords
-         ...,
-         ....,
-         @mainpage,
-         @file,
-         @author,
-         @version,
-         @date,
-         @bug,
-         @brief,
-         @extended,
-         @param,
-         @return,
-         @warning,
-         @note,
-         @see},
+    otherkeywords={           % DoxygenKeywords
+        ...,
+        ....,
+        @mainpage,
+        @file,
+        @author,
+        @version,
+        @date,
+        @bug,
+        @brief,
+        @extended,
+        @param,
+        @return,
+        @warning,
+        @note,
+        @see},
 }
 
 %choose customstyle in DOC with \lstinputlisting[style=custom]{path}
 %\lstset{escapechar=@,style=customc++}
-\lstset{style=customc++doxy}
+\lstset{style=customc++}
