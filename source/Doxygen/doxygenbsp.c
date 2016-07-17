@@ -29,8 +29,7 @@ Adafruit_PN532 nfc(PN532_SCK,
 //set Global Variable
  /**Initialize a Array for the Inputs*/
  char inputCode[maxIN];
-
-//=============================================================================
+//=============================================
  void setup()
  {
    //....do setup Code...
