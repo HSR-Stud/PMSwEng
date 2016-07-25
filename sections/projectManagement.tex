@@ -108,6 +108,7 @@ Jedes Projekt hat ein Anfang und ein Ende (Lebenszyklus). Der vorzeitige Abbruch
 \end{minipage}
 
 \subsection{Projektphasen}
+Verschiedene Teilprozesse laufen parallel ab. 
 \subsubsection{Projektdefinition (Vorphase, Initiierung)}
 \begin{itemize}
 	\item Vorbereiten des Projektes
@@ -125,21 +126,24 @@ Jedes Projekt hat ein Anfang und ein Ende (Lebenszyklus). Der vorzeitige Abbruch
 	\end{minipage}
 	
 \subsubsection{Projektplanung}
+Als Voraussetzung zur Projektplanung gilt der erstelle Projektauftrag. Anschliessend findet das \textit{"Kick-Off-Meeting"} statt. Es ist das erstmalige Treffen des ganzen Projektteams, nachher ist das Team arbeitsfähig. Das \textit{"Kick-Off-Meeting"} gitl als offizieler Projektstart.\\
+Die Projektplanung ist das Wichtigste. Die Pläne werden periodisch überarbeitet weil niemals alles nach Plan läuft. 
+\vspace{0.2cm}
+\\
 \begin{minipage}{11cm}
 	\textbf{1. Projektstrukturplan (PSP)}
 	\begin{itemize}
 		\item Projekt in Teilprojekte zerlegen
 		\item Kleinstmögliche Aufgaben sind Arbeitspakete
-		\item Arbeitspakete sind phasenorientiert oder objektorientiert oder funktionsorientiert aufgeteilt
+		\item Arbeitspakete sind phasenorientiert(nach Zeitabschnitten) oder objektorientiert(nach Komponenten) oder funktionsorientiert(nach Ähnlichkeit der Aufgaben) aufgeteilt
 		\item Pro Arbeitspaket wird eine Arbeitsbeschreibung erstellt
 	\end{itemize} 	
 \end{minipage}
 \begin{minipage}{7cm}
 	\includegraphics[width=7cm]{images/projektstrukturplan.png}
 \end{minipage}
-\\
-\\
-\\
+\clearpage
+\pagebreak
 \textbf{2. Projektablaufplan (PAP)} \\
 Stellt die logische Abhängigkeiten der Arbeitspakete dar. Dazu wird eine Vorgangsliste erstellt, welche die Abhängigkeiten zwischen den Arbeitspakete aufzeigt. 
 \renewcommand{\arraystretch}{1.2}
@@ -157,14 +161,15 @@ Stellt die logische Abhängigkeiten der Arbeitspakete dar. Dazu wird eine Vorgan
 	\end{tabular}
 \end{table}
 
-\pagebreak
 \textbf{3. Projektterminplan}
 \begin{itemize}
 	\item Zuordnung von Terminen zu Arbeitspaketen
 	\item Festlegen der Meilensteine
     \begin{itemize}
     	\item Meilensteine sind Etappenziele welche zur Projektkontrolle dienen
-    	\item Meilensteine sind so formuliert, dass \textit{"'Erfüllt"} oder \textit{" Nicht Erfüllt"} gilt
+    	\item Meilensteine sind so formuliert, dass \textit{"'Erfüllt"} oder
+    	\item Meilensteine stehen am Ende jeder Projektphase
+    	\textit{" Nicht Erfüllt"} gilt
     \end{itemize}
 	\item Projektterminplan wird aufgrund des PSP und PAP erstellt
 \end{itemize}
@@ -183,17 +188,19 @@ Die benötigten Ressourcen ermitteln und mit den Kapazitäten abstimmen.
 Die Kosten für für die Ressourcen schätzen und Budget erstellen. 
 
 \subsubsection{Projektdurchführung}
-Die eigentliche Arbeit beginnt. Der Projektleiter hat die Aufgabe des Projekt-Controlling (to control $\rightarrow$ steuern), dieses besteht aus der Projektkontrolle und der Projektsteuerung. 
+Die eigentliche Arbeit beginnt. Der Projektleiter hat die Aufgabe des Projekt-Controlling (to control $\rightarrow$ steuern).\\
+Projekt-Controlling = Projektkontrolle + Projektsteuerung 
 \renewcommand{\arraystretch}{1.2}
 \begin{table}[h!]
 	\begin{tabular}{|l|l|}
-		\hline \textbf{Projektkontrolle} 	& Rechtzeitiges Feststellen von Abweichungen gegenüber dem geplanten.  \\ 
+		\hline \textbf{Projektkontrolle} 	& Rechtzeitiges Feststellen von Abweichungen gegenüber dem geplanten \\ 
 		& Soll-Ist-Vergleich\\
 		\hline  \textbf{Projektsteuerung} 	& Massnahmen um Projekt bei Abweichungen wieder auf Zielkurs zu bringen. \\
 		& Soll-Werte anpassen\\
 		\hline
 	\end{tabular}
 \end{table}
+
 \subsubsection{Projektabschluss}
 \begin{itemize}
 	\item Projektarbeit erfolgreich abgeschlossen
@@ -201,3 +208,26 @@ Die eigentliche Arbeit beginnt. Der Projektleiter hat die Aufgabe des Projekt-Co
 	\item Formeller Abschluss mit Auftraggeber
 	\item Projektteam interner Abschluss
 \end{itemize}
+\clearpage
+\pagebreak
+\subsubsection{Microsoft Project}
+In MS Project wird immer von Tasks (Vorgang) gesprochen. MS Project hat als Grundlage das Balkendiagramm und die Netzplantechnik.
+Wichtigster Zusammenhang: \textbf{Work = Duration $\cdot$ Units}\\
+\begin{multicols}{2}
+\begin{itemize}
+	\item \textbf{Einzelvorgang (Sub Task)} $\rightarrow$Arbeitspaket
+	\item \textbf{Sammelvorgang (Summary Task)} $\rightarrow$ mehrere Vorgänge
+	\item \textbf{Vorgang mit Dauer 0}$\rightarrow$ Meilenstein	
+\end{itemize}
+\begin{itemize}
+	\item \textbf{Fixed Units}$\rightarrow$ Ressourcen=konstant
+	\item \textbf{Fixed Work} $\rightarrow$ Arbeit=konstant
+	\item \textbf{Fixed Duration}$\rightarrow$ Dauer konstant
+\end{itemize}
+\end{multicols}
+
+\begin{tabular}{l l l}
+		\textbf{Work}& Arbeitsumfang & Einheit: Anzahl Personentage, Mannstunden\\
+		\textbf{Duration} & Zeitdauer & Einheit: Anzahl Stunden,Tage\\
+		\textbf{Units}& Intensität& Einheit: Angabe der Beteiligung in Prozent\\
+\end{tabular}

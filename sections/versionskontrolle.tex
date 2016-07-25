@@ -4,14 +4,15 @@
 \begin{multicols}{2}
 	\subsubsection{Zweck}
 	\begin{itemize}
-		\item Aufbewahrung, Verwaltung, Wiederherstellen von Dateien \newline in einem Archiv
-		\item Koordination des Zugriffs
+		\item Aufbewahrung, Verwaltung, Wiederherstellen von Dateien in einem Archiv
+		\item Koordination des Zugriffs,bekannt als File-Sharing
+		\item erlaubt hervorholen von alten Versionen
 	\end{itemize}
 	
 	\subsubsection{Einsatz}
 	\begin{itemize}
 		\item Softwareentwicklung
-		\item Content-Management-Systeme (CMS)
+		\item Dokument-Management-Systeme (DMS)
 		\item Archiv $=$ Repository $=$ Lager
 	\end{itemize}
 \end{multicols}
@@ -19,23 +20,17 @@
 \subsubsection{Einteilung}
 	\begin{itemize}
 		\item Lokale Versionskontrollsysteme (LVCS), ein Archiv für jede Datei
-		\item Zentralisierte Versionskontrollsysteme (CVCS), ein Archiv für alles
-		\item Verteilte Versionskontrollsysteme (DVCS), mehrere verteilte Archive
+		\item Zentralisierte Versionskontrollsysteme (CVCS), ein zentrales Archiv für alles
+		\item Verteilte Versionskontrollsysteme (DVCS), mehrere verteilte gleichberechtigte Archive
 \end{itemize}
 
 \subsection{Git}
-\begin{minipage}{7cm}
 \begin{itemize}
 	\item Git $\rightarrow$ Blödmann
 	\item Entwicklet von Linus Torvalds, Linux-Erfinder
-	\item Man arbeitet mittels einer Konsole, kein GUI
+	\item Ziele waren Geschwindigkeit, Einfachheit, Unterstützung von nichtlinearer Entwicklung
 	\item Git ist ein DVCS
 \end{itemize}
-\end{minipage}
-%\hfill
-\begin{minipage}{9cm}
-	\includegraphics[width=11cm]{images/git.png}
-\end{minipage}
 
 \subsubsection{Allgemeines}
 \begin{tabular}{|l|l|}
@@ -69,22 +64,80 @@
 	\hline
 \end{tabular}
 
-\subsubsection{Datenbereiche}
-\begin{tabular}{|l|l|}
-	\hline
-	\begin{tabular}[c]{@{}l@{}}\textbf{Workspace}\\ -Projektverzeichniss\\ -hier wird gearbeitet\end{tabular}   & \begin{tabular}[c]{@{}l@{}}\textbf{Repository}\\ -Versionsgeschichte in Form von Commits (Revision)\\ -lokal/remote\end{tabular}   \\ \hline
-	\begin{tabular}[c]{@{}l@{}}\textbf{Stash}\\ -Lager\\ -temporäres Speichern der Workspace-Daten\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Staging Area/Index/Cache}\\ -sammelt Änderungen für Commits\\ -Bereitstellungsraum\end{tabular} \\ \hline
-\end{tabular}
-
 \subsubsection{Git-Konzepte}
 \begin{itemize}
 	\item Git-Workspace ist ein Verzeichnis welches die zu bearbeitenden Dateien eines Projektes enthält
 	\item In diesem Verzeichnis ist ein Unterverzeichnis \textit{".git"}
 	\item Dieses Unterverzeichnis \textit{".git"} bildet das lokale Repository
 	\item Im Branch zeigen die Pointer immer auf den vorhergehenden Commit
-	\item Jeder Commit bekommt einen speziellen Hashwert
+	\item Jeder Commit bekommt einen speziellen Hashwert mittels SHA1-Algorythmus
 \end{itemize}
 
+\subsubsection{Datenbereiche}
+\begin{tabular}{|l|l|}
+	\hline
+	\begin{tabular}[c]{@{}l@{}}\textbf{Workspace}\\ -Projektverzeichniss\\ -hier wird gearbeitet\end{tabular}   & \begin{tabular}[c]{@{}l@{}}\textbf{Repository}\\ -Versionsgeschichte in Form von Commits (Revision)\\ -lokal/remote\end{tabular}   \\ \hline
+	\begin{tabular}[c]{@{}l@{}}\textbf{Stash}\\ -Lager\\ -temporäres Speichern der Workspace-Daten\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Staging Area/Index/Cache}\\ -sammelt Änderungen für Commits\\ -Bereitstellungsraum\end{tabular} \\ \hline
+\end{tabular}
+\\
+	\includegraphics[width=11cm]{images/git.png}
+
+\subsubsection{Git-Repository}
+\begin{itemize}
+	\item lokales Repository $\rightarrow$ \textit{".git"}-Verzeichniss im Workspace
+	\item remote Repository $\rightarrow$ Git-Repository ohne Projektverzeichnis an externem Ort
+	\item bare Repository $\rightarrow$ Git-Repository zum teilen, Klon von lokalen
+\end{itemize}
+\clearpage
+\pagebreak
+\subsubsection{Git-Objekte}
+	\begin{tabular}{|l|l|}
+		\hline
+		\begin{tabular}[c]{@{}l@{}}\textbf{blob}\\ -Inhalt einer Datei\\ -Keine Zeiger auf andere Objekte\end{tabular}                                 & \begin{tabular}[c]{@{}l@{}}\textbf{tree}\\ -enthält Zeiger auf blob-, oder tree-objekte\\ -enthält Information über Verzeichnis-,Dateinamen\end{tabular} \\ \hline
+		\begin{tabular}[c]{@{}l@{}}\textbf{commit}\\ -Startobjekt für ein Commit\\ -enthält Zeiger auf tree und vorgängiges commit-objekt\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{tag}\\ -Etikette mit Kommentar\\ -enthält Zeiger auf commit\end{tabular}                                              \\ \hline
+	\end{tabular}
+\\
+\includegraphics[width=8cm]{images/git_object.png}
+
+\subsubsection{Git-Referenzen}
+\begin{minipage}{12cm}
+	\begin{itemize}
+		\item Referenzen $=$ Zeiger (nur Zeigerwert)
+		\item Zeigen nur auf Git-Objekte
+		\item Hashwert-Zeiger $\rightarrow$ zeigt auf Branches/Tags
+		\item Symbolischer-Zeiger $\rightarrow$ zeigt auf Datei mit Namen eines anderen Zeigers
+	\end{itemize}
+\end{minipage}
+\begin{minipage}{5cm}
+	\includegraphics[width=5cm]{images/git-referenz.png}
+\end{minipage}
+\subsubsection{Bashprints}
+\begin{multicols}{2}
+	\begin{minipage}[l]{.40\textwidth}
+		Files changed but not staged.\\    
+		\textbf{\$ git status}\\
+		On branch master\\
+		Your branch is up-to-date with 'origin/master'.\\
+		Changes not staged for commit:\\
+		\quad (use "git add <file>..." to update what will be committed)\\
+		\quad (use "git checkout -- <file>..." to discard changes in working directory)\\
+		\\
+		\qquad modified:\quad idiotenseite/IdiotenseiteInclude.tex\\
+		\\
+		no changes added to commit (use "git add" and/or "git commit -a")\\
+	\end{minipage}
+	
+	\begin{minipage}[r]{.40\textwidth}
+		\textbf{\$ git log}\\
+		commit 1b7ff854a491397087ff89689a535c275549e6ee\\
+		Author: \quad Michel Gisler <Michel Gisler>\\
+		Date:  \quad  Tue May 31 15:08:58 2016 +0200\\
+		\\  
+		\qquad Kleiner Ergänzungen und Anpasungen\\
+	\end{minipage}
+\end{multicols}
+\clearpage
+\pagebreak
 \subsubsection{Git Commands}
 \begin{longtable}{| p{.30\textwidth} | p{.70\textwidth} |}
 	\hline 
@@ -256,29 +309,3 @@
 	Move the current branch tip backward to <commit>, reset the staging area to match, but leave the working directory alone. 
 	\\ \hline
 \end{longtable}
-
-\subsubsection{Bashprints}
-\begin{multicols}{2}
-	\begin{minipage}[l]{.40\textwidth}
-		Files changed but not staged.\\    
-		\textbf{\$ git status}\\
-		On branch master\\
-		Your branch is up-to-date with 'origin/master'.\\
-		Changes not staged for commit:\\
-		\quad (use "git add <file>..." to update what will be committed)\\
-		\quad (use "git checkout -- <file>..." to discard changes in working directory)\\
-		\\
-		\qquad modified:\quad idiotenseite/IdiotenseiteInclude.tex\\
-		\\
-		no changes added to commit (use "git add" and/or "git commit -a")\\
-	\end{minipage}
-	
-	\begin{minipage}[r]{.40\textwidth}
-		\textbf{\$ git log}\\
-		commit 1b7ff854a491397087ff89689a535c275549e6ee\\
-		Author: \quad Michel Gisler <Michel Gisler>\\
-		Date:  \quad  Tue May 31 15:08:58 2016 +0200\\
-		\\  
-		\qquad Kleiner Ergänzungen und Anpasungen\\
-	\end{minipage}
-\end{multicols}
