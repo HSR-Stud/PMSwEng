@@ -1,22 +1,31 @@
 \section{Software Entwicklung}
+\begin{wrapfigure}[4]{r}[1pt]{3cm}
+	\fbox{\includegraphics[width = 3cm]{images/softwareissues}}
+\end{wrapfigure}
 Die Softwareentwicklung ist schwierig,Hauptgrund: Komplexität.  
 Ein Softwareprojekt kann sich aufgrund der Komplexität in ein Werwolf verwandeln. Dieser kann nur mit einer Silberkugel getötet werden.\\
-Frederic Brooks hat dies analysiert. 
+Frederic Brooks hat dies analysiert. \\
+
 \begin{itemize}
 	\item \textit{"No Silver Bullet"} $\rightarrow$ Es gibt kein Wundermittel um komplexe Software zu entwickeln
 	\item \textit{"{}Adding Manpower to a late Software project makes it later"} $\rightarrow$ Neue Leute müssen sich einarbeiten und Kommunikationsaufwand steigt. 
 \end{itemize}
 
-\subsection{Schwierigkeiten}
-2 Arten von Schwierigkeiten führen zu Komplexität
-\begin{table}[h]
-	\begin{tabular}{|l|l|}
+\subsection{Schwierigkeiten/Eigenschaften}
+2 Arten von Schwierigkeiten führen zu Komplexität\\ \\
+\begin{tabular}{|p{0.3\linewidth}|p{0.6\linewidth}|}
 	\hline
-	\textbf{Essentielle Schwierigkeiten}  & \begin{tabular}[c]{@{}l@{}}Verursacht durch Komplexität des Problems\\ Essenz: Kern der Sache\end{tabular}                \\ \hline
-	\textbf{Akzidentelle Schwierigkeiten} & \begin{tabular}[c]{@{}l@{}}Selbst verursacht durch falsche Methoden, Mittel\\ Akzidenz: Art der Realisierung\end{tabular} \\ \hline
-	\end{tabular}
-\end{table}
-
+	\textbf{Essentielle Schwierigkeiten} & Verursacht durch Komplexität des Problems \newline Essenz: Kern der Sache \\ \hline
+	\textbf{Akzidentelle Schwierigkeiten} & Selbst verursacht durch falsche Methoden, Mittel \newline Akzidenz: Art der Realisierung \\ \hline\hline
+	\textbf{Essentielle Eigenschaften (essential)} & Grundlegende Eigenschaften \newline \underline{Bsp.} 
+	\begin{itemize}
+	\item Auto muss einen Motor, Räder und Türen haben, sonst ist es kein Auto.
+	\end{itemize} \\ \hline
+	\textbf{Akzidentelle Eigenschaft (accidental)} & Zufällige Eigenschaft, die ein Objekt haben kann. \newline \underline{Bsp.} 
+	\begin{itemize}
+	\item Achtzylinder oder Vierzylindermotor
+	\end{itemize} \\ \hline
+\end{tabular}
 \subsection{Bewältigung der Komplexität}	
 		\begin{enumerate}
 			\item Teile und herrsche \textit{"divide et impera"}
@@ -30,7 +39,8 @@ Frederic Brooks hat dies analysiert.
 					\begin{itemize}
 						\item Definition: Weglassen von Aspekten, die für den gegenwärtigen Zweck nicht wichtig sind.
 					\end{itemize}
-			\item Modelle
+			\item Modelle \newline
+			$\Rightarrow$ visuelle Darstellung des Sachverhalts 
 					\begin{itemize}
 						\item Abstraktion der realen Welt, Es gibt zwei Typen von Modellen:
                         \begin{itemize}
@@ -39,29 +49,32 @@ Frederic Brooks hat dies analysiert.
                         \end{itemize}
 					\end{itemize}
 		\end{enumerate}
-
+\subsection{Magical Number Seven}
+Ein Mensch kann nur gleichzeitig 7 $\pm$ 2 Informationseinheiten im Arbeitsgedächtnis präsent halten.
+\clearpage
 \subsection{Vorgehen zur Softwareentwicklung}
+Wenn die folgenden Schritte gleich nacheinander durchgeführt werden, spricht man von \textit{Phasen und Phasenplänen}.
 	\begin{enumerate}
 		\item Analyse
 			\begin{itemize}
-				\item Ziel: Man weiss mehr als vorher, Man weiss WAS entwickelt werden soll.
+				\item Ziel: Man weiss mehr als vorher, Man weiss \textbf{\textcolor{blue}{WAS}} entwickelt werden soll.
 				\item Probleme, Ideen, Anforderungen aufnehmen
-				\item Erstellen eines Pflichtenhefts
+				\item Erstellen eines Lasten-, Pflichtenhefts und einer Anforderungsspezifikation
 				\item \textit{"doing the right things"} $\rightarrow$ Die richtigen Dinge tun
 			\end{itemize}
 		\item Design
 			\begin{itemize}
-				\item Ziel: Man weiss WIE das Produkt entwickelt werden soll
-				\item Erstellen eines Grobentwurfs und eines Detailentwurfs. Es entsteht noch kein Code. Nur Baupläne für die Software
+				\item Ziel: Man weiss \textbf{\textcolor{blue}{WIE}} das Produkt entwickelt werden soll
+				\item Erstellen eines \textbf{\textit{Grobentwurfs}} (Festlegung der Software-Architektur, Hilfsmittel) und \newline eines \textbf{\textit{Detailentwurfs}} (UML-Diagramme). Es entsteht noch kein Code. Nur Baupläne für die Software
 				\item \textit{"doing things right"} $\rightarrow$ Die Dinge richtig tun
 			\end{itemize}
 		\item Implementierung
 			\begin{itemize}
-				\item Entwicklung des Sourcecodes 
+				\item Codieren
+				\item Debuggen
+				\item (Testen) $\Leftarrow$ Nicht immer!
 			\end{itemize}
-		\item Test 
 	\end{enumerate}
-\pagebreak
 
 \subsection{Vorgehensmodelle (Klassisch)}
 \subsubsection{Begriffe}
@@ -75,18 +88,18 @@ Frederic Brooks hat dies analysiert.
 \subsubsection{Wasserfall-Modell}
 \begin{minipage}{10cm}
 	\begin{itemize}
-		\item linear
+		\item lineares Vorgehensmodell
 		\item nicht iterativ
-		\item in Realität nicht durchführbar
+		\item in Realität nicht durchführbar, da keine Rückkopplung vorhanden
 		\item Freigabe beim Abschluss jeder Phase
 		\item Es gibt kein zurück, alles muss beim ersten Mal richtig gemacht werden. 
 	\end{itemize}
 \end{minipage}
 \begin{minipage}{5cm}
-	\includegraphics[width=5cm]{images/wasserfall_modell.png}
+	\includegraphics[width=5cm]{images/wasserfallmodell}
 \end{minipage}
 	
-\subsubsection{Kaskade}
+\subsubsection{Iterativer Wasserfall (Kaskade)}
 	\begin{minipage}{10cm}
 		\begin{itemize}
 			\item Erweiterung des Wasserfalls um Korrekturschleifen
@@ -99,9 +112,10 @@ Frederic Brooks hat dies analysiert.
 	\end{minipage}
 
 \subsubsection{V-Modell}
+Von der deutschen Bundeswehr für ihre eigenen IT-Projekte entwickelt.\\
 \begin{minipage}{8cm}
 	\begin{itemize}
-		\item Korrespondierende Tests
+		\item Grundidee: Korrespondierende Tests
 		\item x-Achse = Zeit
 		\item y-Achse = Detaillierungsgrad
 		\item Weiterentwicklung V-Modell XT,\newline
@@ -109,49 +123,45 @@ Frederic Brooks hat dies analysiert.
         (XT = Extreme Tailoring, engl. „to tailor“ = schneidern)
 	\end{itemize}
 \end{minipage}
-\begin{minipage}{8cm}
-	\includegraphics[width=8cm]{images/v_modell.png}	
+\begin{minipage}{9cm}
+	\includegraphics[width=9cm]{images/vmodell}	
 \end{minipage}
+\begin{wrapfigure}[4]{r}[1pt]{7cm}
+	\includegraphics[width=6cm]{images/iterative_entwicklung.png}
+	\includegraphics[width=7cm]{images/spiral_modell.png}
+\end{wrapfigure}
 
 \subsubsection{Iterative / Inkrementelle Entwicklung / Spiralmodell}
-\begin{minipage}{8cm}
 Es gibt zwei Modelle: Das Spiralmodell und RUP (Rational Unified Process).\\
 \\
 	\textbf{Inkrementell:}
 		\begin{itemize}
 			\item Resultat in Schritten entwickeln
-			\item Jeder Schritt ist Teil des Endresultats
+			\item Jeder Schritt ist Teil des Endresultats \newline $\Rightarrow$ wird \underline{nicht} mehr angepasst
 		\end{itemize}
 	\textbf{Iterativ:}
 		\begin{itemize}					
 			\item Erste Version entwickeln
 			\item In weiteren Schritten bessere Versionen erstellen
 		\end{itemize}
-\end{minipage}
-\begin{minipage}{6cm}
-	\includegraphics[width=6cm]{images/iterative_entwicklung.png}
-\end{minipage}
-\begin{minipage}{8cm}
-	\includegraphics[width=5cm]{images/spiral_modell.png}
-\end{minipage}
-
 
 \subsection{Vorgehensmodell (Agil)}
+\textit{$\Rightarrow$ Ist 3 Mal erfolgreicher als das Wasserfall-Modell}
 \begin{itemize}
 	\item weniger formalisiert als schwerfällige, bürokratische klassische Softwareentwicklung
 	\item agil = flink, beweglich
-	\item Individuen und Interaktionen gelten mehr als Prozesse
+	\item Individuen und Interaktionen gelten mehr als Prozesse und Tools
 \end{itemize}
 
 Agile Softwareentwicklung besteht aus:
 \begin{enumerate}
-	\item \textbf{Agile Werte:} bilden das Fundament.
-	\item \textbf{Agile Prinzipien:} sind Handlungsgrundsätze, die auf agilen Werten basieren.
-	\item \textbf{Agile Methoden:} sind konkrete Verfahren, die sich auf agile Werte und Prinzipien stützen.
-	\item \textbf{Agile Prozesse:} sind die Zusammenfassungen agiler Methoden.
+	\item \textbf{\textit{Agile Werte:}} bilden das Fundament.
+	\item \textbf{\textit{Agile Prinzipien:}} sind Handlungsgrundsätze, die auf agilen Werten basieren.
+	\item \textbf{\textit{Agile Methoden:}} sind konkrete Verfahren, die sich auf agile Werte und Prinzipien stützen.
+	\item \textbf{\textit{Agile Prozesse:}} sind die Zusammenfassungen angewandten Methoden.
 	\\ 
 \end{enumerate}
-
+\pagebreak
 \begin{multicols}{2}
 \subsubsection{XP (Extreme Programming)}
 \begin{minipage}{10cm}
@@ -164,38 +174,50 @@ Agile Softwareentwicklung besteht aus:
 \end{minipage}
 
 \subsubsection{Scrum}
+$\Rightarrow$ Basiert auf sogenannten User Stories (Use Cases)\\
+
 \begin{minipage}[l]{10cm}
 	\begin{itemize}
 		\item Gedränge
-		\item Basis: Sprints von 15-30 Tagen wo neuer Software-Release erstellt wird
+		\item \textit{\textbf{Basis:}} Sprints von 15-30 Tagen, in welchen vom Team eine \newline neue (brauchbarere) Softwareversion erstellt wird. 
 	\end{itemize}
 \end{minipage}
-\begin{minipage}{8cm}
-	\includegraphics[width=8cm]{images/scrum.png}
+\begin{minipage}{10cm}
+	\includegraphics[width=10cm]{images/scrum.png}
 \end{minipage}
 \\
 \end{multicols}
 
 \subsection{Objektorientierte Softwareentwicklung (OOAD)}
-\begin{minipage}{13cm}
+\begin{minipage}[b]{13cm}
 	\begin{itemize}
-		\item Modelle auf allen Stufen: OO-Analyse $\rightarrow$ OO-Design $\rightarrow$ OO-Implementation
-		\item Objekte sind Abstraktionen von realen Dingen
-		\item Klassen entstehen durch Gruppieren und Zusammfassen von Objekten mit gleicher Datenstruktur
+		\item Modelle auf allen Stufen:\textcolor{blue}{\textbf{ OO-Analyse $\rightarrow$ OO-Design $\rightarrow$ OO-Implementation}}
+		\item \textit{Objekte} sind Abstraktionen von realen Dingen (Modellen)
+		\item Klassen entstehen durch Gruppieren und zusammenfassen von Objekten mit gleicher Datenstruktur
 		\item Gleiche Notation bei OOA, OOD, OOI
 		\item Darstellung mit UML
 		\item OOAD kann in jedem Vorgehensmodell verwendet werden
 	\end{itemize}
+	\vspace{1pt}
 \end{minipage}
-\begin{minipage}{6cm}%TODO lesbares UML
-	\includegraphics[width=6cm]{images/uml.png}
-\end{minipage}
+\newline
+\includegraphics[width=12cm]{images/uml.png}
 
 \subsection{Kriterien für die Wahl des Modells}
 \begin{itemize}
-	\item Verfügbarkeit der Ressourcen
+	\item Projektgrösse
 	\item Projektkomplexität
+	\item Verfügbarkeit der Ressourcen
 	\item Zeitpunkt von Änderungen (diskret, laufend)
 	\item Qualität der Anforderungsdefinitionen
 	\item Stabilität bzw. Volatilität der Anforderungen
 \end{itemize}
+\pagebreak
+\subsection{The Big Bang Problem bei Wasserfallmodellen}
+\begin{enumerate}
+	\item zuerst lange Analyse-Phase mit dem Kunden
+	\item dann lange Phase für Design, Codierung und Test \newline $\rightarrow$ Kein Kundenkontakt
+	\item Einführung des Systems beim Kunden $\Leftarrow$ \textcolor{blue}{\textbf{Big Bang}} 
+	\item \textbf{Folge:} Hektisches Nachbessern
+\end{enumerate}
+$\Rightarrow$ \textit{Häufig wird dadurch das Vertrauen des Kunden zerstört.}
