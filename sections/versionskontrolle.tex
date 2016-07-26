@@ -5,7 +5,7 @@
 	\subsubsection{Zweck}
 	\begin{itemize}
 		\item Aufbewahrung, Verwaltung, Wiederherstellen von Dateien in einem Archiv
-		\item Koordination des Zugriffs,bekannt als File-Sharing
+		\item Koordination des Zugriffs, bekannt als File-Sharing
 		\item erlaubt hervorholen von alten Versionen
 	\end{itemize}
 	
@@ -97,13 +97,11 @@
 \clearpage
 \pagebreak
 \subsubsection{Git-Objekte}
-	\begin{tabular}{|l|l|}
+	\begin{tabular}{|p{0.5\linewidth}|p{0.5\linewidth}|}
 		\hline
-		\begin{tabular}[c]{@{}l@{}}\textbf{blob}\\ -Inhalt einer Datei\\ -Keine Zeiger auf andere Objekte\end{tabular}                                 & \begin{tabular}[c]{@{}l@{}}\textbf{tree}\\ -enthält Zeiger auf blob-, oder tree-objekte\\ -enthält Information über Verzeichnis-,Dateinamen\end{tabular} \\ \hline
-		\begin{tabular}[c]{@{}l@{}}\textbf{commit}\\ -Startobjekt für ein Commit\\ -enthält Zeiger auf tree und vorgängiges commit-objekt\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{tag}\\ -Etikette mit Kommentar\\ -enthält Zeiger auf commit\end{tabular}                                              \\ \hline
+		\begin{tabular}[c]{@{}l@{}}\textbf{blob}\\ -Inhalt einer Datei\\ -Keine Zeiger auf andere Objekte\end{tabular}   \newline  \includegraphics[width = 4cm]{images/blob}                             & \begin{tabular}[c]{@{}l@{}}\textbf{tree}\\ -enthält Zeiger auf blob-, oder tree-objekte\\ -enthält Information über Verzeichnis-,Dateinamen\end{tabular} \newline \includegraphics[width = 4cm]{images/tree} \\ \hline
+		\begin{tabular}[c]{@{}l@{}}\textbf{commit}\\ -Startobjekt für ein Commit\\ -enthält Zeiger auf tree und vorgängiges commit-objekt\end{tabular} \newline \includegraphics[width = 4cm]{images/commit}& \begin{tabular}[c]{@{}l@{}}\textbf{tag}\\ -Etikette mit Kommentar\\ -enthält Zeiger auf commit\end{tabular} \newline \includegraphics[width = 4cm]{images/tag}                                             \\ \hline
 	\end{tabular}
-\\
-\includegraphics[width=8cm]{images/git_object.png}
 
 \subsubsection{Git-Referenzen}
 \begin{minipage}{12cm}
@@ -130,7 +128,7 @@
 		\\
 		\qquad modified:\quad idiotenseite/IdiotenseiteInclude.tex\\
 		\\
-		no changes added to commit (use "git add" and/or "git commit -a")\\
+		no changes added to commit \newline (use "git add" and/or "git commit -a")\\
 	\end{minipage}
 	
 	\begin{minipage}[r]{.40\textwidth}
