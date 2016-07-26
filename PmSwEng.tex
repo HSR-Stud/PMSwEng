@@ -1,6 +1,6 @@
 \title{PmSwEng Zusammenfassung}
 \author{M. Gisler}
-\RequirePackage{luatex85}
+\RequirePackage{luatex85} %Bug-Fix Driver not found
 \def\pgfsysdriver{pgfsys-pdftex.def}
 \documentclass[a4paper]{article}
 
@@ -13,8 +13,8 @@
 \title{\Huge{Projektmanagement und Softwareengineering}}
 \maketitle
 
-\tableofcontents
-\setcounter{tocdepth}{2} %Setzt Tiefe des Inhaltsverzeichnis
+\tableofcontents %TODO evt tocdepth auf 1?
+\setcounter{tocdepth}{2} %Setzt Tiefe des Inhaltsverzeichnis 
 \setcounter{secnumdepth}{4} %Setzt Tiefe im Dokument selber
 \thispagestyle{empty}
 \newpage

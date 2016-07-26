@@ -5,9 +5,11 @@
 \newpage
 
 \subsection{Doxygen}
-\begin{tabular}{l l}
-	\textbf{Eclipse Einstellungen} & \textbf{Eclipse-Plugin}\\
-	\tabbild[width=9cm]{images/doxygen_advanced.png} & \tabbild[width=9cm]{images/doxygen_basic.png}\\
+\begin{tabular}{p{0.5\linewidth} p{0.5\linewidth}}
+	\textbf{Eclipse Einstellungen}\newline
+	\tabbild[width=9cm]{images/doxygen_advanced.png} &
+    \textbf{Eclipse-Plugin} \newline
+    \tabbild[width=9cm]{images/doxygen_basic.png}
 \end{tabular}
 \newpage
 \begin{multicols}{2}
@@ -15,10 +17,9 @@
 	\includegraphics[width=8cm]{images/html.JPG}
 \end{multicols}	
 \pagebreak
+%=================================
 
 \subsection{Qt}
-\subsubsection{Hello World}
-\lstinputlisting[style=c++qt]{source/Qt/hello_world.cpp}
 \subsubsection{QWidgets}
 \begin{tabular}{c c}
 	\includegraphics[width=9cm]{images/button_1.png}& \includegraphics[width=9cm]{images/button_2.png}\\
@@ -31,15 +32,24 @@
 \subsubsection{QBrush}
 \includegraphics[width=9cm]{images/brush.png}
 
-\subsubsection{QPainter draw-Methoden}
-\begin{tabular}{c c} %GRAFIK WIEDERHOLT SICH
-	\includegraphics[width=9cm]{images/draw_1.png}& \includegraphics[width=9cm]{images/draw_2.png}\\
-\end{tabular}
-\subsubsection{QPen}
-\begin{tabular}{c c}
-	\includegraphics[width=9cm]{images/pen_1.png}& \includegraphics[width=9cm]{images/pen_2.png}\\
-\end{tabular}
-\newpage
+%\begin{multicols}{2}
+    \begin{minipage}{0.6\linewidth}
+        \subsubsection{QPainter draw-Methoden}
+        \includegraphics[width=\linewidth]{images/draw_1.png}\newline
+        \includegraphics[width=\linewidth]{images/draw_2.png}
+    \end{minipage}
+    
+    \begin{minipage}{0.6\linewidth}
+        \subsubsection{QPen}
+        \includegraphics[width=\linewidth]{images/pen_1.png}\newline \includegraphics[width=\linewidth]{images/pen_2.png}\newline   
+    \end{minipage}
+%\end{multicols}
+\clearpage
+%=================================================
+
+\subsubsection{Hello World}
+\lstinputlisting[style=c++qt]{source/Qt/hello_world.cpp}
+
 \subsubsection{Temperaturwidget}
 \textbf{main.cpp}
 \\
