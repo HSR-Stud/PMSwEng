@@ -11,7 +11,21 @@
 \subsubsection{Wahrscheinlichkeit von Fehlern}
 Je mehr Fehler gefunden werden, desto höher ist die Wahrscheinlichkeit weiterer Fehler.\\
 \includegraphics[width=6cm]{images/fehler_wkeit}
+	
+	\subsubsection{Testen \& Debuggen}
+	\textbf{Ziel des Testing:} \\
+	\begin{minipage}{10cm}
+		\vspace{0.2cm}
+		\begin{itemize}
+			\item Aufzeigen, dass Fehler existieren.
+			\item \textit{"{}Jeder gefundene Bug ist ein Gold Nugget"}
+		\end{itemize}
+		\textbf{Ziel des Debugging:} \\
+		Durch Testing gefundene Fehler lokalisieren und beheben.		
+	\end{minipage}
+\end{multicols}
 
+\begin{minipage}{10cm}
 	\subsubsection{Verifikation \& Validierung}
 	\textbf{Validierung:}\\
 	\textit{"{}Are we building the right product?"}\\
@@ -19,22 +33,13 @@ Je mehr Fehler gefunden werden, desto höher ist die Wahrscheinlichkeit weiterer
 	\textbf{Verifikation:}\\
 	\textit{"{}Are we building the product right?"}\\
 	Überprüft ob die erstellte Software funktioniert.\\
-	\includegraphics[width=9cm]{images/verificationvalidation}
-	
-	\subsubsection{Testen \& Debuggen}
-	\textbf{Ziel des Testing:} \\
-	\begin{minipage}{10cm}
-	\vspace{0.2cm}
-	\begin{itemize}
-		\item Aufzeigen, dass Fehler existieren.
-		\item \textit{"{}Jeder gefundene Bug ist ein Gold Nugget"}
-	\end{itemize}
-	\textbf{Ziel des Debugging:} \\
-	Durch Testing gefundene Fehler lokalisieren und beheben.
+\end{minipage}
+\begin{minipage}{7cm}
+	\includegraphics[width=7cm]{images/verificationvalidation}
 \end{minipage}
 
 \subsubsection{Anforderungen an Softwaretests}
-	\begin{minipage}{12cm}
+	\begin{minipage}{10cm}
 	\begin{itemize}
 			\item Geplant: Testplanung $\rightarrow$ Testplan
 			\item Systematisch spezifiziert $\rightarrow$ Testspezifikationen
@@ -49,10 +54,11 @@ Je mehr Fehler gefunden werden, desto höher ist die Wahrscheinlichkeit weiterer
 			$\Rightarrow$ Regressionstests
 		\end{itemize}
 	\end{minipage}
-		\begin{minipage}{10cm}
-			\includegraphics[width=10cm]{images/sofwaretest.png}
-		\end{minipage}
-\end{multicols}
+	\begin{minipage}{8cm}
+		\includegraphics[width=8cm]{images/sofwaretest.png}
+	\end{minipage}
+\clearpage
+\pagebreak
 
 \begin{multicols}{2}
 	\subsubsection{Massnahmen zur Softwareprüfung}
@@ -69,7 +75,6 @@ Je mehr Fehler gefunden werden, desto höher ist die Wahrscheinlichkeit weiterer
 		\begin{itemize}
 			\item Leistung
 			\item Usability
-			\item ...
 		\end{itemize}
 		\end{itemize} & 
 		\begin{itemize}
@@ -78,7 +83,6 @@ Je mehr Fehler gefunden werden, desto höher ist die Wahrscheinlichkeit weiterer
 		\begin{itemize}
 			\item Leistungstests
 			\item Usabilitytests
-			\item ...	
 		\end{itemize}
 	\end{itemize} \\ \hline
 \end{tabular}
@@ -96,7 +100,7 @@ Je mehr Fehler gefunden werden, desto höher ist die Wahrscheinlichkeit weiterer
 \subsubsection{Blackbox Tests}
 Testfälle \textbf{ohne} Kenntnis der inneren Struktur\\\\
 \textbf{Äquivalenzklassen:} \\
-\begin{minipage}{12cm}
+\begin{minipage}{10cm}
 Wertebereich, für welche das Programm voraussichtlich das gleiche Verhalten zeigt. \\
 Methodik: 1 Testcase pro Äquivalenzklasse \\
 Beispiel: Quadratische Gleichung; Determinante $<0$ ; $=0$ ; $>0$ \\
@@ -107,7 +111,7 @@ Beispiel: Quadratische Gleichung; Determinante $<0$ ; $=0$ ; $>0$ \\
 \end{minipage}
 
 \textbf{Grenzwertanalyse:} \\
-\begin{minipage}{12cm}
+\begin{minipage}{10cm}
 Fehler liegen oft an Grenzen zulässiger Eingabewertbereiche. \\
 \textit{\textbf{Methodik:}} Testfälle auf Grenzen und knapp daneben \\
 \vspace{2cm}
@@ -119,6 +123,7 @@ Fehler liegen oft an Grenzen zulässiger Eingabewertbereiche. \\
 \textbf{Zustandsbasiertes Testing:} \\
 \includegraphics[width = 8cm]{images/stack}
 \clearpage
+\pagebreak
 \subsubsection{Whitebox Tests}
 \begin{minipage}{8cm}
 Tests \textbf{mit} Kenntnis der inneren Struktur\\
@@ -299,6 +304,6 @@ Erst der Test, dann der Code dazu
 	..\newline \textcolor{red}{\texttt{OK (2)}}\\\\
 	\textbf{\textit{Suite hat 10 Tests mit Fehler in Test 2 und 5 absolviert}} \\ 
 	...\newline \textcolor{red}{\texttt{MyClassTest.cpp:32:Assertion \newline Test name: MyClassTest::testCtorWithValues\newline equality assertion failed\newline - Expected: 0 \newline - Actual : 15 \newline \newline MyClassTest.cpp:57:Assertion\newline Test name: MyClassTest::testEquals\newline assertion failed\newline - Expression: object.isValid()\newline \newline Failures !!!\newline Run: 10 \qquad Failure total: 2 \qquad Failures: 2 \qquad Errors: 0}}}
-\subsubsection{CppUnit Test-Fixture: \texttt{setUp()} und \texttt{tearDown()}}
-\includegraphics[width = 8 cm]{images/fixture}
+%\subsubsection{CppUnit Test-Fixture: \texttt{setUp()} und \texttt{tearDown()}}
+%\includegraphics[width = 8 cm]{images/fixture}
 \end{multicols}

@@ -73,7 +73,7 @@
 \begin{multicols}{3}
 \subsubsection{Top-Level-Widget}
 Die \textit{"Top-Level-Window"} sind Widgets welche auf der obersten Hierarchiestufe liegen. Sie haben keine \textit{"Parent-Widget"}.\newline
-Übliche Widgets für \textit{"Top-Level-Window"}: 
+\textbf{Widgets} für \textit{"Top-Level-Window"}: 
 \begin{itemize}
 	\item QMainWindow $\rightarrow$ Applikations-Window (Hauptfenster)
 	\item QDialog $\rightarrow$ Popup-Window für Abfragen ("Wirklich löschen?"), Hauptanwendung bleibt blockiert
@@ -83,7 +83,7 @@ Die \textit{"Top-Level-Window"} sind Widgets welche auf der obersten Hierarchies
 \subsubsection{Parent-Child-Widgets}
 \begin{itemize}
 	\item Jedes QObject kann maximal ein Eltern-QObject haben
-	\item Jedes QObject kann beliebig viele \newline Kind-QObject haben
+	\item Jedes QObject kann beliebig viele Kind-QObject haben
 	\item Kind muss Eltern über sich informieren
 	\item Entweder über Konstruktor, \newline label->setParent(mainwindow) oder Layout Manager
 \end{itemize}

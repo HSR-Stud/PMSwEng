@@ -70,7 +70,6 @@
 	\item In diesem Verzeichnis ist ein Unterverzeichnis \textit{".git"}
 	\item Dieses Unterverzeichnis \textit{".git"} bildet das lokale Repository
 	\item Im Branch zeigen die Pointer immer auf den vorhergehenden Commit
-	\item Jeder Commit bekommt einen speziellen Hashwert mittels SHA1-Algorythmus
 \end{itemize}
 
 \subsubsection{Datenbereiche}
@@ -87,6 +86,13 @@
 	\item lokales Repository $\rightarrow$ \textit{".git"}-Verzeichniss im Workspace
 	\item remote Repository $\rightarrow$ Git-Repository ohne Projektverzeichnis an externem Ort
 	\item bare Repository $\rightarrow$ Git-Repository zum teilen, Klon von lokalen
+\end{itemize}
+\subsubsection{Git-Hashwerte}
+\begin{itemize}
+	\item Zur Identifizierung von Commits und Git-Objekten wird ein Hash-Wert generiert
+	\item Hash-Wert wird mittels SHA1-Algorithmus generiert.
+	\item die Hash-Werte werden als Zweigerwerte (Adressen) verwendet um die Repository-Datenstruktur aufzubauen
+	\item Der Hashwert wird aus Dateiinhalt berechnet und für den Dateinamen verwendet
 \end{itemize}
 \clearpage
 \pagebreak
@@ -108,8 +114,8 @@
 		\item Symbolischer-Zeiger $\rightarrow$ zeigt auf Datei mit Namen eines anderen Zeigers
 	\end{itemize}
 \end{minipage}
-\begin{minipage}{5cm}
-	\includegraphics[width=5cm]{images/git-referenz.png}
+\begin{minipage}{6cm}
+	\includegraphics[width=6cm]{images/git-referenz.png}
 \end{minipage}
 \subsubsection{Bashprints}
 \begin{multicols}{2}
