@@ -4,31 +4,61 @@
 \begin{multicols}{2}
 	\subsubsection{Zweck}
 	\begin{itemize}
-		\item Aufbewahrung, Verwaltung, Wiederherstellen von Dateien in einem Archiv
+		\item Aufbewahrung, Verwaltung, Wiederherstellen von früheren Versionen in einem Archiv
 		\item Koordination des Zugriffs, bekannt als File-Sharing
 		\item erlaubt hervorholen von alten Versionen
 	\end{itemize}
 	
-	\subsubsection{Einsatz}
+	\subsubsection{Haupteinsatz}
 	\begin{itemize}
-		\item Softwareentwicklung
+		\item Softwareentwicklung: zur Verwaltung des Source-Codes
 		\item Dokument-Management-Systeme (DMS)
 		\item Archiv $=$ Repository $=$ Lager
 	\end{itemize}
 \end{multicols}
 
-\subsubsection{Einteilung}
+\subsubsection{Hauptaufgaben von VCS}
+\begin{minipage}{\linewidth}
 	\begin{itemize}
-		\item Lokale Versionskontrollsysteme (LVCS), ein Archiv für jede Datei
-		\item Zentralisierte Versionskontrollsysteme (CVCS), ein zentrales Archiv für alles
-		\item Verteilte Versionskontrollsysteme (DVCS), mehrere verteilte gleichberechtigte Archive
+		\item \textcolor{blue}{Protokollierungen} der Änderungen: \newline $\rightarrow$ Es kann jederzeit nachvollzogen werden, wer wann was geändert hat.
+		\item \textcolor{blue}{Wiederherstellung} von alten Ständen (Milestones) einzelner Dateien: \newline $\rightarrow$ Versehentliche Änderungen können jederzeit rückgängig gemacht werden.
+		\item \textcolor{blue}{Koordinierung} des gemeinsamen Zugriffs auf die Dateien eines Projektes. \newline $\rightarrow$ Mehrere Mitarbeiter können gefahrlos auf die Dateien eines Projektes zugreifen. 
+		\item \textcolor{blue}{Mehrere Entwicklungszweige} (engl. \"{}Branches\"{})\newline $\rightarrow$ Es kann gleichzeitig an verschiedenen Entwicklungszweigen gearbeitet werden. \newline $\rightarrow$ Ein \"{}Branch\"{} ist eine Abspaltung von der normalen Entwicklungslinie, bei der z.B. eine alternative Lösung für ein Teilproblem untersucht wird.
+	\end{itemize}
+\end{minipage}
+\subsubsection{Einteilung von VCS}
+	\begin{itemize}
+\item \textcolor{blue}{Lokale (dateibasierte) Versions-Kontrollsysteme}
+\begin{itemize}
+\item \"{}Local Version Contol Systems\"{} (LVCS)
+ \item Dateibasiert = \textbf{\textit{ein}} Archiv für \textbf{jede} zu archivierende Datei
+ \item Der Name der Archiv-Datei wird dabei vom Namen des Source-Files abgeleitet. \newline $\rightarrow$ \texttt{hallo.cpp} $\rightarrow$ \texttt{hallo.cpp\textbf{,v}} (Suffix '\textbf{,v}') 
+ \item Die im Archiv \"{}abc.xyz,v\"{} abgespeicherte Versionen der Datei \"{}abc.xyz\"{} werden \"{}Revisionen\"{} genannt.
+ \item Wichtige Operationen:
+ \begin{itemize}
+ 	\item \textbf{\"{}check-in\"{}:} Datei zu Archiv hinzufügen (neue Revision) \newline $\rightarrow$ \texttt{\$ ci -m \"{}first check-in\"{} hallo.cpp \qquad \# \"{}einchecken\"{}}
+ 	\item \textbf{\"{}checkout\"{}:} eine bestimmte Revision aus dem Archiv holen \newline $\rightarrow$ \texttt{\$ co -l hallo.cpp\qquad \# \"{}auschecken\"{} und \"{}locken\"{}}
+ \end{itemize}
 \end{itemize}
-
+\item \textcolor{blue}{Zentralisierte Versions-Kontrollsysteme}
+\begin{itemize}
+	\item \"{}Centralized Version Control Systems\"{} (CVCS)
+	\item \textbf{\textit{Ein}} zentrales Repository für alle zu archivierende Dateien. 
+\end{itemize}
+\item \textcolor{blue}{Verteilte Versions-Kontrollsysteme}
+\begin{itemize}
+	\item \"{}Distributed Version Control Systems\"{} (DVCS)
+	\item \textbf{\textit{Mehrere, verteilte, gleichberechtigte}} Repositories für die zu archivierenden Dateien
+	\item \textbf{Git}, gehört in diese Sparte!
+\end{itemize}
+\end{itemize}
+\clearpage
 \subsection{Git}
 \begin{itemize}
-	\item Git $\rightarrow$ Blödmann
-	\item Entwicklet von Linus Torvalds, Linux-Erfinder
-	\item Ziele waren Geschwindigkeit, Einfachheit, Unterstützung von nichtlinearer Entwicklung
+	\item Git $\rightarrow$ (engl. Blödmann)
+	\item Entwickelt von Linus Torvalds, Linux-Erfinder
+	\item Ziele waren Geschwindigkeit, Einfachheit, Unterstützung von nichtlinearer Entwicklung, \newline vollständig verteilt (distributed Repos), Verwaltung von grossen Projekten
+	\item Ist ein spezielles Filesystem
 	\item Git ist ein DVCS
 \end{itemize}
 
@@ -75,36 +105,40 @@
 \subsubsection{Datenbereiche}
 \begin{tabular}{|l|l|}
 	\hline
-	\begin{tabular}[c]{@{}l@{}}\textbf{Workspace}\\ -Projektverzeichniss\\ -hier wird gearbeitet\end{tabular}   & \begin{tabular}[c]{@{}l@{}}\textbf{Repository}\\ -Versionsgeschichte in Form von Commits (Revision)\\ -lokal/remote\end{tabular}   \\ \hline
-	\begin{tabular}[c]{@{}l@{}}\textbf{Stash}\\ -Lager\\ -temporäres Speichern der Workspace-Daten\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Staging Area/Index/Cache}\\ -sammelt Änderungen für Commits\\ -Bereitstellungsraum\end{tabular} \\ \hline
+	\begin{tabular}[c]{@{}l@{}}\textbf{Workspace}\\ -Projektverzeichniss\\ -enthält die Dateien mit denen man arbeitet\end{tabular}   & \begin{tabular}[c]{@{}l@{}}\textbf{Repository}\\ -enthält die Versionsgeschichte in Form von Commits (Revision)\\ -lokal/remote\end{tabular}   \\ \hline
+	\begin{tabular}[c]{@{}l@{}}\textbf{Stash}\\ -Lager\\ -zum temporären Speichern der Workspace-Daten\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Staging Area/Index/Cache}\\ -sammelt Änderungen für Commits\\ -Bereitstellungsraum\end{tabular} \\ \hline
 \end{tabular}
 \\
-	\includegraphics[width=11cm]{images/git.png}
+	\includegraphics[width=12cm]{images/git.png}
 
 \subsubsection{Git-Repository}
 \begin{itemize}
-	\item lokales Repository $\rightarrow$ \textit{".git"}-Verzeichniss im Workspace
-	\item remote Repository $\rightarrow$ Git-Repository ohne Projektverzeichnis an externem Ort
-	\item bare Repository $\rightarrow$ Git-Repository zum teilen, Klon von lokalen
+	\item \textbf{lokales Repository} $\rightarrow$ \textit{".git"}-Verzeichniss im Workspace
+	\item \textbf{remote Repository} $\rightarrow$ Ein normales Git-Repository ohne Projektverzeichnis an externem Ort
+	\item \textbf{\"{}bare\"{} Repository} $\rightarrow$ Git-Repository ohne Projektverzeichnis zum teilen, Klon von lokalen Repositories
 \end{itemize}
 \subsubsection{Git-Hashwerte}
 \begin{itemize}
-	\item Zur Identifizierung von Commits und Git-Objekten wird ein Hash-Wert generiert
-	\item Hash-Wert wird mittels SHA1-Algorithmus generiert.
+	\item Zur Identifizierung von Commits (und anderen Git-Objekten) werden sogenannte Hash-Werte verwendet
+	\item Diese werden mittels SHA1-Algorithmus berechnet.\newline $\rightarrow$ SHA-1 = \"{}Secure Hash Algorithmus Version 1\"{}\newline
+	$\rightarrow$ Dieser liefert 160 Bits (40 Hex Ziffern), \textbf{eindeutiger Prüfwert} für beliebige Daten
 	\item die Hash-Werte werden als Zweigerwerte (Adressen) verwendet um die Repository-Datenstruktur aufzubauen
 	\item Der Hashwert wird aus Dateiinhalt berechnet und für den Dateinamen verwendet
 \end{itemize}
-\clearpage
-\pagebreak
+\subsubsection{Ein existierendes Verzeichnis als Repository initialisieren}
+\includegraphics[width = 13cm]{images/bsprepo}
 \subsubsection{Git-Objekte}
-	\begin{tabular}{|p{0.5\linewidth}|p{0.5\linewidth}|}
+- Git-Objekte sind einfache Dateien im Verzeichnis \"{}.git/objects/\"{}\\
+- Dabei werden \textbf{die ersten zwei Hex-Ziffern als Namen für ein Unterverzeichnis} verwendet, die restlichen 38 für den Namen der Datei in diesem Unterverzeichnis.\\\\
+\includegraphics[width = 12cm]{images/gitobjekte}\\
+	\begin{tabular}{|p{0.5\linewidth}|p{0.51\linewidth}|}
 		\hline
-		\begin{tabular}[c]{@{}l@{}}\textbf{blob}\\ -Inhalt einer Datei\\ -Keine Zeiger auf andere Objekte\end{tabular}   \newline  \includegraphics[width = 4cm]{images/blob}                             & \begin{tabular}[c]{@{}l@{}}\textbf{tree}\\ -enthält Zeiger auf blob-, oder tree-objekte\\ -enthält Information über Verzeichnis-,Dateinamen\end{tabular} \newline \includegraphics[width = 4cm]{images/tree} \\ \hline
-		\begin{tabular}[c]{@{}l@{}}\textbf{commit}\\ -Startobjekt für ein Commit\\ -enthält Zeiger auf tree und vorgängiges commit-objekt\end{tabular} \newline \includegraphics[width = 4cm]{images/commit}& \begin{tabular}[c]{@{}l@{}}\textbf{tag}\\ -Etikette mit Kommentar\\ -enthält Zeiger auf commit\end{tabular} \newline \includegraphics[width = 4cm]{images/tag}                                             \\ \hline
+		\begin{tabular}[c]{@{}l@{}}\textbf{blob} (\"{}binary large Object\"{})\\ -Inhalt einer Datei\\ -enthält \textit{keine} Zeiger auf andere Git-Objekte\end{tabular}   \newline  \includegraphics[width = 4cm]{images/blob}                             & \begin{tabular}[c]{@{}l@{}}\textbf{tree}\\ -enthält Zeiger auf blob-, oder tree-objekte\\ -enthält Referenzen über Git-Objekte, Ordner- \& Dateinamen\end{tabular} \newline \includegraphics[width = 4cm]{images/tree} \\ \hline
+		\begin{tabular}[c]{@{}l@{}}\textbf{commit}\\ -Startobjekt für einen Commit\\ -enthält Zeiger auf tree und vorgängiges Commit-Objekt\end{tabular} \newline \includegraphics[width = 4cm]{images/commit}& \begin{tabular}[c]{@{}l@{}}\textbf{tag}\\ -Etikette mit Kommentar\\ -enthält Zeiger auf ein Commit-Objekt\end{tabular} \newline \includegraphics[width = 4cm]{images/tag}                                             \\ \hline
 	\end{tabular}
 
 \subsubsection{Git-Referenzen}
-\begin{minipage}{12cm}
+\begin{minipage}{10cm}
 	\begin{itemize}
 		\item Referenzen $=$ Zeiger (nur Zeigerwert)
 		\item Zeigen nur auf Git-Objekte
@@ -112,8 +146,8 @@
 		\item Symbolischer-Zeiger $\rightarrow$ zeigt auf Datei mit Namen eines anderen Zeigers
 	\end{itemize}
 \end{minipage}
-\begin{minipage}{6cm}
-	\includegraphics[width=6cm]{images/git-referenz.png}
+\begin{minipage}{8cm}
+	\includegraphics[width=8cm]{images/git-referenz.png}
 \end{minipage}
 \subsubsection{Bashprints}
 \begin{multicols}{2}
@@ -128,7 +162,7 @@
 		\\
 		\qquad modified:\quad idiotenseite/IdiotenseiteInclude.tex\\
 		\\
-		no changes added to commit \newline (use "git add" and/or "git commit -a")\\
+		no changes added to commit \newline (use \"{}git add\"{} and/or \"{}git commit -a\"{})\\
 	\end{minipage}
 	
 	\begin{minipage}[r]{.40\textwidth}
@@ -137,7 +171,7 @@
 		Author: \quad Michel Gisler <Michel Gisler>\\
 		Date:  \quad  Tue May 31 15:08:58 2016 +0200\\
 		\\  
-		\qquad Kleiner Ergänzungen und Anpasungen\\
+		\qquad Kleiner Ergänzungen und Anpassungen\\
 	\end{minipage}
 \end{multicols}
 \clearpage
