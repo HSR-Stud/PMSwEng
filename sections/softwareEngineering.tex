@@ -8,20 +8,26 @@ Frederic Brooks hat dies analysiert. \\
 
 \begin{itemize}
 	\item \textit{"No Silver Bullet"} $\rightarrow$ Es gibt kein Wundermittel um komplexe Software zu entwickeln
-	\item \textit{"{}Adding Manpower to a late Software project makes it later"} $\rightarrow$ Neue Leute müssen sich einarbeiten und Kommunikationsaufwand steigt. 
+	\item \textit{"{}Adding Manpower to a late Software project makes it later"}\newline
+    $\rightarrow$ Neue Leute müssen sich einarbeiten und Kommunikationsaufwand steigt. 
 \end{itemize}
 
 \subsection{Schwierigkeiten/Eigenschaften}
 2 Arten von Schwierigkeiten führen zu Komplexität\\ \\
 \begin{tabular}{|p{0.35\linewidth}|p{0.6\linewidth}|}
 	\hline
-	\textbf{Essentielle Schwierigkeiten} & Verursacht durch Komplexität des Problems \newline Essenz: Kern der Sache \\ \hline
-	\textbf{Akzidentelle Schwierigkeiten} & Selbst verursacht durch falsche Methoden, Mittel \newline Akzidenz: Art der Realisierung \\ \hline\hline
-	\textbf{Essentielle Eigenschaften (essential)} & Grundlegende Eigenschaften \newline \underline{Bsp.} 
-	\begin{itemize}
-	\item Auto muss einen Motor, Räder und Türen haben, sonst ist es kein Auto.
-	\end{itemize} \\ \hline
-	\textbf{Akzidentelle Eigenschaft (accidental)} & Zufällige Eigenschaft, die ein Objekt haben kann. \newline \underline{Bsp.} 
+	\textbf{1. Essentielle Schwierigkeiten} & Verursacht durch Komplexität des Problems \newline Essenz: Kern der Sache
+    \\ \hline
+   	\quad\textbf{Eigenschaften (essential)} & Grundlegende Eigenschaften \newline \underline{Bsp.} 
+    \begin{itemize}
+        \item Auto muss einen Motor, Räder und Türen haben, sonst ist es kein Auto.
+    \end{itemize}
+    \\ \hline \hline
+    
+	\textbf{2. Akzidentelle Schwierigkeiten} & Selbst verursacht durch falsche Methoden, Mittel \newline Akzidenz: Art der Realisierung
+    \\ \hline
+
+	\quad \textbf{Eigenschaft (accidental)} & Zufällige Eigenschaft, die ein Objekt haben kann. \newline \underline{Bsp.} 
 	\begin{itemize}
 	\item Achtzylinder oder Vierzylindermotor
 	\end{itemize} \\ \hline
@@ -57,7 +63,8 @@ Wenn die folgenden Schritte gleich nacheinander durchgeführt werden, spricht ma
 	\begin{enumerate}
 		\item Analyse
 			\begin{itemize}
-				\item Ziel: Man weiss mehr als vorher, Man weiss \textbf{\textcolor{blue}{WAS}} entwickelt werden soll.
+				\item Ziel: Man weiss \textbf{\textcolor{blue}{WAS}} entwickelt werden soll.
+                \subitem \rightarrow Man weiss mehr als vorher
 				\item Probleme, Ideen, Anforderungen aufnehmen
 				\item Erstellen eines Lasten-, Pflichtenhefts und einer Anforderungsspezifikation
 				\item \textit{"doing the right things"} $\rightarrow$ Die richtigen Dinge tun
@@ -95,7 +102,7 @@ Wenn die folgenden Schritte gleich nacheinander durchgeführt werden, spricht ma
 	\end{itemize}
 \end{minipage}
 \begin{minipage}{5cm}
-	\includegraphics[width=6cm]{images/wasserfallmodell}
+	\includegraphics[width=7cm]{images/wasserfallmodell}
 \end{minipage}
 	
 \subsubsection{Iterativer Wasserfall (Kaskade)}
@@ -107,7 +114,7 @@ Wenn die folgenden Schritte gleich nacheinander durchgeführt werden, spricht ma
 		\end{itemize}
 	\end{minipage}
 	\begin{minipage}{5cm}
-	\includegraphics[width=5cm]{images/kaskade.png}	
+	\includegraphics[width=6cm]{images/kaskade.png}	
 	\end{minipage}
 
 \subsubsection{V-Modell}
@@ -125,9 +132,10 @@ Von der deutschen Bundeswehr für ihre eigenen IT-Projekte entwickelt.\\
 \begin{minipage}{9cm}
 	\includegraphics[width=9cm]{images/vmodell}	
 \end{minipage}
+\hspace{-0.5cm}
 \begin{wrapfigure}[4]{r}[1pt]{7cm}
-	\includegraphics[width=6cm]{images/iterative_entwicklung.png}
-	\includegraphics[width=7cm]{images/spiral_modell.png}
+	\includegraphics[width=7cm]{images/iterative_entwicklung.png}
+	\includegraphics[width=9cm]{images/spiral_modell.png}
 \end{wrapfigure}
 
 \subsubsection{Iterative / Inkrementelle Entwicklung / Spiralmodell}
@@ -147,11 +155,12 @@ Es gibt zwei Modelle: Das Spiralmodell und RUP (Rational Unified Process).\\
 \subsection{Vorgehensmodelle (Agil)}
 \textit{$\Rightarrow$ Ist 3 Mal erfolgreicher als das Wasserfall-Modell}
 \begin{itemize}
-	\item weniger formalisiert als schwerfällige, bürokratische klassische Softwareentwicklung
+	\item weniger formalisiert als schwerfällige, \newline
+    bürokratische klassische Softwareentwicklung
 	\item agil = flink, beweglich
 	\item Individuen und Interaktionen gelten mehr als Prozesse und Tools
 \end{itemize}
-
+\vspace{0.5cm}
 Agile Softwareentwicklung besteht aus:
 \begin{enumerate}
 	\item \textbf{\textit{Agile Werte:}} bilden das Fundament.
@@ -162,26 +171,21 @@ Agile Softwareentwicklung besteht aus:
 \end{enumerate}
 \pagebreak
 \begin{multicols}{2}
-\subsubsection{XP (Extreme Programming)}
-\begin{minipage}{10cm}
+\begin{minipage}{\linewidth}
+    \subsubsection{XP (Extreme Programming)}
 	\begin{itemize}
 		\item Bekanntester agiler Prozess
 	\end{itemize}
-\end{minipage}
-\begin{minipage}{5cm}
 	\includegraphics[width=7cm]{images/extreme_programming.png}
 \end{minipage}
 
+\begin{minipage}{\linewidth}
 \subsubsection{Scrum}
 $\Rightarrow$ Basiert auf sogenannten User Stories (Use Cases)\\
-
-\begin{minipage}[l]{10cm}
 	\begin{itemize}
 		\item Gedränge
-		\item \textit{\textbf{Basis:}} Sprints von 15-30 Tagen, in welchen vom Team eine \newline neue (brauchbarere) Softwareversion erstellt wird. 
+		\item \textit{\textbf{Basis:}} Sprints von 15-30 Tagen, in welchen vom Team eine neue (bessere) Softwareversion erstellt wird. 
 	\end{itemize}
-\end{minipage}
-\begin{minipage}{10cm}
 	\includegraphics[width=10cm]{images/scrum.png}
 \end{minipage}
 \\

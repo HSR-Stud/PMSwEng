@@ -54,8 +54,8 @@ Je mehr Fehler gefunden werden, desto höher ist die Wahrscheinlichkeit weiterer
 			$\Rightarrow$ Regressionstests
 		\end{itemize}
 	\end{minipage}
-	\begin{minipage}{8cm}
-		\includegraphics[width=8cm]{images/sofwaretest.png}
+	\begin{minipage}{9cm}
+		\includegraphics[width=\linewidth]{images/sofwaretest.png}
 	\end{minipage}
 \clearpage
 \pagebreak
@@ -92,10 +92,10 @@ Je mehr Fehler gefunden werden, desto höher ist die Wahrscheinlichkeit weiterer
 \subsection{Testmethoden}
 \subsubsection{Testumgebung}
 \begin{minipage}{0.5\linewidth}
-\includegraphics[width=8cm]{images/testumgebung}
+\includegraphics[width=\linewidth]{images/testumgebung}
 \end{minipage}
 \begin{minipage}{0.5\linewidth}
-	\includegraphics[width=8cm]{images/blackwhitetests}
+	\includegraphics[width=\linewidth]{images/blackwhitetests}
 \end{minipage}
 \subsubsection{Blackbox Tests}
 Testfälle \textbf{ohne} Kenntnis der inneren Struktur\\\\
@@ -106,8 +106,8 @@ Methodik: 1 Testcase pro Äquivalenzklasse \\
 Beispiel: Quadratische Gleichung; Determinante $<0$ ; $=0$ ; $>0$ \\
 \vspace{2cm}
 \end{minipage}
-\begin{minipage}{4cm}
-	\includegraphics[width=4cm]{images/aequivalenzklasse.png}
+\begin{minipage}{5cm}
+	\includegraphics[width=\linewidth]{images/aequivalenzklasse.png}
 \end{minipage}
 
 \textbf{Grenzwertanalyse:} \\
@@ -116,8 +116,8 @@ Fehler liegen oft an Grenzen zulässiger Eingabewertbereiche. \\
 \textit{\textbf{Methodik:}} Testfälle auf Grenzen und knapp daneben \\
 \vspace{2cm}
 \end{minipage}
-\begin{minipage}{4cm}
-	\includegraphics[width=4cm]{images/grenzwertanalyse.png}
+\begin{minipage}{5cm}
+	\includegraphics[width=\linewidth]{images/grenzwertanalyse.png}
 \end{minipage}
 
 \textbf{Zustandsbasiertes Testing:} \\
@@ -125,20 +125,21 @@ Fehler liegen oft an Grenzen zulässiger Eingabewertbereiche. \\
 \clearpage
 \pagebreak
 \subsubsection{Whitebox Tests}
-\begin{minipage}{8cm}
-Tests \textbf{mit} Kenntnis der inneren Struktur\\
-
-\begin{itemize}
-\item Whitebox-Test werden mittels Kontrollfluss-Graphen durchgeführt.
-\begin{itemize}
-	\item Jedes Statement entspricht Knoten.
-	\item Zweige, stellen Schleifen und Verzweigungen dar, verbinden Knoten.
-\end{itemize}
-\item Der Test wird so ausgelegt, dass die Überdeckung (Coverage) möglichst gut ist. (Test der Überdeckung mit Dynamic Analyzer messen)
-\end{itemize}
+\begin{minipage}{9cm}
+    Tests \textbf{mit} Kenntnis der inneren Struktur\\
+    
+    \begin{itemize}
+    \item Whitebox-Test werden mittels Kontrollfluss-Graphen durchgeführt.
+    \begin{itemize}
+    	\item Jedes Statement entspricht Knoten.
+    	\item Zweige, stellen Schleifen und Verzweigungen dar, verbinden Knoten.
+    \end{itemize}
+    \item Der Test wird so ausgelegt, dass die Überdeckung (Coverage) möglichst gut ist. (Test der Überdeckung mit Dynamic Analyzer messen)
+    \end{itemize}
 \end{minipage}
-\begin{minipage}{7cm}
-	\includegraphics[width=7cm]{images/kontrollflussgraphen.png}
+\hspace{0.5cm}
+\begin{minipage}{7.5cm}
+	\includegraphics[width=\linewidth]{images/kontrollflussgraphen.png}
 \end{minipage}
 
 \paragraph{Testüberdeckung (test coverage)}
@@ -220,7 +221,7 @@ Tests \textbf{mit} Kenntnis der inneren Struktur\\
 \begin{itemize}
 	\item Spezielle, möglichst einfache Testfunktion mit Zusicherungen
 	\begin{itemize}
-		\item \texttt{ASSERT(...);} // Vergleicht ein Soll- mit einem Ist-Wert
+		\item \texttt{ASSERT(...)} Vergleicht ein Soll- mit einem Ist-Wert
 		\item Stimmen beide überein, ist der Test erfolgreich
 		\item Sind sie unterschiedlich $\rightarrow$ Test fehlgeschlagen
 	\end{itemize}
@@ -255,7 +256,8 @@ Tests \textbf{mit} Kenntnis der inneren Struktur\\
 	\footnotesize{
 	\begin{itemize}
 		\item \textcolor{blue}{Assert-Anweisung} \newline $\rightarrow$ Zum Vergleich von Ist- und Soll-Wert
-		\item \textcolor{blue}{TestKlasse} \newline $\rightarrow$ selbst geschriebene Klasse, die von \"{}CppUnit::TestCase\"{} erbt.
+		\item \textcolor{blue}{TestKlasse} \newline $\rightarrow$ selbst geschriebene Klasse, \newline
+        welche von \"{}CppUnit::TestCase\"{} erbt.
 		\item \textcolor{blue}{TestFunktion} \begin{itemize}
 			\item enthält Assert-Anweisungen
 			\item ist Memberfunktion einer Testklasse
@@ -266,7 +268,8 @@ Tests \textbf{mit} Kenntnis der inneren Struktur\\
 	\end{itemize}}
 \end{minipage}
 \subsubsection{CppUnit: Testklasse}
-\includegraphics[width = 7cm]{images/testklasse}
+\hspace{0.5cm}
+\includegraphics[width = 8cm]{images/testklasse}
 \subsubsection{CppUnit: Konventionen}
 \begin{itemize}
 	\item Für jede zu testende Klasse wird eine entsprechende Testklasse erstellt
@@ -276,34 +279,55 @@ Tests \textbf{mit} Kenntnis der inneren Struktur\\
 \subsubsection{Testprinzipien}
 Erst der Test, dann der Code dazu
 \subsubsection{Good Unit Tests are \"{}A TRIP\"{}}
+\hspace{0.5cm}
 \includegraphics[width=8cm]{images/atrip}
 \subsubsection{CORRECT - Boundary Conditions}
+\hspace{0.5cm}
 \includegraphics[width=6cm]{images/correct}
 \subsubsection{CppUnit: Assert-Makros}
 \begin{minipage}{10cm}
-\begin{itemize}
-\footnotesize{
-	\item \textcolor{blue}{\texttt{CPPUNIT\_ASSERT (condition)}}\newline 
-	\textcolor{blue}{\texttt{CPPUNIT\_ASSERT\_MESSAGE (msg, condition)}} \newline 
-	Test ist okay (d.h. wird bestanden), falls 'condition' true ist.
-	\item \textcolor{blue}{\texttt{CPPUNIT\_FAIL (msg)}} \newline
-	Test, der immer fehlschlägt.
-	\item \textcolor{blue}{\texttt{CPPUNIT\_ASSERT\_EQUAL (expected, actual)}} \newline 
-	\textcolor{blue}{\texttt{CPPUNIT\_ASSERT\_EQUAL\_MESSAGE (msg, expected, actual)}} \newline 
-	Test ist okay, falls 'expected' und 'actual' gleich sind. Dabei werden \newline einfache Datentypen ('int' etc.) sowie 'std::string' unterstützt.
-	\item \textcolor{blue}{\texttt{CPPUNIT\_ASSERT\_DOUBLES\_EQUAL (expected, actual, delta)}} \newline Test ist okay, falls 'expected' und 'actual' innerhalb einer Toleranz von \newline 'delta' gleich sind. Die Argumente sind vom Datentyp 'double'.
-	\item \textcolor{blue}{\texttt{CPPUNIT\_ASSERT\_THROW (expression, ExceptionType)}} \newline Test ist okay, falls 'expression' eine Ausnahme vom Typ 'ExceptionType' auslöst.
-	\item \textcolor{blue}{\texttt{CPPUNIT\_ASSERT\_NOTHROW (expression)}} \newline 
-	Test ist okay, falls 'expression' keine Ausnahme auslöst.
-	\item Bei den Varianten mit 'msg' (= message) wird diese zusätzlich \newline ausgegeben, falls der Test fehlschlägt.}
-\end{itemize}
+    \begin{itemize}
+    \footnotesize{
+    	\item \textcolor{blue}{\texttt{CPPUNIT\_ASSERT (condition)}}\newline 
+    	\textcolor{blue}{\texttt{CPPUNIT\_ASSERT\_MESSAGE (msg, condition)}} \newline 
+    	Test ist okay (d.h. wird bestanden), falls 'condition' true ist.
+        
+    	\item \textcolor{blue}{\texttt{CPPUNIT\_FAIL (msg)}} \newline
+    	Test, der immer fehlschlägt.
+        
+    	\item \textcolor{blue}{\texttt{CPPUNIT\_ASSERT\_EQUAL (expected, actual)}} \newline 
+    	\textcolor{blue}{\texttt{CPPUNIT\_ASSERT\_EQUAL\_MESSAGE (msg, expected, actual)}} \newline 
+    	Test ist okay, falls 'expected' und 'actual' gleich sind. Dabei werden \newline einfache Datentypen ('int' etc.) sowie 'std::string' unterstützt.
+        
+    	\item \textcolor{blue}{\texttt{CPPUNIT\_ASSERT\_DOUBLES\_EQUAL (expected, actual, delta)}} \newline Test ist okay, falls 'expected' und 'actual' innerhalb einer Toleranz von \newline 'delta' gleich sind. Die Argumente sind vom Datentyp 'double'.
+        
+    	\item \textcolor{blue}{\texttt{CPPUNIT\_ASSERT\_THROW (expression, ExceptionType)}} \newline Test ist okay, falls 'expression' eine Ausnahme vom Typ 'ExceptionType' auslöst.
+        
+    	\item \textcolor{blue}{\texttt{CPPUNIT\_ASSERT\_NOTHROW (expression)}} \newline 
+    	Test ist okay, falls 'expression' keine Ausnahme auslöst.
+        
+    	\item Bei den Varianten mit 'msg' (= message) wird diese zusätzlich \newline ausgegeben, falls der Test fehlschlägt.}
+    \end{itemize}
 \end{minipage}
 \subsubsection{Typischer Output}
+\hspace{0.5cm}
+\begin{minipage}{10cm}
 \footnotesize{
-	\textbf{\textit{Suite hat 2 Tests fehlerlos absolviert}}\\
-	..\newline \textcolor{red}{\texttt{OK (2)}}\\\\
-	\textbf{\textit{Suite hat 10 Tests mit Fehler in Test 2 und 5 absolviert}} \\ 
-	...\newline \textcolor{red}{\texttt{MyClassTest.cpp:32:Assertion \newline Test name: MyClassTest::testCtorWithValues\newline equality assertion failed\newline - Expected: 0 \newline - Actual : 15 \newline \newline MyClassTest.cpp:57:Assertion\newline Test name: MyClassTest::testEquals\newline assertion failed\newline - Expression: object.isValid()\newline \newline Failures !!!\newline Run: 10 \qquad Failure total: 2 \qquad Failures: 2 \qquad Errors: 0}}}
+        \textbf{\textit{Suite hat 2 Tests fehlerlos absolviert}}\\
+        ...\newline
+        \textcolor{red}{\texttt{OK (2)}}\\\\
+        
+        \textbf{\textit{Suite hat 10 Tests mit Fehler in Test 2 und 5 absolviert}} \\ 
+        ...\newline
+        \textcolor{red}{\texttt{MyClassTest.cpp:32:Assertion \newline
+        Test name: MyClassTest::testCtorWithValues\newline equality assertion failed\newline
+        - Expected: 0 \newline - Actual : 15 \newline \newline        
+        MyClassTest.cpp:57:Assertion\newline
+        Test name: MyClassTest::testEquals\newline assertion failed\newline
+        - Expression: object.isValid()\newline \newline        
+        Failures !!!\newline
+        Run: 10 \qquad Failure total: 2 \qquad Failures: 2 \qquad Errors: 0}}}
+\end{minipage}
 %\subsubsection{CppUnit Test-Fixture: \texttt{setUp()} und \texttt{tearDown()}}
 %\includegraphics[width = 8 cm]{images/fixture}
 \end{multicols}
