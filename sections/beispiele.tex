@@ -22,8 +22,10 @@
 \subsection{Qt}
 \subsubsection{QWidgets}
 \begin{tabular}{c c}
-	\includegraphics[width=9cm]{images/button_1.png}& \includegraphics[width=9cm]{images/button_2.png}\\
-	\includegraphics[width=9cm]{images/button_3.png}& \includegraphics[width=9cm]{images/button_7.png}\\
+	\includegraphics[width=9cm]{images/button_1.png}&
+    \includegraphics[width=9cm]{images/button_2.png}\\
+	\includegraphics[width=9cm]{images/button_3.png}&
+    \includegraphics[width=9cm]{images/button_7.png}\\
 	\includegraphics[width=9cm]{images/button_4.png}&
 	\includegraphics[width=9cm]{images/button_5.png}\\
 	\includegraphics[width=9cm]{images/button_6.png}&
@@ -45,10 +47,29 @@
     \end{minipage}
 %\end{multicols}
 \clearpage
+\subsubsection{SpezUeb}
+\begin{longtable}{l l} %TODO: Layout
+    \lstinputlisting[style=c++qt,linewidth=12cm]{source/Qt/SpezUeb1.cpp}&
+    \hspace{-2cm}\includegraphics{images/qtSpezUeb1.jpg}
+    \\
+    \lstinputlisting[style=c++qt,linewidth=12cm]{source/Qt/SpezUeb2.cpp}&
+    \includegraphics{images/qtSpezUeb2.jpg}
+    \\
+    \lstinputlisting[style=c++qt,linewidth=12cm]{source/Qt/SpezUeb3.cpp}&
+    \hspace{-2cm}\includegraphics{images/qtSpezUeb3.jpg}
+    \\
+    \lstinputlisting[style=c++qt,linewidth=12cm]{source/Qt/GridLayout.cpp}&
+    \hspace{-2cm}\includegraphics{images/GridLayout.jpg}    
+\end{longtable}
+%TODO JPG smaller
+%\newpage 
+%\includegraphics[angle=90,origin=c,width=\linewidth]{images/qt3classchart}
+%\newpage
 %=================================================
 
 \subsubsection{Hello World}
 \lstinputlisting[style=c++qt]{source/Qt/hello_world.cpp}
+\clearpage
 
 \subsubsection{Temperaturwidget}
 \textbf{main.cpp}
