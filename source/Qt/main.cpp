@@ -1,11 +1,12 @@
-#include "temperaturwidget.h"
-#include <QApplication>
-
+//TemperaturWidget main.cpp
+#include <QtWidgets>
+#include "TemperaturWidget.h"
+//------------------------------
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    temperaturwidget w;
-    w.show();
+    QApplication app(argc, argv);
+    TemperaturWidget mainWindow;
 
-    return a.exec();
+    mainWindow.show();
+    return app.exec();
 }

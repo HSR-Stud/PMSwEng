@@ -1,33 +1,24 @@
+//TemperaturWidget TemperaturWidget.h
 #ifndef TEMPERATURWIDGET_H
 #define TEMPERATURWIDGET_H
-
 #include <QtWidgets>
-
-class temperaturwidget : public QWidget
+class TemperaturWidget : public QWidget
 {
 private:
     Q_OBJECT
-
+private:    // **** GUI-Stuff:
     QGridLayout * mainLayout;
-    QGroupBox * radiobutton;
-    QHBoxLayout * hbox;
-    QFont * font1;
-    QFont * font2;
-    QLabel * temp;
-    QLabel * input;
-    QLabel * output;
-    QPushButton * rechne;
-    QLineEdit * eingabe;
-    QLineEdit * ausgabe;
-    QRadioButton * celsius;
-    QRadioButton * fahrenheit;
+    QLabel *label1, *label2, *label3;
+    QLineEdit *eingabeLineEdit, *resultLineEdit;
+    QGroupBox *groupBox;
 
+    QHBoxLayout * boxLayout;
+    QRadioButton * tCelsiusButton, * tFahrenheitButton;
+
+    QPushButton * rechneButton;
 public:
-    temperaturwidget(QWidget *parent = 0);
-
+    TemperaturWidget(QWidget * parent = 0);
 private slots:
-    void Berechne();        //muss als slot gekennzeichent werden
-                            //weil sonst Qt die Funktion nicht erkennt
+    void rechne();
 };
-
-#endif // TEMPERATURWIDGET_H
+#endif // MYDIALOG_H
