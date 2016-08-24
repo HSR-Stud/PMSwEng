@@ -176,7 +176,11 @@
 \end{multicols}
 \clearpage
 \pagebreak
+
+\thispagestyle{empty}
+\enlargethispage{3\baselineskip}
 \subsubsection{Git Commands}
+\vspace{-0.5cm}
 \begin{longtable}{| p{.30\textwidth} | p{.70\textwidth} |}
 	\hline 
 	\textbf{Create}&
@@ -227,6 +231,22 @@
 	Change the last commit. \textbf{Don‘t amend published commits!}
 	\\ \hline \hline
 	
+    \textbf{Stash}&
+    \\ \hline
+    
+    git stash&
+    when you want to record the current state of the working directory 
+    \\ \hline
+
+    git stash list&
+    Lists the modifications stashed away by this command
+    \\ \hline
+        
+    git stash pop&
+    Restore your stashed files
+    \\ \hline \hline
+        
+    
 	\textbf{Commit History}&  
 	\\ \hline 
 	

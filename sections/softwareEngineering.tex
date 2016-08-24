@@ -1,11 +1,10 @@
 \section{Software Entwicklung}
 \begin{wrapfigure}[4]{r}[1pt]{3cm}
-	\fbox{\includegraphics[width = 3cm]{images/softwareissues}}
+	\fbox{\includegraphics[width = 3.5cm]{images/softwareissues}}
 \end{wrapfigure}
 Die Softwareentwicklung ist schwierig,Hauptgrund: Komplexität.  
-Ein Softwareprojekt kann sich aufgrund der Komplexität in ein Werwolf verwandeln. Dieser kann nur mit einer Silberkugel getötet werden.\\
-Frederic Brooks hat dies analysiert. \\
-
+Ein Softwareprojekt kann sich aufgrund der Komplexität in einen Werwolf verwandeln. Dieser kann nur mit einer Silberkugel getötet werden.\\
+Frederic Brooks hat dies analysiert: \\
 \begin{itemize}
 	\item \textit{"No Silver Bullet"} $\rightarrow$ Es gibt kein Wundermittel um komplexe Software zu entwickeln
 	\item \textit{"{}Adding Manpower to a late Software project makes it later"}\newline
@@ -37,7 +36,7 @@ Frederic Brooks hat dies analysiert. \\
 			\item Teile und herrsche \textit{"divide et impera"}
 					\begin{itemize}
 						\item Problem in Teilprobleme aufteilen
-						\item Jedes Teilproblem für sich alleine lösen, alle zusammen ergeben Problemlösung
+						\item Jedes Teilproblem für sich alleine lösen, alle zusammen ergeben die Problemlösung
 						\item Möglichst eigenständige Teile (hohe Kohäsion)
 						\item Möglichst geringe Abhängigkeiten (kleine Kopplung)
 					\end{itemize}
@@ -64,7 +63,7 @@ Wenn die folgenden Schritte gleich nacheinander durchgeführt werden, spricht ma
 		\item Analyse
 			\begin{itemize}
 				\item Ziel: Man weiss \textbf{\textcolor{blue}{WAS}} entwickelt werden soll.
-                \subitem \rightarrow Man weiss mehr als vorher
+                \subitem \rightarrow Man weiss nacher mehr als vorher
 				\item Probleme, Ideen, Anforderungen aufnehmen
 				\item Erstellen eines Lasten-, Pflichtenhefts und einer Anforderungsspezifikation
 				\item \textit{"doing the right things"} $\rightarrow$ Die richtigen Dinge tun
@@ -96,7 +95,7 @@ Wenn die folgenden Schritte gleich nacheinander durchgeführt werden, spricht ma
 	\begin{itemize}
 		\item lineares Vorgehensmodell
 		\item nicht iterativ
-		\item in Realität nicht durchführbar, da keine Rückkopplung vorhanden
+		\item in Realität nicht durchführbar, da keine Rückkopplung vorhanden ist
 		\item Freigabe beim Abschluss jeder Phase
 		\item Es gibt kein zurück, alles muss beim ersten Mal richtig gemacht werden. 
 	\end{itemize}
@@ -139,8 +138,11 @@ Von der deutschen Bundeswehr für ihre eigenen IT-Projekte entwickelt.\\
 \end{wrapfigure}
 
 \subsubsection{Iterative / Inkrementelle Entwicklung / Spiralmodell}
-Es gibt zwei Modelle: Das Spiralmodell und RUP (Rational Unified Process).\\
-\\
+Es gibt zwei Modelle:
+\begin{enumerate}
+    \item Spiralmodell
+    \item RUP (Rational Unified Process)
+\end{enumerate}
 	\textbf{Inkrementell:}
 		\begin{itemize}
 			\item Resultat in Schritten entwickeln
@@ -196,7 +198,7 @@ $\Rightarrow$ Basiert auf sogenannten User Stories (Use Cases)\\
 	\begin{itemize}
 		\item Modelle auf allen Stufen:\textcolor{blue}{\textbf{ OO-Analyse $\rightarrow$ OO-Design $\rightarrow$ OO-Implementation}}
 		\item \textit{Objekte} sind Abstraktionen von realen Dingen (Modellen)
-		\item Klassen entstehen durch Gruppieren und zusammenfassen von Objekten mit gleicher Datenstruktur
+		\item Klassen entstehen durch Gruppieren und Zusammenfassen von Objekten mit gleicher Datenstruktur
 		\item Gleiche Notation bei OOA, OOD, OOI
 		\item Darstellung mit UML
 		\item OOAD kann in jedem Vorgehensmodell verwendet werden
@@ -217,7 +219,7 @@ $\Rightarrow$ Basiert auf sogenannten User Stories (Use Cases)\\
 	\item Stabilität bzw. Volatilität der Anforderungen
 \end{itemize}
 
-\subsection{The Big Bang Problem bei Wasserfallmodellen}
+\subsection{The Big Bang Problem bei \newline Wasserfallmodellen}
 \begin{enumerate}
 	\item zuerst lange Analyse-Phase mit dem Kunden
 	\item dann lange Phase für Design, Codierung und Test \newline $\rightarrow$ Kein Kundenkontakt

@@ -18,7 +18,6 @@
 		\item Alle Qt Widgets werden \textbf{auf dem Heap} erstellt
 		\item Jedes Programm enthält eine Instanz von QApplication
 		\item QApplication hält alles zusammen
-		\item siehe Hello World Beispiel im Anhang für \newline Näheres
 	\end{itemize}
 \end{minipage}
 \begin{minipage}{10cm}
@@ -85,7 +84,11 @@ Die \textit{"Top-Level-Window"} sind Widgets welche auf der obersten \newline Hi
 	\item Jedes QObject kann \textbf{maximal ein} Eltern-QObject haben
 	\item Jedes QObject kann beliebig \newline viele Kind-QObject haben
 	\item Kind muss Eltern über sich \newline informieren
-	\item Entweder über Konstruktor, \newline label->setParent(mainwindow) oder Layout Manager
+    \begin{itemize}
+	\item Mit Konstruktor
+    \subitem label->setParent(..)
+    \item oder Layout Manager
+    \end{itemize}
 \end{itemize}
 
 \includegraphics[width=5cm]{images/qt_parent_child.png}
@@ -98,26 +101,35 @@ Die \textbf{Interaktion} legt die Reaktion des Programmes auf eine Eingabe fest.
 
 \subsection{Layout}
 Es gibt \textbf{drei Varianten} wie Widgets innerhalb eines Widget angeordnet werden können: \newline
-\textcolor{blue}{Absolute Positionierung, Layout Manager und GUI-Designer (Qt Designer)}
+\textcolor{blue}{
+    \begin{itemize}
+        \item Absolute Positionierung
+        \item Layout Manager
+        \item GUI-Designer (Qt Designer)
+    \end{itemize}
+}
 
 \subsubsection{Absolute Positionierung}
 Mittels Methoden:
-\begin{multicols}{2}	
-	\lstinputlisting[style=c++qt,linewidth=1.08\linewidth]{source/Qt/methoden.cpp}
-	
+\begin{multicols}{2}
+    \begin{minipage}{1.08\linewidth}
+        \lstinputlisting[style=c++qt,linewidth=\linewidth]{source/Qt/methoden.cpp}
+        \subsubsection{Layout Manager} %TODO Layout?
+        \begin{tabular}{|l|l|}
+            \hline \textbf{Klasse} & \textbf{Ort}\\
+            \hline QVBoxLayout & Elemente vertikal\\
+            \hline QHBoxLayout & Elemente horizontal\\
+            \hline QGridLayout & zweidimensionales Gitter\\
+            \hline QFormLayout & Elemente zeilenweise\\
+            \hline QStackedLayout & aufeinandergelegt Widgets\\
+            \hline
+        \end{tabular}
+       \end{minipage}	
+		
 	\includegraphics[width=0.8\linewidth]{images/geometry.png}
 \end{multicols}
 
-\subsubsection{Layout Manager} %TODO Layout?
-	\begin{tabular}{|l|l|}
-		\hline \textbf{Klasse} & \textbf{Ort}\\
-		\hline QVBoxLayout & Elemente vertikal\\
-		\hline QHBoxLayout & Elemente horizontal\\
-		\hline QGridLayout & zweidimensionales Gitter\\
-		\hline QFormLayout & Elemente zeilenweise\\
-		\hline QStackedLayout & aufeinandergelegt Widgets\\
-		\hline
-	\end{tabular}
+
 	
 \subsubsection{GUI-Designer / Qt Designer}	
 	Anordnung innerhalb eines Formulars mittels\textbf{ interaktiven Tools}, anschliessend Umwandlung in Code. 	
