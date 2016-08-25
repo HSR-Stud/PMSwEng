@@ -53,7 +53,7 @@
 	\hline img&image& Support src, source, width, height attributes\\
 	\hline kbd& User entered text&\\
 	\hline meta & Meta-information& Text in Metacode in HTML\\
-	\hline li & List-Item&\\
+	\hline li & List-Item& Jeder einzelne Punkt muss umschlossen werden.\\
 	\hline nobr & Non-breakable text&\\
 	\hline ol & Ordered list& \\
 	\hline p & paragraph&\\
@@ -106,7 +106,8 @@
     \\&\\
     \lstinputlisting[style=c++qt,linewidth=12cm]{source/Qt/GridLayout.cpp}&
     \hspace{-2cm}\includegraphics{images/GridLayout.jpg}  
-    \\   
+    \\ 
+    \\&\\ 
     \textbf{Quiz}&\\
     \lstinputlisting[style=c++qt,linewidth=12cm]{source/Qt/SpezUeb2.cpp}&
     \includegraphics{images/qtSpezUeb2.jpg}
@@ -155,7 +156,6 @@
     \begin{minipage}{\linewidth}
         \includegraphics[width=0.5\linewidth]{images/count1}\newline
         \textbf{Implementation \"{}nur\"{} im main.cpp}
-        \textbf{main.cpp}
         \lstinputlisting[style=c++qt]{source/Qt/countermain1.cpp}
     \end{minipage}
 \end{multicols}
@@ -164,3 +164,23 @@
 \lstinputlisting[style=c++qt]{source/Qt/counter.h}
 \textbf{counter.cpp}\newline
 \lstinputlisting[style=c++qt]{source/Qt/counter.cpp}
+%=================================================
+\clearpage
+\textbf{CircleButton}
+\begin{multicols}{2}
+    \lstinputlisting[style=c++qt]{source/Qt/CircleButton/main.cpp}
+    
+\begin{minipage}{0.8\linewidth}
+    \includegraphics[width=0.5\linewidth]{images/circlebutton1}\includegraphics[width=0.5\linewidth]{images/circlebutton2}
+    \newline
+    \newline
+\end{minipage}
+\end{multicols}
+\lstinputlisting[style=c++qt]{source/Qt/CircleButton/Demo1CircleButton.h}
+\lstinputlisting[style=c++qt]{source/Qt/CircleButton/Demo1CircleButton.cpp}
+\clearpage
+\lstinputlisting[style=c++qt]{source/Qt/CircleButton/CircleButton.h}
+\lstinputlisting[style=c++qt]{source/Qt/CircleButton/CircleButton.cpp}
+
+
+
