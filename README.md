@@ -1,12 +1,12 @@
 # PMSW
 Zusammenfasssung der Vorlesung PMSW FS16 auf der [Vorlage](https://github.com/HSR-Stud/PmSwEng-Zusammenfassung) von [H.Badertscher](https://github.com/HBadertscher)
 
-##Beschreibung
+## Beschreibung
 Zusammenfassung für Projektmanagement und Software Engineering auf Grundlage der Vorlesung FS 16 von Hans Heinrich Pletscher  
 Bei Korrekturen oder Ergänzungen wendet euch an einen der Mitwirkenden.
 
 
-##Modulschlussprüfung
+## Modulschlussprüfung
 Kompletter Stoff aus Skript, Vorlesung, Übungen und Praktikum  
 Schwerpunkt ist der in den Übungen behandelte Stoff, insbesondere Qt  
  
@@ -16,7 +16,7 @@ Schwerpunkt ist der in den Übungen behandelte Stoff, insbesondere Qt
      2.Teil   open book        Aufgaben im Stil der Übungen, Praktika und der in den Vorlesungen gelösten Aufgaben 
     
  
-##Plan und Lerninhalte
+## Plan und Lerninhalte
 Werkzeuge und Techniken
  - Versionsverwaltung mit Subversion  
  - Unit-Testing mit CPPUnit
@@ -31,14 +31,14 @@ Software Entwicklung
  - Allgemeine Entwurfsprinzipien: Design by Contract, defensives Programmieren
  - Ereignisbasierte Programmierung, Entwurf von GUI-Programmen
  
-##Contributors
+## Contributors
    - Michel Gisler      michel.gisler@hsr.ch
    - Stefan Reinli      stefan.reinli@hsr.ch  
    - Luca Mazzoleni     luca.mazzoleni@hsr.ch 
    - Hannes Badertscher hannes.badertscher@hsr.ch
    
-##License
-###Creative Commons BY-NC-SA 3.0
+## License
+### Creative Commons BY-NC-SA 3.0
 Sie dürfen:  
     - Das Werk bzw. den Inhalt vervielfältigen, verbreiten und öffentlich
     zugänglich machen.  
