@@ -1,0 +1,32 @@
+﻿Name;Wert;Bemerkung;Beschreibung
+Function Points;14;Ausgangslage;
+Sprache C++:;20;C++ min., da Qt Framework verwendet;Min. 20, Mittelwert, 60, Maximum 100
+KSLOC;0.28;;
+ ;;;
+Projektart A;2.94;Default;Default, Embedded, E-Commerce, Web-Entwicklung, Militärisch
+ ;;;
+Grössenfaktoren (scale factors):;;;
+PREC;0;Precedentedness / Similarity to prev prj (Erfahrung mit ähnlichen Projekten);siehe Tabelle
+FLEX;0;Development Flexibility;siehe Tabelle
+RESL;0;Architecture / Risk Resolution (Architektur / Risikobehandlung);siehe Tabelle
+TEAM;0;Team Cohesion (Teamzusammenhalt);siehe Tabelle
+PMAT;0;Process Maturity, Vorschlag CMM Lvl 3;siehe Tabelle
+ ;;;
+B (COCOMOII):;0.91;Konstante für COCOMO II;
+ ;;;
+E;0.91;;
+ ;;;
+Kostentreiber (cost drivers):;;;
+RCPX;1;Product Reliability and Complexity;siehe Tabelle
+RUSE;1;Developed for Reusability;siehe Tabelle
+PDIF;1;Platform Difficulty;siehe Tabelle
+PERS;1;Personal Capability  (z.B. Effizienz);siehe Tabelle
+PREX;1;Personnel Experience;siehe Tabelle
+FCIL;1;Facilities;siehe Tabelle
+SCED;1;Schedule;siehe Tabelle
+ ;;;
+C;1.00;;
+ ;;;
+Aufwand;0.7;PM (Personen Monate);
+;15;PT (Personen Tage);
+;120;Personen Stunden;

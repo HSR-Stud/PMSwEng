@@ -1,0 +1,68 @@
+# executables ########
+# ignore all
+*
+# unignore all with extensions
+!*.*
+# unignore all dirs
+!*/
+*.exe
+
+# CCS ################
+Debug/
+Release/
+targetConfigs/
+*.launch
+*.ccxml
+*.obj
+*.mk
+*.pp
+
+# Prog general ######
+*.o
+*.stackdump
+
+# Doxygen ############
+!Doxyfile
+doc/
+
+# Qt #################
+*.pro.user
+build*-Debug/
+build*-Release/
+
+# Text Editor ########
+*.*~
+~*.*
+
+*.pdf
+!000-Admin/*.pdf
+000-Admin/Semesterplan.pdf
+!010-Literatur/*.pdf
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# LateX ##############
+######################
+*.aux
+*.bbl
+*.blg
+*.log
+*.lot
+*.lof
+*.out
+*.gz
+*.toc
+
+
+## Folder
+100-LibraryAndFramework/**/*.a
+100-LibraryAndFramework/**/*.so
+/.project

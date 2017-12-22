@@ -1,0 +1,123 @@
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% import configuration
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\input{config}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Packages, Layout, Units, etc.
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\input{header}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Dokument
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\begin{document}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Titelseite
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\include{content/title/titel}
+	
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Kopf und Fuszeile aktivieren
+
+\pagestyle{scrheadings}
+\KOMAoption{headsepline}{true}
+\KOMAoption{footsepline}{true}
+\ihead{\footnotesize\normalfont \titleinfo}
+\ohead{\footnotesize\normalfont \subjectinfo}
+\cfoot{}
+\setkomafont{pagenumber}{\normalfont}
+\ofoot{\footnotesize\normalfont\pagemark\ von \pageref{LastPage}}
+\ifoot{\footnotesize\normalfont\copyright\ HSR Hochschule für Technik Rapperswil 2017, Prof. R. Bonderer}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Revision History
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %	
+\input{content/changelist}
+\contentsfinish
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% General notes
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %	
+\note{
+\begin{itemize}
+\item Alle Abschnitte, die im Style "Comment" geschrieben sind (wie dieser Text), dienen nur für Erklärungen, die dem Autoren des Dokumentes helfen sollen. Diese Kommentare müssen im endgültigen Dokument entfernt oder unsichtbar gemacht werden.
+
+\item Im Dokument werden verschiedene Felder, z.B. für das Datum, den Projektnamen, etc. verwendet. Diese sollen deshalb unbedingt zu Beginn unter den Doc properties (Dokumenteigenschaften) festgelegt werden.
+
+\item Die hier präsentierte Pflichtenheftvorlage ist angelehnt an \textbf{IEEE Recommended Practice for Software Requirements Specification. ANSI/IEEE Std 830-1998}. Sie kann auch für Projekte verwendet werden, die nicht nur aus Software bestehen.
+
+\item Gemäss DIN 69901-5 umfasst das Pflichtenheft die "vom Auftragnehmer erarbeiteten Realisierungsvorgaben aufgrund der Umsetzung des vom Auftraggeber vorgegebenen Lastenhefts", d.h. das Lastenheft beinhaltet die Kundenanforderungen, im Pflichtenheft sind technische Vorgaben an die Entwicklungsgruppe formuliert, z.B. allenfalls notwendige Vorgaben für die Programmiersprache, die Plattformen, Betriebssystem, etc... Im Pflichtenheft darf keinesfalls das Design beschrieben werden.
+
+\item Im internationalen Umfeld werden statt der DIN-Normen eher die IEEE-Normen angewandt. Im IEEE Standard 830 wird eine "Software Requirements Specification" formuliert, welche sowohl das Lastenheft als auch das Pflichtenheft beinhaltet. Diese Vorlage verfolgt diesen Ansatz. Teilweise werden Hinweise in Englisch direkt aus diesem Standard verwendet. Weitere Informationen zu den einzelnen Punkten finden Sie direkt in \cite{ieeeStd}.
+
+\item The Requirements Specification should address the product, not the process of producing the product. Project requirements represent an understanding between the customer and the supplier about contractual matters pertaining to production of the product and thus should not be included in the Requirements Specification. These normally include items such as
+	\begin{itemize}
+	\item Cost
+	\item Delivery schedules
+	\item Reporting procedures
+	\item Development methods
+	\item Quality assurance
+	\item Validation and verification criteria
+	\item Acceptance procedures
+	\end{itemize}
+Project requirements are specified in other documents, typically in a software development plan, a software quality assurance plan, or a statement of work.
+\end{itemize}
+\clearpage
+}
+
+\newpage
+	
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Inhaltsverzeichnis
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+	{\linespread{1.0} \tableofcontents}
+	\newpage
+	
+		
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Kapitel
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	\newpage
+		
+	%damit " kein umlaut erzeugt und als Anführungszeichn verwendet werden kann
+	\shorthandoff{"} %Abschalten mit\shorthandon{"}
+    
+    % Abbildungen
+    \listoffigures
+    \addcontentsline{toc}{subsection}{Abbildungsverzeichnis}
+        
+    % Tabellen
+    \listoftables
+    \addcontentsline{toc}{subsection}{Tabellenverzeichnis}
+			
+	%Includes	
+	\include{content/intro/einleitung}
+	\include{content/generalProvisions/generalProvisions}
+	\include{content/extIf/extIf}
+	\include{content/funcReqs/funcReqs}
+	\include{content/otherReqs/otherReqs}
+	
+	
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% ANHANG
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	\appendix
+	
+	%Nummerierung wieder auf roemisch umschalten
+	\newpage
+	
+	\section{Referenzen}
+	\label{anx:ref}
+	% Do not repeat items covered in other documents or in a global project definitions and acronyms document
+	\renewcommand{\refname}{} %kein Titel vor Literaturverzeichnis
+	\vspace{-1.2cm}
+	\bibliographystyle{plain} %Literatur durchnumerieren
+	\bibliography{lit}
+	\nocite{*} %Alle Literatur aufführen
+	
+\note{Do not repeat items covered in other documents or in a global project definitions and acronyms document}
+	
+\end{document}

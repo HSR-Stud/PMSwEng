@@ -1,0 +1,46 @@
+% Projekt-Management & Software Engineering
+\documentclass[
+	11pt,
+	DIV=12,
+	parskip=half, % Absatzeinstellug 1/2 Zeilenabstand, kein Einzug
+	oneside, % Doppeleitiger druck
+	final % Entwurf : draft, Endgültig: final
+]{scrreprt}
+
+\input{header/header} % Load all packages and define styles
+\linespread{1.2}
+\title{Zusammenfassung}
+\author{pescara}
+
+\begin{document}
+
+%\tableofcontents
+%\listoffigures
+%\listoftables
+
+\clearpage
+
+
+%%%% Open Tasks %%%
+% Input zu Aron, COCOMO, COCOMO II ergänzen
+% VL 10, 12, 13, 14 ergänzen
+
+
+% Kapitel
+\pagenumbering{arabic}
+\include{Chapters/VL1-Libraries+Frameworks}
+\include{Chapters/VL2-QtGrundlagen}
+\include{Chapters/VL3-QtWidgets}
+\include{Chapters/VL4-QtSignals+Slots}
+\include{Chapters/VL5-PM-Grundlagen}
+\include{Chapters/VL6-Vorgehensmodelle}
+\include{Chapters/VL7-Aufwandsschaetzung}
+\include{Chapters/VL8-Projektplanung}
+\include{Chapters/VL9-RequirementsEngineering}
+\include{Chapters/VL10-Versionskontrolle}
+\include{Chapters/VL11-Doxygen}
+\include{Chapters/VL12-Testing} % Beinhaltet auch VL 13 Unit Testing
+\include{Chapters/VL14-DesignbyContract-Refactoring}
+\include{Chapters/Includes}
+
+\end{document}

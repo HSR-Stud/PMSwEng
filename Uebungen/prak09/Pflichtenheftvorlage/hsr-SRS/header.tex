@@ -1,0 +1,181 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dokument
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Geometrie
+\newcommand{\paperFormat}{a4paper}
+\newcommand{\lPageMargin}{20mm}
+\newcommand{\rPageMargin}{20mm}
+\newcommand{\tPageMargin}{20mm}
+\newcommand{\bPageMargin}{20mm}
+
+\documentclass[11pt,oneside]{scrartcl}
+
+\newcommand{\newpar}{\par\par}
+
+\usepackage[pdftitle={\titleinfo},%
+			pdfauthor={\authorinfo},%
+			pdfcreator={pdfLatex, LaTeX with hyperref},
+			pdfsubject={\subjectinfo},
+			plainpages=false,
+			pdfpagelabels,
+			colorlinks,
+			linkcolor=black,
+			filecolor=black,
+			citecolor=black,
+			urlcolor=black]{hyperref}
+						
+
+% Headings
+\usepackage{scrlayer-scrpage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Package's
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{layout}
+\setlength{\parindent}{0em}
+
+\renewcommand{\baselinestretch}{1.2}
+\renewcommand{\arraystretch}{1}
+
+%Damit \today ein Deutsch Formatiertes Datum zurueckgibt.
+\usepackage[ngerman, num, orig]{isodate}
+\usepackage[german, ngerman]{babel}
+\monthyearsepgerman{\,}{\,}
+
+\usepackage{amssymb,amsmath,fancybox,graphicx,wrapfig,color,lastpage,verbatim,epstopdf,a4wide,tabularx}
+\usepackage{wasysym} %Checkboxen
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{pst-all}
+\usepackage{pstricks-add}
+\usepackage{supertabular}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[font=footnotesize]{subfig}
+\usepackage{footnote}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{pdfpages}
+\usepackage{pgf,tikz}
+\usepackage{color}
+\usepackage{titletoc}
+
+\usepackage[makeroom]{cancel}
+\usepackage{array}
+\usepackage{trfsigns}
+\usepackage{textcomp}
+
+
+
+\renewcommand{\captionfont}{\scriptsize\slshape}
+	
+\setlength{\unitlength}{1mm}
+
+%Inhaltsverzeichnis
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{2}
+
+%Geometrie
+\usepackage[\paperFormat,left=\lPageMargin,right=\rPageMargin,top=\tPageMargin,bottom=\bPageMargin,includeheadfoot]{geometry}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environment Numbering
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Abbildungsnumerierung anhand Kapitel
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\makeatletter \@addtoreset{figure}{section} \makeatother
+
+%Gleichungen anhand Kapitel
+\AtBeginDocument{\numberwithin{equation}{section}}
+\AtBeginDocument{\numberwithin{figure}{section}}
+\AtBeginDocument{\numberwithin{table}{section}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Farben
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{black}{rgb}{0,0,0}
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{white}{rgb}{1,1,1}
+\definecolor{grey}{rgb}{0.8,0.8,0.8}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Einheiten
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[Gray,squaren]{SIunits} %\gray befehl heisst nun \Gray und \square heisst nun \squaren
+
+%Spannung
+\DeclareMathOperator{\V}{\volt}
+\DeclareMathOperator{\mV}{\milli \volt}
+\DeclareMathOperator{\uV}{\micro \volt}
+
+%Strom
+\DeclareMathOperator{\A}{\ampere}
+\DeclareMathOperator{\mA}{\milli \ampere}
+\DeclareMathOperator{\uA}{\micro \ampere}
+\DeclareMathOperator{\nA}{\nano \ampere}
+
+%Zeit
+\DeclareMathOperator{\s}{\second}
+\DeclareMathOperator{\ms}{\milli \second}
+\DeclareMathOperator{\us}{\micro \second}
+\DeclareMathOperator{\ns}{\nano \second}
+
+%Kapazitaet
+\DeclareMathOperator{\mF}{\milli \farad}
+\DeclareMathOperator{\uF}{\micro \farad}
+\DeclareMathOperator{\nF}{\nano \farad}
+\DeclareMathOperator{\pF}{\pico \farad}
+\DeclareMathOperator{\fF}{\femto \farad}
+
+%Induktivitaet
+\DeclareMathOperator{\mH}{\milli \henry}
+\DeclareMathOperator{\uH}{\micro \henry}
+\DeclareMathOperator{\nH}{\nano \henry}
+
+%Widerstand
+\DeclareMathOperator{\MO}{\mega \ohm}
+\DeclareMathOperator{\kO}{\kilo \ohm}
+\DeclareMathOperator{\mO}{\milli \ohm}
+\DeclareMathOperator{\Ohm}{\ohm}
+%Strecke
+\DeclareMathOperator{\km}{\kilo \meter}
+\DeclareMathOperator{\cm}{\centi \meter}
+\DeclareMathOperator{\mm}{\milli \meter}
+
+%Frequenz
+\DeclareMathOperator{\GHz}{\giga \hertz}
+\DeclareMathOperator{\MHz}{\mega \hertz}
+\DeclareMathOperator{\Hz}{\hertz}
+\DeclareMathOperator{\kHz}{\kilo \hertz}
+\DeclareMathOperator{\mHz}{\milli \hertz}
+
+%Leistung
+\DeclareMathOperator{\kW}{\kilo \watt}
+\DeclareMathOperator{\mW}{\milli \watt}
+\DeclareMathOperator{\uW}{\micro \watt}
+\DeclareMathOperator{\W}{\watt}
+
+%Kreisfrequenz
+\DeclareMathOperator{\rpers}{\radianpersecond}
+
+%DeziBel
+\DeclareMathOperator{\dB}{\deci \bel}
+\DeclareMathOperator{\dBm}{\deci \bel \milli}
+
+%Bit
+\DeclareMathOperator{\Bit}{\text{Bit}}
+\DeclareMathOperator{\kBit}{\text{kBit}}
+\DeclareMathOperator{\MBit}{\text{MBit}}
+\DeclareMathOperator{\Byte}{\text{Byte}}
+\DeclareMathOperator{\kByte}{\text{kByte}}
+\DeclareMathOperator{\MByte}{\text{MByte}}
+\DeclareMathOperator{\ppm}{\text{ppm}}

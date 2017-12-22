@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+\definecolor{mygray}{RGB}{213,213,213}
+\tikzset{
+	pstep/.style={draw=mygray!80!black, fill=mygray, signal},
+	text width=3.0cm, inner sep=0.1cm, minimum height=1.5cm,
+	text centered, font=\footnotesize
+}
+
+\node[pstep] at (-14,1.9) {Forecast and \\ Demand Planing};
+\node[pstep, signal from=west] at (-9.9,1.9) {Demand Clarification};
+\node[pstep, signal from=west] at (-5.8,1.9) {Supplier Identification and Selection};
+
+\node[pstep, signal from=west, text width=0.5cm, fill=mygray!30!white] at (-2.95,1.9) {};
+
+\node[pstep, signal from=west, text width=0.5cm, fill=mygray!30!white] at (-12.75,0) {};
+
+\node[pstep, signal from=west] at (-9.9,0) {Contract};
+\node[pstep, signal from=west] at (-5.8,0) {Receipt and Documentation};
+\node[pstep, signal from=west] at (-1.7,0) {Settlement, Payment and Evaluation};
+
+%\draw (-15.6,-0.85) rectangle (0.7,3.05);
+\useasboundingbox (-15.6,-0.85) rectangle (0.7,3.05);
+\end{tikzpicture}

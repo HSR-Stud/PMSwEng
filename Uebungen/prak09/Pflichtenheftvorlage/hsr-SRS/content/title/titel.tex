@@ -1,0 +1,50 @@
+\newgeometry{left=20mm, right=20mm, top=10mm, bottom=10mm}
+
+\hrule
+\begin{tikzpicture}[scale=1]
+\node[] at(0cm,0) {\includegraphics[height=1.5cm,trim=0mm 2mm 0cm 0mm, clip]{content/title/HSR-Logo-CMYK.eps}};			
+\end{tikzpicture}
+\hrule
+\begin{center}
+   	\vspace*{\stretch{1}}
+   	\begin{flushright}
+   		\Huge
+   		\titleinfo\\
+   		\Large
+   		Projekt: \subjectinfo\\
+   		\large
+   		\vspace*{\stretch{0.1}}
+   		Version \versioninfo\\
+   		\vspace*{\stretch{0.5}}
+   		\authorinfo \\			
+   	\end{flushright}
+   	\vspace*{\stretch{2}}	
+   	\newcolumntype{Y}{>{\setlength\hsize{0.2\hsize}\raggedright\arraybackslash}X}
+   	\newcolumntype{Z}{>{\setlength\hsize{0.4\hsize}\raggedright\arraybackslash}X}
+   	\renewcommand\arraystretch{1.5}
+   	\begin{tabularx}{\linewidth}{|Z|Y|Z|}
+   		\hline
+   		\textbf{Name} & \textbf{Datum} & \textbf{Unterschrift}\\
+   		\hline
+   		Hans Mustermann & \printdate{\dateinfo} & \\
+   		\hline
+   		& & \\
+   		\hline
+   		& & \\
+   		\hline
+   		& & \\
+        \hline
+   	\end{tabularx}
+\end{center}
+\cfoot{}
+\vspace*{\stretch{0.5}}	
+\hrule
+{
+    \footnotesize 
+    \begin{flushright}
+        Doc\#: \docNr\linebreak
+        Datum: \dateinfo
+    \end{flushright}
+}
+
+\restoregeometry
