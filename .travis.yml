@@ -1,14 +1,14 @@
-before_install:
+efore_install:
 - sudo apt-get update
 - sudo apt-get install -y texlive-latex-extra texlive-lang-german texlive-math-extra
 script:
-- pdflatex -interaction=nonstopmode ./ELT1.tex
-- pdflatex -interaction=nonstopmode ./ELT1.tex
+- pdflatex -interaction=nonstopmode ./PMSwEng.tex
+- pdflatex -interaction=nonstopmode ./PMSwEng.tex
 deploy:
   provider: releases
   api_key: $GITHUB_RELEASE_TOKEN
   file:
-   - ./ELT1.pdf
+   - ./PMSwEng.pdf
   skip_cleanup: true
   on:
     tags: true
