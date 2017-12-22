@@ -1,4 +1,4 @@
-efore_install:
+before_install:
 - sudo apt-get update
 - sudo apt-get install -y texlive-latex-extra texlive-lang-german texlive-math-extra
 script:
