@@ -4,11 +4,14 @@ before_install:
 script:
 - pdflatex -interaction=nonstopmode ./PMSwEng.tex
 - pdflatex -interaction=nonstopmode ./PMSwEng.tex
+- pdflatex -interaction=nonstopmode ./PMSWE.tex
+- pdflatex -interaction=nonstopmode ./PMSWE.tex
 deploy:
   provider: releases
   api_key: $GITHUB_RELEASE_TOKEN
   file:
    - ./PMSwEng.pdf
+   - ./PMSWE.pdf
   skip_cleanup: true
   on:
     tags: true
