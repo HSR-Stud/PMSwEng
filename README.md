@@ -1,11 +1,9 @@
 # PMSwEng - Projektmanagement und Software Engeneering
-
-## Erlaubte Hilfsmittel im zweiten Teil(nach MSP FS2013)
- * Alle Unterlagen des Unterrichts (Folien, Übungen, alte Prüfungen) -> Alles auf Skript-Server
- * Persönliche, handgeschriebene Zusammenfassung von maximal 10 A4-Seiten (beidseitig beschrieben).
- * maximal 5 beliebige Informatik-Fachbücher
+ This course has been taken over and modified by Mr. Trummer in 2016. Therefore, a part of the content has changed.
+ The old Version (<2016) is: PMSwEng.tex
+ The newer Version (>2017) is: PMSWE.tex
  
-## Branches
+## Branches of PMSwEng (older Version)
  * master: komplette Zusammenfassung aller Übungen
  * short: kurze Zusammenfassung der wichtigsten Übungen
  
