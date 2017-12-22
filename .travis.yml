@@ -1,3 +1,4 @@
+
 before_install:
 - sudo apt-get update
 - sudo apt-get install -y texlive-latex-extra texlive-lang-german texlive-math-extra texlive-fonts-extra
@@ -10,3 +11,5 @@ deploy:
   file:
    - ./PmSwEng.pdf
   skip_cleanup: true
+  on:
+    tags: true
