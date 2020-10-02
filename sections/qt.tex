@@ -1,0 +1,187 @@
+\section{Qt}
+\begin{minipage}{16cm}
+	Qt (sprich cute = süss) ist eine plattformübergreifende Programmierungsapplikation für grafische \newline Benutzeroberflächen
+    (GUI = Graphical User Interface).\\
+	Qt wurde 1991 gegründet und gehörte der Firma Trolltech.
+    Im Jahr 2008 übernahm Nokia die Firma Trolltech. Im Jahr 2014 wurde Qt als Open-Source-Projekt verwaltet. 
+\end{minipage}
+\begin{minipage}{1.5cm}
+	\includegraphics[width=1.5cm]{images/qt_logo.jpg}
+\end{minipage}
+
+\subsection{Grundlagen zu Qt}
+\begin{minipage}{8cm}
+	\begin{itemize}
+		\item Qt C++ Klassenbibliothek stellt GUI-Elemente zur Verfügung
+		\item Das GUI wird als C++ Sourcefile geschrieben
+		\item Standardklasse QtGui und QtCore werden \newline automatisch inkludiert
+		\item Alle Qt Widgets werden \textbf{auf dem Heap} erstellt
+		\item Jedes Programm enthält eine Instanz von QApplication
+		\item QApplication hält alles zusammen
+	\end{itemize}
+\end{minipage}
+\begin{minipage}{10cm}
+	\includegraphics[width=10cm]{images/qt_classes.jpg}
+\end{minipage}
+
+\begin{multicols}{2}
+	\subsubsection{QObject}
+	\begin{itemize}
+		\item QObject ist die \textcolor{blue}{Basisklasse des Qt-Modells}
+		\item stellt das Memorymanagement (automatische delete) für alle abgeleitet Klassen von QObject zur \newline Verfügung. Es entstehen Objektbäume. 
+		\item stellt die connect-Funktion zur Verfügung
+		\item bearbeitet das Eventhandling
+		\item hat keine visuelle Representation
+	\end{itemize}
+	
+	\subsubsection{Qt Building: qmake}
+	\begin{itemize}
+		\item qmake Makefile-Generator
+		\item macht aus plattformunabhängiem Projektfile (.pro) ein plattformspezifisches Projektfile. 
+		\item die gewünschte Plattform wird qmake als Option \newline mitgegeben
+		\item Bei Build-Problemen alle Dateien \textbf{ausser} .pro und Sourcefile löschen
+	\end{itemize}
+\end{multicols}
+
+\subsubsection{Qt Konvention}
+\begin{tabular}{|l|l|c|}
+	\hline \textbf{Was}&\textbf{Beispiel} &\textbf{Konvention}
+    \\ \hline   
+    Qt-Modulname& "QtCore"&\textit{Qt}
+    \\ \hline  
+    Qt-Klassenname & "QString" &\textit{Q}
+    \\ \hline   
+    Qt-Variablen-,Funktionsname & "qTranslator, qDebug()"&\textit{q}
+    \\ \hline   
+    Qt-include & "\#include <QtGui>& \textit{ohne.h}
+    \\ \hline
+\end{tabular}
+
+\subsection{QWidget (Widget = Window Gadget (\"{}Fenster Ding\"{})}
+\begin{itemize}
+	\item abgeleitet von QObject,  eine Instanz der Klasse stellt grafisches Element dar
+	\item Diese Klasse hat viele Methoden um Aussehen, Grösse, Position etc. zu verändern
+	\item mit show() wird das Widget angezeigt, mit hide() wird das Widget versteckt
+	\item Jedes Widget wird einem \textit{"Parent-Widget"} (Eltern) zugewiesen, ein solches Widgets nennt man dann \textit{Child-Widgets}
+	\item Durch die Parent-Child Funktion entsteht eine Verschachtelung
+	\item Ein Widget \textbf{ohne} Parent ist ein Top-Level-Widget oder Window	
+	\item Das \textit{"Parent-Widget"} übernimmt Verwaltungsfunktionen wie Memory-Management, \newline
+    weiterleiten von Ereignisse an \textit{"Child-Widget}, anzeigen, verstecken von Widgets etc.
+\end{itemize}
+
+\begin{multicols}{3}
+\subsubsection{Top-Level-Widget}
+Die \textit{"Top-Level-Window"} sind Widgets welche auf der obersten \newline Hierarchiestufe liegen. Sie haben \newline keine \textit{"Parent-Widget"}.\newline
+\textbf{Widgets} für \textit{"Top-Level-Window"}: 
+\begin{itemize}
+	\item \textcolor{blue}{QMainWindow} $\rightarrow$ Applikations-Window (Hauptfenster)
+	\item \textcolor{blue}{QDialog} $\rightarrow$ Popup-Window für Abfragen ("Wirklich löschen?"), Hauptanwendung bleibt blockiert
+	\item \textcolor{blue}{QWidget} $\rightarrow$ Einfaches Fenster
+\end{itemize}
+
+\subsubsection{Parent-Child-Widgets}
+\begin{itemize}
+	\item Jedes QObject kann \textbf{maximal ein} Eltern-QObject haben
+	\item Jedes QObject kann beliebig \newline viele Kind-QObject haben
+	\item Kind muss Eltern über sich \newline informieren
+    \begin{itemize}
+	\item Mit Konstruktor
+    \subitem label->setParent(..)
+    \item oder Layout Manager
+    \end{itemize}
+\end{itemize}
+
+\includegraphics[width=5cm]{images/qt_parent_child.png}
+\end{multicols}
+
+\subsection{GUI-Programmierung}
+Es gibt zwei grundlegende Aufgaben bei der GUI-Programmierung.\\
+Das \textbf{Layout} legt Anordnung, Grösse  und Farbe fest.\\
+Die \textbf{Interaktion} legt die Reaktion des Programmes auf eine Eingabe fest. \\
+
+\subsection{Layout}
+Es gibt \textbf{drei Varianten} wie Widgets innerhalb eines Widget angeordnet werden können: \newline
+\textcolor{blue}{
+    \begin{itemize}
+        \item Absolute Positionierung
+        \item Layout Manager
+        \item GUI-Designer (Qt Designer)
+    \end{itemize}
+}
+
+\subsubsection{Absolute Positionierung}
+Mittels Methoden:
+\begin{multicols}{2}
+    \begin{minipage}{1.08\linewidth}
+        \lstinputlisting[style=c++qt,linewidth=\linewidth]{source/Qt/methoden.cpp}
+        \subsubsection{Layout Manager} %TODO Layout?
+        \begin{tabular}{|l|l|}
+            \hline \textbf{Klasse} & \textbf{Ort}\\
+            \hline QVBoxLayout & Elemente vertikal\\
+            \hline QHBoxLayout & Elemente horizontal\\
+            \hline QGridLayout & zweidimensionales Gitter\\
+            \hline QFormLayout & Elemente zeilenweise\\
+            \hline QStackedLayout & aufeinandergelegt Widgets\\
+            \hline
+        \end{tabular}
+       \end{minipage}	
+		
+	\includegraphics[width=0.8\linewidth]{images/geometry.png}
+\end{multicols}
+	
+\subsubsection{GUI-Designer / Qt Designer}	
+	Im Qt Designer mittels Drag-Drop können die Elemente angeordnet werden, anschliessend Umwandlung in Code. 	
+
+\subsection{Interaktion}
+In Qt werden die Eingaben als SIGNALS bezeichnet und die Ausgaben als SLOTS. Mittels der Funktion connect() werden die beiden miteinander verknüpft.\\
+\includegraphics[width=15cm]{images/connect.png}
+
+\begin{multicols}{3}
+\subsubsection{SIGNALS}
+\begin{itemize}
+	\item nur deklariert, nie definiert
+	\item kein Zugriffsrecht vergeben
+	\item Rückgabetyp immer void
+\end{itemize}
+
+\subsubsection{SLOTS}
+\begin{itemize}
+	\item deklariert und definiert
+	\item oftmals Memberfunktion, auch normal abrufbar
+	\item Zugriffsrechte
+\end{itemize}
+
+\subsubsection{connect}
+\begin{itemize}
+	\item Verbindungsfunktion zwischen Input und Output
+	\item ein Signal zu mehreren Slots
+	\item mehrere Signale zu einem Slot
+\end{itemize}
+\end{multicols}
+
+\vspace{0.5pt}
+\textbf{Beispiele connect-Funktion}
+\lstinputlisting[style=c++qt]{source/Qt/connect.cpp}
+
+\subsection{Zeichnen und Malen}
+\begin{multicols}{2}
+	\subsubsection{QPainter}
+	Der Maler mit Mal-\& Zeichenwerkzeugen.\\
+	
+	\begin{tabular}{|l|l|}
+		\hline \textbf{Klasse} & \textbf{Werkzeug}\\
+		\hline QPen & Zeichenstift\\
+		\hline QBrush & Pinsel\\
+		\hline QFont & Schriftart\\
+		\hline draw & Formen malen\\
+		\hline
+	\end{tabular}
+	
+	\subsubsection{QPaintDevice}
+	Oberfläche wo darauf gezeichnet \& gemalt werden kann
+	QPainter-Objekte zeigen auf QPaintDevice-Objekte. QPaintDevice ist eine abstrakte Basisklasse welche nicht von QObject abgeleitet ist und daher \textbf{kein automatisches delete.}\\
+
+\end{multicols}
+
+\subsubsection{Vorgehen}
+\lstinputlisting[style=c++qt]{source/Qt/qpainter.cpp}

@@ -1,0 +1,39 @@
+\title{PmSwEng Zusammenfassung}
+\author{\href{mailto:michel.gisler@hsr.ch}{M. Gisler} \qquad
+        \href{mailto:stefan.reinli@hsr.ch}{S. Reinli} \qquad
+        \href{mailto:luca.mazzoleni@hsr.ch}{L. Mazzoleni}}
+\RequirePackage{luatex85} %Bug-Fix Driver not found
+\def\pgfsysdriver{pgfsys-pdftex.def}
+\documentclass[a4paper]{article}
+
+%Includes
+\include{header/pakete}
+\include{header/zusammenfassung}
+
+%Dokument
+\begin{document}
+\input{sections/README}
+\title{\Huge{Projektmanagement und Softwareengineering}}
+\maketitle
+
+\setcounter{tocdepth}{2} %Setzt Tiefe des Inhaltsverzeichnis 
+\tableofcontents
+\setcounter{secnumdepth}{4} %Setzt Tiefe im Dokument selber
+\thispagestyle{empty}
+\newpage
+
+\input{sections/softwareEngineering}
+\input{sections/testing}
+\pagebreak
+\input{sections/doxygen}
+\pagebreak
+\input{sections/projectManagement}
+\input{sections/versionskontrolle}
+\pagebreak
+\input{sections/qt}
+\pagebreak
+\input{sections/beispiele}
+\pagebreak
+\null\pagebreak\null\pagebreak %Um bei booklet auf der lezten Seite zu sein: S.40 +k x 4
+\input{sections/Glossar} 
+\end{document}
