@@ -1,0 +1,58 @@
+% !TeX program = xelatex
+% !TeX encoding = utf8
+% !TeX root = Vorlage.tex
+
+%% TODO: publish to CTAN
+\documentclass[]{tex/hsrzf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+
+%% TODO: publish to CTAN
+\usepackage{tex/hsrstud}
+
+%% Language configuration
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=swiss]{german}
+
+%% License configuration
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+    lang={german},
+]{doclicense}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Metadata
+
+\course{Elektrotechnik}
+\module{ModAbk}
+\semester{Fr\"uhlingssemester 2020}
+
+\authoremail{vname@hsr.ch}
+\author{\textsl{Vorname Name} -- \texttt{\theauthoremail}}
+
+\title{\texttt{\themodule} Zusammenfassung}
+\date{\thesemester}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Einf\"uhrung}
+\[
+  i\hbar \partial_t \left| \psi(t) \right\rangle 
+    = \hat{H} \left| \psi(t) \right\rangle
+\]
+
+
+\section{Lizenz}
+\doclicenseThis
+
+
+\end{document}
