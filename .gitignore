@@ -1,3 +1,4 @@
+*.xdv
 #Ignore files build by Visual Studio
 *.obj
 *.exe

@@ -1,0 +1,82 @@
+% !TeX program = xelatex
+% !TeX encoding = utf8
+% !TeX root = PMSwEng.tex
+
+%% TODO: publish to CTAN
+\documentclass[header, margin=normal]{tex/hsrzf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+
+%% TODO: publish to CTAN
+%% TODO: update to the latest version
+\usepackage{tex/hsrstud}
+
+%% Language configuration
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=swiss]{german}
+
+%% More control over alignment of descriptions, itemize, etc
+\usepackage{enumitem}
+\setdescription{align=right}
+
+%% make better looking tables
+\usepackage{booktabs}
+
+%% License configuration
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+    lang={german},
+]{doclicense}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Metadata
+
+\course{Elektrotechnik}
+\module{PMSwEng}
+\semester{Herbstsemester 2020}
+
+\authoremail{naoki.pross@ost.ch}
+\author{\textsl{Naoki Pross} -- \texttt{\theauthoremail}}
+
+\title{\texttt{\themodule} Zusammenfassung}
+\date{\thesemester}
+
+\contributors{
+    Bernhard Grauer (bgrauer),
+    Christian Gwerder (cgwerder),
+    Damian Koeppel (dkoeppel),
+    David Wright (dwright),
+    Gian Claudio Koeppel (gkoeppel),
+    Hannes Badertscher (hbaderts),
+    Juerg Rast (jrast),
+    Luca Mazzoleni (lmazzoleni),
+    Michel Gisler (mgisler),
+    Naoki Pross (npross),
+    Raphael Nestler (rnestler),
+    Stefan Reinli (sreinli),
+    Sven Körner (skoerner)
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\input{tex/00-libraries-and-frameworks}
+\input{tex/01-qt-framework}
+% \input{tex/02-}
+% \input{tex/03-}
+
+\section{Contributors}
+\thecontributors
+
+\section{Lizenz}
+\doclicenseThis
+
+\end{document}
