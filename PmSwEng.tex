@@ -1,0 +1,73 @@
+\documentclass{scrartcl}
+
+
+\include{header/zusammenfassung}
+\title{PmSwEng Zusammenfassung}
+\author{H. Badertscher}
+ 
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage[T1]{fontenc}
+
+
+\definecolor{lbcolor}{rgb}{0.92,0.92,0.92}
+\lstset{
+backgroundcolor=\color{lbcolor},
+tabsize=4,
+rulecolor=,
+language=c++,
+    basicstyle=\scriptsize\ttfamily,
+    upquote=true,
+    aboveskip={0.5\baselineskip},
+    columns=fixed,
+    showstringspaces=false,
+    extendedchars=true,
+    breaklines=true,
+    prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=single,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    identifierstyle=\bfseries\ttfamily,
+    keywordstyle=\color[rgb]{0,0,1},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+
+\lstset{literate=%
+{Ö}{{\"O}}1
+{Ä}{{\"A}}1
+{Ü}{{\"U}}1
+{ß}{{\ss}}2
+{ü}{{\"u}}1
+{ä}{{\"a}}1
+{ö}{{\"o}}1
+{°}{{$^{\circ}$}}1
+{'}{{}}1
+}
+
+\lstset{basicstyle=\ttfamily}
+
+
+\begin{document}
+
+\title{\Huge{Projektmanagement \& Software Engineering}}
+\maketitle
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+\newpage
+
+\input{sections/softwareEngineering}
+\newpage
+\input{sections/testing}
+\newpage
+\input{sections/projectManagement}
+\input{sections/doxygen}
+\input{sections/subversion}
+\input{sections/qt}
+\newpage
+\input{sections/examples}
+
+\end{document}
