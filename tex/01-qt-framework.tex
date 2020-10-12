@@ -53,20 +53,37 @@ Der Befehl lautet: \texttt{qmake <project file name>.pro}
 \end{figure}
 
 \subsection{Projektbeschreibung (\texttt{*.pro})}
-% TODO: rewrite this
-% \begin{multicols}{2}
-\textbf{Keywords:} 
-- QT: Liste von verwendeten Qt Modulen 
-- Target: Name der Applikation (Output File) 
-- TEMPLATE: Projekt Typ: app oder lib 
-- CONFIG: z.B. CONFIG += C++14  
-- windows/linux/macx: Plattform spezifische   Compilierungsregeln 
-- SOURCES/HEADER/FORMS: Source-, Header- oder Formdateien die dem Projekt hinzugefügt werden sollen 
-% \columnbreak
-% FIXME
-% \adjustbox{width=6.5cm}{\includegraphics{Figures/keywordspro}}
-% \end{multicols}
+\begin{lstlisting}
+# Comments are lines that begin with '#'
+# Load a template
+TEMPLATE = app
 
+# Modify compiler flags
+CONFIG += qt c++14 warn_on strict_c++
+DEFINES += QT_DEPRECATED_WARNINGS
+
+# Select Qt Modules to use
+QT += core gui
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+# Project name
+TARGET = GlowingBroccoli
+
+# List source files for the project
+INCLUDEPATH += src
+
+HEADERS += \
+    src/mainwindow.h \
+    src/snake.h
+
+FORMS   += \
+    src/mainwindow.ui
+
+SOURCES += \
+    src/main.cpp \
+    src/mainwindow.cpp \
+    src/snake.cpp
+\end{lstlisting}
 
 \section{Hallo Welt Beispiel}
 
@@ -162,7 +179,7 @@ void QWidget::move (int x, int y);
     \caption[]{Qt Layout Manager}
 \end{figure}
 
-Klassen, welche von QLayout ableiten:
+\noindent Klassen, welche von QLayout ableiten:
 \begin{description}[leftmargin=*, widest={\textbf{\texttt{QStackedLayout}}}]
     \item[\texttt{QHBoxLayout}] Ordnet Elemente horizontal an
     \item[\texttt{QVBoxLayout}] Ordnet Elemente vertikal an
@@ -170,7 +187,6 @@ Klassen, welche von QLayout ableiten:
     \item[\texttt{QFormLayout}] Ordnet Elemente in Form von Zeilen an Zeile = QLabel gefolgt von anderem QWidget (z.B. QLineEdit)
     \item[\texttt{QStackedLayout}] ``Aufeinandergelegte'' Widgets (Stapel), nur immer ein Widget ist sichtbar
 \end{description}
-
 
 Das QLayout-Objekt ist bei einem Parent-Widget zuständig für das Layout (Anordnung) von dessen Child-Widgets:
 \begin{lstlisting}[language=c++]
