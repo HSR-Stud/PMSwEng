@@ -1,69 +1,82 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%
-% Dokumentinformationen %
-%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\titleinfo}{PMSwEng Zusammenfassung}
-\newcommand{\authorinfo}{Gian Claudio Koeppel}
-\newcommand{\versioninfo}{$Revision: 1 $ - powered by \LaTeX}
+% !TeX program = xelatex
+% !TeX encoding = utf8
+% !TeX root = PMSwEng.tex
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Standard projektübergreifender Header für
-% - Makros 
-% - Farben
-% - Mathematische Operatoren 
-%
-% DORT NUR ERGÄNZEN, NICHTS LÖSCHEN
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
-\include{header/header}
-% Seitenränder
-\geometry{left=1.5cm,right=1cm,top=1cm,bottom=1cm,includeheadfoot}
-\usepackage[T1]{fontenc}
+%% TODO: publish to CTAN
+\documentclass[header, margin=normal]{tex/hsrzf}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[final]{pdfpages}
-% Syntaxhighlighting für Code
-\usepackage{listings}
-%\usepackage{textcomp}
-\definecolor{lbcolor}{rgb}{0.92,0.92,0.92}
-\lstset{
-backgroundcolor=\color{lbcolor},
-tabsize=4,
-rulecolor=,
-language=c++,
-    basicstyle=\scriptsize\ttfamily,
-    upquote=true,
-    aboveskip={0.5\baselineskip},
-    columns=fixed,
-    showstringspaces=false,
-    extendedchars=true,
-    breaklines=true,
-    prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
-    frame=single,
-    showtabs=false,
-    showspaces=false,
-    showstringspaces=false,
-    identifierstyle=\bfseries\ttfamily,
-    keywordstyle=\color[rgb]{0,0,1},
-    commentstyle=\color[rgb]{0.133,0.545,0.133},
-    stringstyle=\color[rgb]{0.627,0.126,0.941},
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+
+%% TODO: publish to CTAN
+%% TODO: update to the latest version
+\usepackage{tex/hsrstud}
+
+%% Language configuration
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=swiss]{german}
+
+%% More control over alignment of descriptions, itemize, etc
+\usepackage{enumitem}
+\setdescription{align=right}
+
+%% make better looking tables
+\usepackage{booktabs}
+
+%% License configuration
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+    lang={german},
+]{doclicense}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Metadata
+
+\course{Elektrotechnik}
+\module{PMSwEng}
+\semester{Herbstsemester 2020}
+
+\authoremail{naoki.pross@ost.ch}
+\author{\textsl{Naoki Pross} -- \texttt{\theauthoremail}}
+
+\title{\texttt{\themodule} Zusammenfassung}
+\date{\thesemester}
+
+\contributors{
+    Bernhard Grauer      (\texttt{bgrauer}),
+    Christian Gwerder    (\texttt{cgwerder}),
+    Damian Koeppel       (\texttt{dkoeppel}),
+    David Wright         (\texttt{dwright}),
+    Gian Claudio Koeppel (\texttt{gkoeppel}),
+    Hannes Badertscher   (\texttt{hbaderts}),
+    Juerg Rast           (\texttt{jrast}),
+    Luca Mazzoleni       (\texttt{lmazzoleni}),
+    Michel Gisler        (\texttt{mgisler}),
+    Naoki Pross          (\texttt{npross}),
+    Raphael Nestler      (\texttt{rnestler}),
+    Stefan Reinli        (\texttt{sreinli}),
+    Sven Körner          (\texttt{skoerner})
 }
 
-\lstset{literate=%
-{Ö}{{\"O}}1
-{Ä}{{\"A}}1
-{Ü}{{\"U}}1
-{ß}{{\ss}}2
-{ü}{{\"u}}1
-{ä}{{\"a}}1
-{ö}{{\"o}}1
-{°}{{$^{\circ}$}}1
-{'}{{}}1
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
 
-\lstset{basicstyle=\ttfamily}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Möglichst keine Ergänzungen hier, sondern in header.tex
 \begin{document}
 
-\input{sections/Uebungen.tex}
+\maketitle
+\tableofcontents
+
+\input{tex/00-libraries-and-frameworks}
+\input{tex/01-qt-framework}
+\input{tex/02-project-management}
+% \input{tex/03-}
+
+\section{Contributors}
+\thecontributors
+
+\section{Lizenz}
+\doclicenseThis
 
 \end{document}
